@@ -39,7 +39,7 @@
         #files: \.py$
     -   id: check-nose2
         name: Nose2 Tests
-        entry: sh -c "make test"
+        entry: python -m pytest
         #stages: commit_stage
         language: system
         files: \.py$

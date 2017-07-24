@@ -9,9 +9,9 @@ from nltk.stem import PorterStemmer
 SENTINET_PREFIX = 9
 
 ROOT = ''
-NEGATIVE_WORDS_TXT = ROOT + 'dataset/data/negative_words.txt'
-POSITIVE_WORDS_TXT = ROOT + 'dataset/data/positive_words.txt'
-NEUTRAL_MODIFIERS_TXT = ROOT + 'dataset/data/neutral_modifiers.txt'
+NEGATIVE_WORDS_TXT = ROOT + 'dataset/sentiment_words_text_files/negative_words.txt'
+POSITIVE_WORDS_TXT = ROOT + 'dataset/sentiment_words_text_files/positive_words.txt'
+NEUTRAL_MODIFIERS_TXT = ROOT + 'dataset/sentiment_words_text_files/neutral_modifiers.txt'
 
 POSITIVE_SENTIMENT_SCORE = 'PosScore'
 NEGATIVE_SENTIMENT_SCORE = 'NegScore'

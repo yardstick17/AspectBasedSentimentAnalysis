@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+from collections import namedtuple
+
 import nltk
+from nltk.sentiment.vader import NEGATE
 
 syntactic_compiled_grammar = {}
 source_target_compiled_grammar = {}
+Target = namedtuple('Target', ['word', 'polarity'])
+
+NEGATE_SET = set(NEGATE) | {"n't", 'never'}
 
 
 class PatternGrammar:
@@ -15,45 +21,45 @@ class PatternGrammar:
             2: """
                 # the place was amazing |
                 VBG_DESRIBING_NN: {<NN|NN.><VB|VB.>+<RB|RB.>*<VB|VB.>}""",
-            3: """            
+            3: """
                 # I loved the ambiance and the food. | enjoyed the taste.
                 VBG_DESCRIBING_NN_V3 : {<VB|VB.>+<DT>?<IN>?<NN.|NN>+(<CC|,>?<DT>?<JJ|JJ.>*<NN|NN.>+)*}  # noqa nopep8""",
-            4: """             
+            4: """
                 # Amazingly satisfying food
                 VBG_DESRIBING_NN_V2: {<RB|RB.>*<VB.|VBG>+<NN|NN.>}""",
             5: """
                 VBG_DESRIBING_NN_V5 :{<JJ|JJ.><N.|NN.><VB.|VB><RB>*<VB.>}""",
-            6: """            
+            6: """
                 # perfect place to have varied options in burgers
                 VBG_NN_DESCRIBING_NN: { <VBN><NN|NN.><IN><NN|NN.> }""",
-            7: """            
+            7: """
                 # improved on their service
                 VBN_IN_PRP_NN: { <VBN><IN><PRP\$><NN> }""",
             8: """
                 VBG_NN_DESCRIBING_NN: { <VBN><NN|NN.><IN><NN|NN.> }""",
             9: """
                 VBN_DESCRING_THE_FOLLOWING_NOUN : { <RB|JJ.|JJ>*<VB|VB.>+<IN|DT>?(<CC|,|TO>?<DT>?<NN|NN.>+)+}""",
-            10: """            
+            10: """
                 #i love east village pizza
                 VB_DESCRBING_NN : { <VB|VB.>(<CC|,>?<RB|RB.><JJ|JJ.>*<NN|NN.>*)+}""",
 
-            11: """            
+            11: """
                 # the place was ok and good
                 # The Phirni here is a rich flavoured dessert | Place not worth visiting | the place was ok and good | the fish , chicken and biryani were so tastefull   # noqa nopep8
                 JJ_DESCRIBING_NN_V4 :{(<CC|,>*<DT>?<JJ|JJ.>*<NN|NN.>+)+(<IN><NN.|N.>)*<RB|RB.>*<VB|VB.>+<IN>?<DT>?(<CC|,>*<RB|RB.>*<JJ|JJ.>+<NN|NN.>*)+} # noqa nopep8""",
 
-            12: """            
+            12: """
                 # this place is always crowded, noisy and full #JJ_VBG_RB_DESRIBING_NN
                 # great food , service and ambience. | great food and service. | the served the lovely food. | they have a speedy delivery
                 # food is amazing
                 NN_IS_VBG : { <NN><VBZ><VB|VB.> }""",
-            13: """            
+            13: """
                 # they have a speedy delivery
                 PRP_VB_NN : { <PRP><VBP|VB><DT>?<NN|NN.>+ }""",
             14: """
                 # they have a speedy delivery
                 PRP_VB_NN : { <PRP><VBP|VB><DT>?<NN|NN.>+ }""",
-            15: """            
+            15: """
                 # nice for trying some authentic chinese
                 NN_VB_DT_JJ_NN: { <NN><IN><VBG><DT><JJ><NN|NN.> }
             """,
@@ -93,7 +99,7 @@ class PatternGrammar:
             28: """
                 # grasps all NN if none rule captures the sentence
                 NN_Phrase : { <JJ|JJ.>?<VB.|V.>?<FW|NN.|N.>+ }""",
-            29: """                
+            29: """
                 JJ_VBG_RB_DESRIBING_NN_2: {  ( <CC|,|TO>? <DT>? <JJ|JJ.>*<NN|NN.>+ )+ <WDT> <..|...>* <VB|VB.|JJ|JJ.|RB>+ }
                 """,
             30: """
@@ -217,7 +223,6 @@ class PatternGrammar:
         }
         return extractor_dict
 
-
     def get_source_target_compiled_grammar(self, clause):
         global source_target_compiled_grammar
         compiled_grammar = source_target_compiled_grammar.get(clause, None)
@@ -253,3 +258,35 @@ class PatternGrammar:
         for index in indexes:
             _ = self.get_syntactic_grammar(index)
         return syntactic_compiled_grammar
+
+    @staticmethod
+    def get_source_target_set(source_chunk, target_tuple_with_polarity):
+        from grammar.chunker import Chunker
+
+        """
+        :param source_chunk: list of source chunk , extracted using
+        :param target_chunk_with_polarity:
+        :return:
+        """
+
+        source_set, target_set = set(), set()
+        target_chunk = target_tuple_with_polarity.word
+        target_chunk = [tgt for tgt in target_chunk if tgt not in source_chunk]
+        for src in source_chunk:
+            src_pos_tagged_part = src[0]
+            np_phrase_pos_tagged_list = Chunker.get_chunk(src_pos_tagged_part, 'NN_all')
+            # np_phrase_pos_tagged_part = np_phrase_pos_tagged_list[0]
+            for np_phrase_pos_tagged_part in np_phrase_pos_tagged_list:
+                for single_np_phrase in np_phrase_pos_tagged_part:
+                    source_word = ' '.join([i[0] for i in single_np_phrase]).strip()
+                    source_set.add(source_word)
+
+        for tgt in target_chunk:
+            tgt_pos_tagged_part = tgt[0]
+            sentiment_phrase_pos_tagged_list = Chunker.get_chunk(tgt_pos_tagged_part, 'JJ_NN_RB_VB')
+            # sentiment_phrase_pos_tagged_part = sentiment_phrase_pos_tagged_list[0]
+            for sentiment_phrase_pos_tagged_part in sentiment_phrase_pos_tagged_list:
+                for single_sentiment_phrase in sentiment_phrase_pos_tagged_part:
+                    target_word = ' '.join([i[0] for i in single_sentiment_phrase]).strip()
+                    target_set.add(target_word)
+        return source_set, target_set

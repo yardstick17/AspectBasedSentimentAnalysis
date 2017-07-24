@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 import nltk
 
 from grammar.pattern_grammar import PatternGrammar
@@ -48,7 +47,7 @@ class Chunker:
 
     @staticmethod
     def get_chunk(pos_tagged_sentence, src_target_grammar_key: str) -> list:
-        compile_grammar = PatternGrammar.compile_source_target_grammar(clause=src_target_grammar_key)
+        compile_grammar = PatternGrammar().get_source_target_compiled_grammar(clause=src_target_grammar_key)
         return Chunker.apply_grammar_on_pos_tagged_chunk(compile_grammar, pos_tagged_sentence)
 
     @staticmethod

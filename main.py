@@ -1,15 +1,17 @@
+# -*- coding: utf-8 -*-
 import os
 
 import pandas as pd
 
 from dataset.read_dataset import read_json_formatted
-from grammar.chunker import Chunker
 from grammar.pattern_grammar import PatternGrammar
+from grammar.source_target_extractor import SourceTargetExtractor
 
 
 def initialize_globals():
     PatternGrammar().compile_all_source_target_grammar()
     PatternGrammar().compile_all_syntactic_grammar()
+
 
 def get_dataset():
     dataset_filename = 'dataset/annoted_dataset.pkl'
@@ -29,24 +31,42 @@ def get_dataset():
         dataset = pd.read_pickle(dataset_filename)
     return dataset
 
+
 def process():
     initialize_globals()
     annoted_data_dataset = get_dataset()
 
-
-    grammar_indices = PatternGrammar().syntactic_grammars.keys()
-
+    syntactic_compiled_grammar = PatternGrammar().compile_all_syntactic_grammar()
+    lol_rule_that_extracted_correctly = []
+    correct_predictions = 0
+    empty_correct_predictions = 0
     for row in annoted_data_dataset:
-        sentence = row['sentence']
+        sentence = row['sentence'].lower()
         meta = row['meta']
-        for index in grammar_indices:
-            grammar = PatternGrammar().compile_syntactic_grammar(index)
-            chunk_dict = Chunker(grammar).chunk_sentence(sentence)
-            print(chunk_dict)
+        ste = SourceTargetExtractor(sentence)
+        rule_that_extracted_correctly = []
+        for index, compiled_grammar in sorted(syntactic_compiled_grammar.items(), key=lambda x: x, reverse=True):
+            score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
+            extracted_meta = {}
+            for source, score in score_dict.items():
+                if score['PosScore'] < score['NegScore']:
+                    extracted_meta[source] = 'negative'
+                else:
+                    extracted_meta[source] = 'positive'
+
+            if extracted_meta and extracted_meta == meta:
+                print(index, 'extracted_meta: ', extracted_meta, ', meta: ', meta)
+                correct_predictions += 1
+                rule_that_extracted_correctly.append(1)
+            elif extracted_meta == meta:
+                empty_correct_predictions += 1
+            else:
+                rule_that_extracted_correctly.append(0)
+        print(rule_that_extracted_correctly)
+        lol_rule_that_extracted_correctly.append(rule_that_extracted_correctly)
+
+    print(correct_predictions, empty_correct_predictions, len(annoted_data_dataset))
 
 
-
-
-    pass
 if __name__ == '__main__':
     process()
