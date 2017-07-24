@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+from collections import Counter
 
 import pandas as pd
 
@@ -40,6 +41,7 @@ def process():
     lol_rule_that_extracted_correctly = []
     correct_predictions = 0
     empty_correct_predictions = 0
+    index_coverage = Counter()
     for row in annoted_data_dataset:
         sentence = row['sentence'].lower()
         meta = row['meta']
@@ -58,6 +60,7 @@ def process():
                 print(index, 'extracted_meta: ', extracted_meta, ', meta: ', meta)
                 correct_predictions += 1
                 rule_that_extracted_correctly.append(1)
+                index_coverage[index] += 1
             elif extracted_meta == meta:
                 empty_correct_predictions += 1
             else:
@@ -65,7 +68,11 @@ def process():
         print(rule_that_extracted_correctly)
         lol_rule_that_extracted_correctly.append(rule_that_extracted_correctly)
 
-    print(correct_predictions, empty_correct_predictions, len(annoted_data_dataset))
+    print('Correct Predictions:', correct_predictions, 'Empty Correct Predictions :', empty_correct_predictions,
+          'Data-set Size :', len(annoted_data_dataset))
+
+    print('Most Efficient Rule: ', list(index_coverage.most_common()))
+    print('Rules that at least hit one correct: ', list(index_coverage.keys()))
 
 
 if __name__ == '__main__':
