@@ -156,6 +156,68 @@ class PatternGrammar:
         }
         return SRC_TARGET_GRAMMAR
 
+    @staticmethod
+    def extractor_mapping_dict():
+        extractor_dict = {
+            'JJ_DESCRIBING_NN_V4': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                    'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VBG_RB_DESRIBING_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                    'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VBN_DESCRING_THE_FOLLOWING_NOUN': {
+                'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'JJ_VBG_RB_DESRIBING_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                       'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'JJ_VBG_RB_DESRIBING_NN_2': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                         'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VBG_DESCRIBING_NN_V3': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                     'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VBG_NN_DESCRIBING_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                     'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VBG_DESRIBING_NN_V2': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                    'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VBG_DESCRIBIN_NN_V4': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                    'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VB_DESCRBING_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'RB_BEFORE_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                             'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'JJ_BEFORE_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                             'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_JJ': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                      'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'JJ_IN_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                         'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'JJ_TO_NN_VB': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                            'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_MD_VB': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                         'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VBN_IN_PRP_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                              'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'VB_PRP_NNS': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                           'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'PR_VB_JJ_JJ': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                            'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'I_JJ_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                        'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_IN_DT_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                            'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_VB_DT_JJ_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                               'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_Phrase': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                          'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_desc_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                           'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_DT_NN': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                         'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_desc_NN_reverse': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                   'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')},
+            'NN_IN_DT_NN_reverse': {'source': PatternGrammar().get_source_target_compiled_grammar('NP_before_VB'),
+                                    'target': PatternGrammar().get_source_target_compiled_grammar('JJ_AFTER_VB')}
+        }
+        return extractor_dict
+
+
     def get_source_target_compiled_grammar(self, clause):
         global source_target_compiled_grammar
         compiled_grammar = source_target_compiled_grammar.get(clause, None)
