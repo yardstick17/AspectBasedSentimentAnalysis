@@ -1,8 +1,12 @@
 # -*- coding: utf-8 -*-
+import logging
 import os
 from collections import Counter
 
+import numpy as np
 import pandas as pd
+from sklearn.metrics import classification_report
+from tqdm import tqdm
 
 from dataset.read_dataset import read_json_formatted
 from grammar.pattern_grammar import PatternGrammar
@@ -33,47 +37,91 @@ def get_dataset():
     return dataset
 
 
+def get_polarity(score):
+    return 'negative' if score['PosScore'] < score['NegScore'] else 'positive'
+
+
 def process():
     initialize_globals()
     annoted_data_dataset = get_dataset()
 
     syntactic_compiled_grammar = PatternGrammar().compile_all_syntactic_grammar()
-    lol_rule_that_extracted_correctly = []
     correct_predictions = 0
     empty_correct_predictions = 0
+    non_empty_miss_case = 0
     index_coverage = Counter()
-    for row in annoted_data_dataset:
+    lol_mean_match = []
+    label = []
+    predicted_label = []
+
+    for row in tqdm(annoted_data_dataset):
         sentence = row['sentence'].lower()
         meta = row['meta']
         ste = SourceTargetExtractor(sentence)
-        rule_that_extracted_correctly = []
+        expected_meta_form = set(sorted(meta.items()))
+        max_match = 0
+        max_tmp_label = []
+        max_tmp_predicted_label = []
+        final_rule = -1
         for index, compiled_grammar in sorted(syntactic_compiled_grammar.items(), key=lambda x: x, reverse=True):
             score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
+
             extracted_meta = {}
             for source, score in score_dict.items():
                 if score['PosScore'] < score['NegScore']:
                     extracted_meta[source] = 'negative'
                 else:
                     extracted_meta[source] = 'positive'
+            extracted_meta_form = set(sorted(extracted_meta.items()))
+            all_data = extracted_meta_form | expected_meta_form
+            intersection = extracted_meta_form & expected_meta_form
+            tmp_predicted_label = []
+            tmp_label = []
+            for _ in range(len(intersection)):
+                tmp_label.append(1)
+                tmp_predicted_label.append(1)
 
-            if extracted_meta and extracted_meta == meta:
-                print(index, 'extracted_meta: ', extracted_meta, ', meta: ', meta)
-                correct_predictions += 1
-                rule_that_extracted_correctly.append(1)
-                index_coverage[index] += 1
-            elif extracted_meta == meta:
-                empty_correct_predictions += 1
-            else:
-                rule_that_extracted_correctly.append(0)
-        print(rule_that_extracted_correctly)
-        lol_rule_that_extracted_correctly.append(rule_that_extracted_correctly)
+            for _ in range(len(expected_meta_form - extracted_meta_form)):
+                tmp_label.append(0)
+                tmp_predicted_label.append(1)
 
-    print('Correct Predictions:', correct_predictions, 'Empty Correct Predictions :', empty_correct_predictions,
-          'Data-set Size :', len(annoted_data_dataset))
+            for _ in range(len(extracted_meta_form - expected_meta_form)):
+                tmp_label.append(1)
+                tmp_predicted_label.append(0)
 
-    print('Most Efficient Rule: ', list(index_coverage.most_common()))
-    print('Rules that at least hit one correct: ', list(index_coverage.keys()))
+            if len(all_data):
+                match_percent = len(intersection) / len(all_data)
+                if max_match < match_percent: # to avoid update on the null subject cases
+                    max_match = match_percent
+                    max_tmp_predicted_label = tmp_predicted_label
+                    max_tmp_label = tmp_label
+                    final_rule = index
+
+
+        if not max_tmp_label:
+            """
+            case: when there is no subject in the sentence (null in the data-set)
+            """
+            max_tmp_label.append(0)
+            max_tmp_predicted_label.append(0)
+
+        label.extend(max_tmp_label)
+        index_coverage[final_rule] += 1
+        predicted_label.extend(max_tmp_predicted_label)
+        lol_mean_match.append(max_match)
+
+    logging.info(np.mean(lol_mean_match))
+    logging.info(
+        'Correct Predictions: {}, Empty Correct Predictions : {}, Non empty_miss_case: {}, Data-set Size: {} '.format(
+            correct_predictions,
+            empty_correct_predictions, non_empty_miss_case,
+            len(annoted_data_dataset)))
+
+    logging.info('Most Efficient Rule: %s', list(index_coverage.most_common()))
+    logging.info('Rules that at least hit one correct: %s', list(index_coverage.keys()))
+    logging.info('\n{}'.format(classification_report(label, predicted_label)))
 
 
 if __name__ == '__main__':
+    logging.basicConfig(format='[%(name)s] [%(asctime)s] %(levelname)s : %(message)s', level=logging.INFO)
     process()
