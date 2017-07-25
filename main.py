@@ -6,6 +6,7 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 from sklearn.metrics import classification_report
+
 from tqdm import tqdm
 
 from dataset.read_dataset import read_json_formatted
@@ -91,13 +92,11 @@ def process():
 
             if len(all_data):
                 match_percent = len(intersection) / len(all_data)
-                if max_match < match_percent: # to avoid update on the null subject cases
+                if max_match < match_percent:  # to avoid update on the null subject cases
                     max_match = match_percent
                     max_tmp_predicted_label = tmp_predicted_label
                     max_tmp_label = tmp_label
                     final_rule = index
-
-
         if not max_tmp_label:
             """
             case: when there is no subject in the sentence (null in the data-set)
