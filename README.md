@@ -1,16 +1,16 @@
 Aspect Based Sentiment Analysis
 ==========================
 
-###Dataset
+### Dataset
 ABSA-15_Restaurants_Train_Final.xml
 
 
-###Approach
+### Approach
 Natural Language Processing based. Multilabel classifier on top of syntactic extraction rules.
 
 
 
-###Results
+### Results
 ```bash
              precision    recall  f1-score   support
 
@@ -21,24 +21,24 @@ avg / total       0.79      0.79      0.79      2717
 ```
 
 
-###Paper
+### Paper
 Aspect based sentiment analysis for restaurant reviews.
 
 
-###Setup
+### Setup
 ```bash
 # From project root, execute this command:
 
 pip install -r requirements.txt
 ```
-###Commands
+### Commands
 
 ```bash
 # From project root, execute this command:
 PYTHONPATH='.' python3 main.py
 ```
 
-####logs
+#### logs
 ```bash
 
 
