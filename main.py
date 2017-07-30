@@ -58,8 +58,9 @@ def process():
     for row in tqdm(annoted_data_dataset):
         sentence = row['sentence'].lower()
         meta = row['meta']
-        ste = SourceTargetExtractor(sentence)
+        meta = {key: value for key, value in meta.items() if key != 'null'}
         expected_meta_form = set(sorted(meta.items()))
+        ste = SourceTargetExtractor(sentence)
         max_match = 0
         max_tmp_label = []
         max_tmp_predicted_label = []
@@ -97,7 +98,7 @@ def process():
                     max_tmp_predicted_label = tmp_predicted_label
                     max_tmp_label = tmp_label
                     final_rule = index
-        if not max_tmp_label:
+        if len(max_tmp_label) == 0 and len(meta) == 0:
             """
             case: when there is no subject in the sentence (null in the data-set)
             """
