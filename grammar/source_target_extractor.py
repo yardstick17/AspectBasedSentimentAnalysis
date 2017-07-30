@@ -29,13 +29,13 @@ class SourceTargetExtractor(LanguageProcessor):
         for source, targets_with_polarity_dict in source_target_mapping.items():
             if targets_with_polarity_dict:
                 target_pos_neg_scores = list(
-                    map(Sentiment.get_sentiment_with_polarity, set(targets_with_polarity_dict)))
+                        map(Sentiment.get_sentiment_with_polarity, set(targets_with_polarity_dict)))
                 target_pos_neg_score = self.get_target_pos_neg_scores_mean(target_pos_neg_scores)
                 source_target_score_mapping[source] = target_pos_neg_score
                 self._logger.debug(
-                    'Source: %s Target %s Target Score: %s',
-                    source, str(targets_with_polarity_dict), str(target_pos_neg_score)
-                )
+                        'Source: %s Target %s Target Score: %s',
+                        source, str(targets_with_polarity_dict), str(target_pos_neg_score)
+                        )
         return source_target_score_mapping
 
     def get_source_and_target(self, compiled_grammar):

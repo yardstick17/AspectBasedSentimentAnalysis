@@ -6,7 +6,6 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 from sklearn.metrics import classification_report
-
 from tqdm import tqdm
 
 from dataset.read_dataset import read_json_formatted
@@ -67,36 +66,16 @@ def process():
         for index, compiled_grammar in sorted(syntactic_compiled_grammar.items(), key=lambda x: x, reverse=True):
             score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
 
-            extracted_meta = {}
-            for source, score in score_dict.items():
-                if score['PosScore'] < score['NegScore']:
-                    extracted_meta[source] = 'negative'
-                else:
-                    extracted_meta[source] = 'positive'
-            extracted_meta_form = set(sorted(extracted_meta.items()))
+            extracted_meta_form = get_extracted_meta_information(score_dict)
             all_data = extracted_meta_form | expected_meta_form
             intersection = extracted_meta_form & expected_meta_form
-            tmp_predicted_label = []
-            tmp_label = []
-            for _ in range(len(intersection)):
-                tmp_label.append(1)
-                tmp_predicted_label.append(1)
+            tmp_label, tmp_predicted_label = build_expected_and_extracted_label_data(expected_meta_form,
+                                                                                     extracted_meta_form, intersection)
 
-            for _ in range(len(expected_meta_form - extracted_meta_form)):
-                tmp_label.append(0)
-                tmp_predicted_label.append(1)
-
-            for _ in range(len(extracted_meta_form - expected_meta_form)):
-                tmp_label.append(1)
-                tmp_predicted_label.append(0)
-
-            if len(all_data):
-                match_percent = len(intersection) / len(all_data)
-                if max_match < match_percent:  # to avoid update on the null subject cases
-                    max_match = match_percent
-                    max_tmp_predicted_label = tmp_predicted_label
-                    max_tmp_label = tmp_label
-                    final_rule = index
+            final_rule, max_match, max_tmp_label, max_tmp_predicted_label = update_rule_with_extracted_label_with_max_score(
+                    all_data, final_rule, index, intersection, max_match, max_tmp_label, max_tmp_predicted_label,
+                    tmp_label,
+                    tmp_predicted_label)
         if not max_tmp_label:
             """
             case: when there is no subject in the sentence (null in the data-set)
@@ -111,14 +90,52 @@ def process():
 
     logging.info(np.mean(lol_mean_match))
     logging.info(
-        'Correct Predictions: {}, Empty Correct Predictions : {}, Non empty_miss_case: {}, Data-set Size: {} '.format(
-            correct_predictions,
-            empty_correct_predictions, non_empty_miss_case,
-            len(annoted_data_dataset)))
+            'Correct Predictions: {}, Empty Correct Predictions : {}, Non empty_miss_case: {}, Data-set Size: {} '.format(
+                    correct_predictions,
+                    empty_correct_predictions, non_empty_miss_case,
+                    len(annoted_data_dataset)))
 
     logging.info('Most Efficient Rule: %s', list(index_coverage.most_common()))
     logging.info('Rules that at least hit one correct: %s', list(index_coverage.keys()))
     logging.info('\n{}'.format(classification_report(label, predicted_label)))
+
+
+def update_rule_with_extracted_label_with_max_score(all_data, final_rule, index, intersection, max_match, max_tmp_label,
+                                                    max_tmp_predicted_label, tmp_label, tmp_predicted_label):
+    if len(all_data):
+        match_percent = len(intersection) / len(all_data)
+        if max_match < match_percent:  # to avoid update on the null subject cases
+            max_match = match_percent
+            max_tmp_predicted_label = tmp_predicted_label
+            max_tmp_label = tmp_label
+            final_rule = index
+    return final_rule, max_match, max_tmp_label, max_tmp_predicted_label
+
+
+def build_expected_and_extracted_label_data(expected_meta_form, extracted_meta_form, intersection):
+    tmp_predicted_label = []
+    tmp_label = []
+    for _ in range(len(intersection)):
+        tmp_label.append(1)
+        tmp_predicted_label.append(1)
+    for _ in range(len(expected_meta_form - extracted_meta_form)):
+        tmp_label.append(0)
+        tmp_predicted_label.append(1)
+    for _ in range(len(extracted_meta_form - expected_meta_form)):
+        tmp_label.append(1)
+        tmp_predicted_label.append(0)
+    return tmp_label, tmp_predicted_label
+
+
+def get_extracted_meta_information(score_dict):
+    extracted_meta = {}
+    for source, score in score_dict.items():
+        if score['PosScore'] < score['NegScore']:
+            extracted_meta[source] = 'negative'
+        else:
+            extracted_meta[source] = 'positive'
+    extracted_meta_form = set(sorted(extracted_meta.items()))
+    return extracted_meta_form
 
 
 if __name__ == '__main__':
