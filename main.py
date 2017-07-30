@@ -6,7 +6,6 @@ from collections import Counter
 import numpy as np
 import pandas as pd
 from sklearn.metrics import classification_report
-
 from tqdm import tqdm
 
 from dataset.read_dataset import read_json_formatted
@@ -47,9 +46,6 @@ def process():
     annoted_data_dataset = get_dataset()
 
     syntactic_compiled_grammar = PatternGrammar().compile_all_syntactic_grammar()
-    correct_predictions = 0
-    empty_correct_predictions = 0
-    non_empty_miss_case = 0
     index_coverage = Counter()
     lol_mean_match = []
     label = []
@@ -111,11 +107,7 @@ def process():
         lol_mean_match.append(max_match)
 
     logging.info(np.mean(lol_mean_match))
-    logging.info(
-        'Correct Predictions: {}, Empty Correct Predictions : {}, Non empty_miss_case: {}, Data-set Size: {} '.format(
-            correct_predictions,
-            empty_correct_predictions, non_empty_miss_case,
-            len(annoted_data_dataset)))
+    logging.info('Data-set Size: {} '.format(len(annoted_data_dataset)))
 
     logging.info('Most Efficient Rule: %s', list(index_coverage.most_common()))
     logging.info('Rules that at least hit one correct: %s', list(index_coverage.keys()))

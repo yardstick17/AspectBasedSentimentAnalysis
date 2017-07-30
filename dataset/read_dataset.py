@@ -40,5 +40,4 @@ def read_absa_2015_restaurant_xml(filename):
     with open(filename_json, 'w') as outfile:
         json.dump(list_of_meta_dict, outfile)
 
-    print(filename_json)
     return filename_json
