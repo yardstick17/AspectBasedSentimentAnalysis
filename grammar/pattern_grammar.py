@@ -105,7 +105,6 @@ class PatternGrammar:
             30: """
                 JJ_VBG_RB_DESRIBING_NN: {   (<CC|,>?<JJ|JJ.>*<VB.|V.>?<NN|NN.>)+<RB|RB.>*<MD>?<WDT|DT>?<VB|VB.>?<RB|RB.>*(<CC|,>?<RB|RB.>?<VB|VB.|JJ.|JJ|RB|RB.>+)+}
                 """
-
         }
         return grammar
 

@@ -11,6 +11,10 @@ from dataset.read_dataset import read_json_formatted
 from grammar.pattern_grammar import PatternGrammar
 from grammar.source_target_extractor import SourceTargetExtractor
 
+LABEL_LIST_PKL = 'label_list.pkl'
+MID_TRAINING_DATASET = 'mid_training_data.csv'
+grammar_label = None
+
 
 def initialize_globals():
     PatternGrammar().compile_all_source_target_grammar()
@@ -18,9 +22,6 @@ def initialize_globals():
 
 
 def get_dataset(dataset_filename=None):
-    if not dataset_filename:
-        dataset_filename = 'dataset/annoted_data.json'
-
     annoted_data = read_json_formatted(dataset_filename)
     dataset = []
     for row in annoted_data:
@@ -31,6 +32,7 @@ def get_dataset(dataset_filename=None):
         for source, target in zip(sources, targets):
             sentence_meta[source] = target
         dataset.append({'sentence': sentence, 'meta': sentence_meta})
+
     return dataset
 
 
@@ -38,9 +40,17 @@ def get_polarity(score):
     return 'negative' if score['PosScore'] < score['NegScore'] else 'positive'
 
 
-def extract_mid_stage_label_dataset():
+def get_syntactic_rules_in_list():
+    global grammar_label
+    if grammar_label is None:
+        grammar_label = pd.read_pickle(LABEL_LIST_PKL)
+    return grammar_label
+
+
+def extract_mid_stage_label_dataset(dataset_filename):
+    logging.info('Dataset: {}'.format(dataset_filename))
     initialize_globals()
-    annoted_data_dataset = get_dataset()
+    annoted_data_dataset = get_dataset(dataset_filename)
 
     syntactic_compiled_grammar = PatternGrammar().compile_all_syntactic_grammar()
     index_coverage = Counter()
@@ -107,18 +117,30 @@ def extract_mid_stage_label_dataset():
         lol_mean_match.append(max_match)
         mid_training_data.append([sentence, final_rule])
 
+    df = pd.DataFrame(mid_training_data, columns=['sentence', 'label'])
+
+    df.to_csv(MID_TRAINING_DATASET)
+    log_stats_of_pre_training_stage(annoted_data_dataset, index_coverage, label, lol_mean_match, predicted_label,
+                                    total_aspects)
+
+    global grammar_label
+    grammar_label = list(index_coverage.keys())
+    pd.to_pickle(list(index_coverage.keys()), LABEL_LIST_PKL)
+    return df
+
+
+def log_stats_of_pre_training_stage(annoted_data_dataset, index_coverage, label, lol_mean_match, predicted_label,
+                                    total_aspects):
+    logging.info('================================================================')
     logging.info(np.mean(lol_mean_match))
     logging.info('Data-set Size: {} '.format(len(annoted_data_dataset)))
     logging.info('Total_aspects Size: {} '.format(total_aspects))
-
-    df = pd.DataFrame(mid_training_data, columns=['sentence', 'label'])
-    df.to_csv('mid_training_data.csv')
-
     logging.info('Most Efficient Rule: %s', list(index_coverage.most_common()))
     logging.info('Rules that at least hit one correct: %s', list(index_coverage.keys()))
     logging.info('\n{}'.format(classification_report(label, predicted_label)))
+    logging.info('================================================================')
 
 
 if __name__ == '__main__':
     logging.basicConfig(format='[%(name)s] [%(asctime)s] %(levelname)s : %(message)s', level=logging.INFO)
-    extract_mid_stage_label_dataset()
+    extract_mid_stage_label_dataset('dataset/annoted_data.json')
