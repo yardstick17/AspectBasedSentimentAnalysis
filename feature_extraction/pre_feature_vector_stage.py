@@ -8,7 +8,7 @@ from spacy.en import English
 
 from grammar.chunker import Chunker
 from grammar.pattern_grammar import PatternGrammar
-from main import get_dataset
+from training.mid_stage_prepare_dataset import get_dataset
 
 K = 1200
 NGRAM_COUNT = 3

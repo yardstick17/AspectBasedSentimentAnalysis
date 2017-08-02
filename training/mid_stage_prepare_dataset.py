@@ -151,7 +151,7 @@ def log_stats_of_pre_training_stage(annoted_data_dataset, index_coverage, label,
     logging.info('Total_aspects Size: {} '.format(total_aspects))
     logging.info('Most Efficient Rule: %s', list(index_coverage.most_common()))
     logging.info('Rules that at least hit one correct: %s', list(index_coverage.keys()))
-    logging.info('mean of percent extracted targets - {}', np.mean(lol_mean_match))
+    logging.info('mean of percent extracted targets - {}'.format(np.mean(lol_mean_match)))
     logging.info('\n{}'.format(classification_report(label, predicted_label)))
     logging.info('================================================================')
 
