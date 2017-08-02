@@ -9,6 +9,7 @@ __pycache__/
 *.so
 *.xml
 *.pkl
+*.csv
 # Distribution / packaging
 .Python
 env/

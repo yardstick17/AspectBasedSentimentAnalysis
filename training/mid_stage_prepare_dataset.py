@@ -60,14 +60,18 @@ def extract_mid_stage_label_dataset(dataset_filename):
     mid_training_data = []
     total_aspects = 0
     for row in tqdm(annoted_data_dataset):
-        sentence = row['sentence'].lower()
+        logging.info('========================================================================================')
+        sentence = row['sentence']
+        logging.info('sentence: {}'.format(sentence))
+
         meta = row['meta']
         meta = {key: value for key, value in meta.items() if key != 'null'}
         expected_meta_form = set(sorted(meta.items()))
         total_aspects += len(expected_meta_form)
+        logging.info('EXPECTED_META_FORM: %s', expected_meta_form)
 
         ste = SourceTargetExtractor(sentence)
-        max_match = 0
+        max_match_percent = 0
         max_tmp_label = []
         max_tmp_predicted_label = []
         final_rule = -1
@@ -76,10 +80,12 @@ def extract_mid_stage_label_dataset(dataset_filename):
 
             extracted_meta = {}
             for source, score in score_dict.items():
+                source = source.lower()
                 if score['PosScore'] < score['NegScore']:
                     extracted_meta[source] = 'negative'
                 else:
                     extracted_meta[source] = 'positive'
+
             extracted_meta_form = set(sorted(extracted_meta.items()))
             all_data = extracted_meta_form | expected_meta_form
             intersection = extracted_meta_form & expected_meta_form
@@ -90,17 +96,22 @@ def extract_mid_stage_label_dataset(dataset_filename):
                 tmp_predicted_label.append(1)
 
             for _ in range(len(expected_meta_form - extracted_meta_form)):
-                tmp_label.append(0)
-                tmp_predicted_label.append(1)
-
-            for _ in range(len(extracted_meta_form - expected_meta_form)):
                 tmp_label.append(1)
                 tmp_predicted_label.append(0)
 
+            for _ in range(len(extracted_meta_form - expected_meta_form)):
+                tmp_label.append(0)
+                tmp_predicted_label.append(1)
+
             if len(all_data):
                 match_percent = len(intersection) / len(all_data)
-                if max_match < match_percent:  # to avoid update on the null subject cases
-                    max_match = match_percent
+                if max_match_percent <= match_percent:  # to avoid update on the null subject cases
+                    logging.info('------------------------------------------------')
+                    logging.info('extracted_meta_form: %s', extracted_meta_form)
+                    logging.info('expected_meta_form: %s', expected_meta_form)
+                    logging.info('intersection: %s', intersection)
+                    logging.info('------------------------------------------------')
+                    max_match_percent = match_percent
                     max_tmp_predicted_label = tmp_predicted_label
                     max_tmp_label = tmp_label
                     final_rule = index
@@ -111,10 +122,14 @@ def extract_mid_stage_label_dataset(dataset_filename):
             max_tmp_label.append(0)
             max_tmp_predicted_label.append(0)
 
+        logging.info('***************************************************************')
+        logging.info('expected_label- {}'.format(max_tmp_label))
+        logging.info('extracted_label- {}'.format(max_tmp_predicted_label))
+        logging.info('***************************************************************')
         label.extend(max_tmp_label)
         index_coverage[final_rule] += 1
         predicted_label.extend(max_tmp_predicted_label)
-        lol_mean_match.append(max_match)
+        lol_mean_match.append(max_match_percent)
         mid_training_data.append([sentence, final_rule])
 
     df = pd.DataFrame(mid_training_data, columns=['sentence', 'label'])

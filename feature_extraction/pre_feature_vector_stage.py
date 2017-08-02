@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
+import os
+from collections import Counter
+
+import pandas as pd
 from nltk.util import ngrams
+from spacy.en import English
 
 from grammar.chunker import Chunker
 from grammar.pattern_grammar import PatternGrammar
 from main import get_dataset
 
-frequent_word_pairs = None
-K = 200
-import pandas as pd
-
-from spacy.en import English
+K = 1200
+NGRAM_COUNT = 3
 
 parser = English()
-import os
-
-from collections import Counter
 
 
 def extract_top_syntactic_grammar_trio():
@@ -58,7 +57,7 @@ def extract_syntactic_grammar(sentence, grammar):
     for key, pos_tagged_sentences in chunk_dict.items():
         pos_tags = [token[1] for pos_tagged_sentence in pos_tagged_sentences for token in pos_tagged_sentence]
         if len(pos_tags) > 2:
-            trigrams = ngrams(pos_tags, 3)
+            trigrams = ngrams(pos_tags, NGRAM_COUNT)
             trigrams_list = [' '.join(trigram) for trigram in trigrams]
 
     return trigrams_list

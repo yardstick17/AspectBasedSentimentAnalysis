@@ -14,6 +14,9 @@ SYNTACTIC_FEATURE = 'syntactic_feature'
 logging.basicConfig(format='[%(name)s] [%(asctime)s] %(levelname)s : %(message)s', level=logging.INFO)
 syntactic_rules_in_list = None
 
+training_data = 'dataset/annoted_data.json'
+testing_data = 'dataset/ABSA15_Restaurants_Test.json'
+
 
 def get_syntactic_feature(row):
     return get_syntactic_grammar_feature(row.sentence)
@@ -41,7 +44,6 @@ def get_features_and_label(dataset):
     return X, Y
 
 
-training_data = 'dataset/annoted_data.json'
 
 X, Y = get_features_and_label(training_data)
 classifier = svm.SVC()
@@ -49,7 +51,6 @@ classifier.fit(X, Y)
 y_pred = classifier.predict(X)
 print('Classification report on training data\n', classification_report(Y, y_pred))
 
-testing_data = 'dataset/ABSA15_Restaurants_Test.json'
 X, Y = get_features_and_label(testing_data)
 y_pred = classifier.predict(X)
 
