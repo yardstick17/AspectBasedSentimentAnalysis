@@ -123,5 +123,5 @@ pip install -r requirements.txt
 
 ```bash
 # From project root, execute this command:
-PYTHONPATH='.' python3 main.py
+PYTHONPATH='.' python3 training/train_top_classifier.py
 ```
