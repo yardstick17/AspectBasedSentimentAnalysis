@@ -60,15 +60,15 @@ def extract_mid_stage_label_dataset(dataset_filename):
     mid_training_data = []
     total_aspects = 0
     for row in tqdm(annoted_data_dataset):
-        logging.info('========================================================================================')
+        logging.debug('========================================================================================')
         sentence = row['sentence']
-        logging.info('sentence: {}'.format(sentence))
+        logging.debug('sentence: {}'.format(sentence))
 
         meta = row['meta']
         meta = {key: value for key, value in meta.items() if key != 'null'}
         expected_meta_form = set(sorted(meta.items()))
         total_aspects += len(expected_meta_form)
-        logging.info('EXPECTED_META_FORM: %s', expected_meta_form)
+        logging.debug('EXPECTED_META_FORM: %s', expected_meta_form)
 
         ste = SourceTargetExtractor(sentence)
         max_match_percent = 0
@@ -106,11 +106,11 @@ def extract_mid_stage_label_dataset(dataset_filename):
             if len(all_data):
                 match_percent = len(intersection) / len(all_data)
                 if max_match_percent <= match_percent:  # to avoid update on the null subject cases
-                    logging.info('------------------------------------------------')
-                    logging.info('extracted_meta_form: %s', extracted_meta_form)
-                    logging.info('expected_meta_form: %s', expected_meta_form)
-                    logging.info('intersection: %s', intersection)
-                    logging.info('------------------------------------------------')
+                    logging.debug('------------------------------------------------')
+                    logging.debug('extracted_meta_form: %s', extracted_meta_form)
+                    logging.debug('expected_meta_form: %s', expected_meta_form)
+                    logging.debug('intersection: %s', intersection)
+                    logging.debug('------------------------------------------------')
                     max_match_percent = match_percent
                     max_tmp_predicted_label = tmp_predicted_label
                     max_tmp_label = tmp_label
@@ -122,10 +122,10 @@ def extract_mid_stage_label_dataset(dataset_filename):
             max_tmp_label.append(0)
             max_tmp_predicted_label.append(0)
 
-        logging.info('***************************************************************')
-        logging.info('expected_label- {}'.format(max_tmp_label))
-        logging.info('extracted_label- {}'.format(max_tmp_predicted_label))
-        logging.info('***************************************************************')
+        logging.debug('***************************************************************')
+        logging.debug('expected_label- {}'.format(max_tmp_label))
+        logging.debug('extracted_label- {}'.format(max_tmp_predicted_label))
+        logging.debug('***************************************************************')
         label.extend(max_tmp_label)
         index_coverage[final_rule] += 1
         predicted_label.extend(max_tmp_predicted_label)
@@ -147,11 +147,11 @@ def extract_mid_stage_label_dataset(dataset_filename):
 def log_stats_of_pre_training_stage(annoted_data_dataset, index_coverage, label, lol_mean_match, predicted_label,
                                     total_aspects):
     logging.info('================================================================')
-    logging.info(np.mean(lol_mean_match))
     logging.info('Data-set Size: {} '.format(len(annoted_data_dataset)))
     logging.info('Total_aspects Size: {} '.format(total_aspects))
     logging.info('Most Efficient Rule: %s', list(index_coverage.most_common()))
     logging.info('Rules that at least hit one correct: %s', list(index_coverage.keys()))
+    logging.info('mean of percent extracted targets - {}', np.mean(lol_mean_match))
     logging.info('\n{}'.format(classification_report(label, predicted_label)))
     logging.info('================================================================')
 
