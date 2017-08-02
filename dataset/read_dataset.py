@@ -3,9 +3,8 @@ import json
 from xml.dom import minidom
 
 
-def read_json_formatted():
-    # sentences = json.load('scripts/Grammer/annoted_sentences.json')
-    with open('dataset/annoted_data.json') as data_file:
+def read_json_formatted(dataset_filename):
+    with open(dataset_filename) as data_file:
         data = json.load(data_file)
     return data
 
@@ -40,5 +39,4 @@ def read_absa_2015_restaurant_xml(filename):
     with open(filename_json, 'w') as outfile:
         json.dump(list_of_meta_dict, outfile)
 
-    print(filename_json)
     return filename_json

@@ -57,8 +57,9 @@ def process():
     for row in tqdm(annoted_data_dataset):
         sentence = row['sentence'].lower()
         meta = row['meta']
-        ste = SourceTargetExtractor(sentence)
+        meta = {key: value for key, value in meta.items() if key != 'null'}
         expected_meta_form = set(sorted(meta.items()))
+        ste = SourceTargetExtractor(sentence)
         max_match = 0
         max_tmp_label = []
         max_tmp_predicted_label = []
@@ -69,14 +70,28 @@ def process():
             extracted_meta_form = get_extracted_meta_information(score_dict)
             all_data = extracted_meta_form | expected_meta_form
             intersection = extracted_meta_form & expected_meta_form
-            tmp_label, tmp_predicted_label = build_expected_and_extracted_label_data(expected_meta_form,
-                                                                                     extracted_meta_form, intersection)
+            tmp_predicted_label = []
+            tmp_label = []
+            for _ in range(len(intersection)):
+                tmp_label.append(1)
+                tmp_predicted_label.append(1)
 
-            final_rule, max_match, max_tmp_label, max_tmp_predicted_label = update_rule_with_extracted_label_with_max_score(
-                    all_data, final_rule, index, intersection, max_match, max_tmp_label, max_tmp_predicted_label,
-                    tmp_label,
-                    tmp_predicted_label)
-        if not max_tmp_label:
+            for _ in range(len(expected_meta_form - extracted_meta_form)):
+                tmp_label.append(0)
+                tmp_predicted_label.append(1)
+
+            for _ in range(len(extracted_meta_form - expected_meta_form)):
+                tmp_label.append(1)
+                tmp_predicted_label.append(0)
+
+            if len(all_data):
+                match_percent = len(intersection) / len(all_data)
+                if max_match < match_percent:  # to avoid update on the null subject cases
+                    max_match = match_percent
+                    max_tmp_predicted_label = tmp_predicted_label
+                    max_tmp_label = tmp_label
+                    final_rule = index
+        if len(max_tmp_label) == 0 and len(meta) == 0:
             """
             case: when there is no subject in the sentence (null in the data-set)
             """
