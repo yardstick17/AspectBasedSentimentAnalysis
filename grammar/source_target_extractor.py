@@ -1,14 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import logging
 from collections import defaultdict
 
 import nltk
+from nltk.corpus import stopwords
 
 from grammar.chunker import Chunker
 from grammar.language_processor import LanguageProcessor
 from grammar.pattern_grammar import Target
 from grammar.pos_tagger import PosTagger
 from grammar.sentiment import Sentiment
+
+STOP_WORDS = set(stopwords.words('english'))
+# logging.info("STOP_WORDS SIZE: {}".format(len(STOP_WORDS)))
 
 
 class SourceTargetExtractor(LanguageProcessor):
@@ -31,12 +36,20 @@ class SourceTargetExtractor(LanguageProcessor):
                 target_pos_neg_scores = list(
                         map(Sentiment.get_sentiment_with_polarity, set(targets_with_polarity_dict)))
                 target_pos_neg_score = self.get_target_pos_neg_scores_mean(target_pos_neg_scores)
+                source = self.remove_stop_words(source)
                 source_target_score_mapping[source] = target_pos_neg_score
                 self._logger.debug(
                         'Source: %s Target %s Target Score: %s',
                         source, str(targets_with_polarity_dict), str(target_pos_neg_score)
                         )
         return source_target_score_mapping
+
+    def remove_stop_words(self, word):
+        tokens = word.split()
+        new_word = ' '.join([token for token in tokens if token not in STOP_WORDS]).strip()
+        if word != new_word:
+            logging.info('word: {} , new word: {}'.format(word, new_word))
+        return new_word
 
     def get_source_and_target(self, compiled_grammar):
         subject_to_target_mapping = {}

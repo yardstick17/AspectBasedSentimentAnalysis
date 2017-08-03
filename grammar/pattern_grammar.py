@@ -16,6 +16,7 @@ class PatternGrammar:
     @property
     def syntactic_grammars(self):
         grammar = {
+
             1: """
                 VBG_RB_DESRIBING_NN:    {   <NN|NN.><MD>?<RB|RB.>*<VB|VB.><RB|RB.>*(<CC|,>?<RB|RB.>?<VB|VB.>)+<NN|NN.>+ }""",
             2: """
@@ -104,8 +105,12 @@ class PatternGrammar:
                 """,
             30: """
                 JJ_VBG_RB_DESRIBING_NN: {   (<CC|,>?<JJ|JJ.>*<VB.|V.>?<NN|NN.>)+<RB|RB.>*<MD>?<WDT|DT>?<VB|VB.>?<RB|RB.>*(<CC|,>?<RB|RB.>?<VB|VB.|JJ.|JJ|RB|RB.>+)+}
+                """,
+            31: """
+                AAAA_IGNORE_ALL_RULES: {  <XY> }
                 """
-        }
+
+            }
         return grammar
 
     @property

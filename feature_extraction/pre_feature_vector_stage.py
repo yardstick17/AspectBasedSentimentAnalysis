@@ -10,25 +10,21 @@ from grammar.chunker import Chunker
 from grammar.pattern_grammar import PatternGrammar
 from training.mid_stage_prepare_dataset import get_dataset
 
-K = 1200
-NGRAM_COUNT = 3
+K = 10000
+NGRAM_COUNT = 4
 
 parser = English()
 
 
 def extract_top_syntactic_grammar_trio():
-    top_syntactic_grammar_trio_file = 'top_syntactic_grammar_trio_file.pkl'
-    if os.path.isfile(top_syntactic_grammar_trio_file):
-        return pd.read_pickle(top_syntactic_grammar_trio_file)
-
-    dataset = get_dataset()
+    file = 'dataset/annoted_data.json'
+    dataset = get_dataset(file)
     trio_counter = Counter()
     for data in dataset:
         sentence = data['sentence']
         trio_counter += extract_trio_syntactic_rules(sentence)
 
     frequent_trio_counter = sorted(list(dict(trio_counter.most_common(K)).keys()))  # return the actual Counter object
-    pd.to_pickle(frequent_trio_counter, top_syntactic_grammar_trio_file)
     return frequent_trio_counter
 
 
