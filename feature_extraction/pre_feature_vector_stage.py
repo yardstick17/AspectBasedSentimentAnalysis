@@ -17,6 +17,10 @@ parser = English()
 
 
 def extract_top_syntactic_grammar_trio():
+    """
+
+    :return:
+    """
     file = 'dataset/annoted_data.json'
     dataset = get_dataset(file)
     trio_counter = Counter()
@@ -29,6 +33,11 @@ def extract_top_syntactic_grammar_trio():
 
 
 def extract_trio_syntactic_rules(sentence):
+    """
+
+    :param sentence:
+    :return:
+    """
     trio_counter = Counter()
     syntactic_compiled_grammar = PatternGrammar().compile_all_syntactic_grammar()
     for index, compiled_grammar in sorted(syntactic_compiled_grammar.items(), key=lambda x: x, reverse=True):
@@ -48,6 +57,12 @@ def extract_dependency_relations(sentence):
 
 
 def extract_syntactic_grammar(sentence, grammar):
+    """
+
+    :param sentence:
+    :param grammar:
+    :return:
+    """
     chunk_dict = Chunker(grammar).chunk_sentence(sentence)
     trigrams_list = []
     for key, pos_tagged_sentences in chunk_dict.items():

@@ -42,7 +42,7 @@ class Sentiment:
         return {
             POSITIVE_SENTIMENT_SCORE: positive,
             NEGATIVE_SENTIMENT_SCORE: negative
-            }
+        }
 
     @staticmethod
     def get_sentiment_with_polarity(target_polarity):
@@ -51,7 +51,7 @@ class Sentiment:
             reverse_sentiment_score = {
                 POSITIVE_SENTIMENT_SCORE: sentiment_score[NEGATIVE_SENTIMENT_SCORE],
                 NEGATIVE_SENTIMENT_SCORE: sentiment_score[POSITIVE_SENTIMENT_SCORE]
-                }
+            }
             sentiment_score = reverse_sentiment_score
         return sentiment_score
 

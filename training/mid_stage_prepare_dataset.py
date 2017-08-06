@@ -47,7 +47,7 @@ def get_syntactic_rules_in_list():
     return grammar_label
 
 
-def extract_mid_stage_label_dataset(dataset_filename):
+def extract_mid_stage_label_dataframe(dataset_filename):
     logging.info('Dataset: {}'.format(dataset_filename))
     initialize_globals()
     annoted_data_dataset = get_dataset(dataset_filename)
@@ -68,7 +68,7 @@ def extract_mid_stage_label_dataset(dataset_filename):
         meta = {key: value for key, value in meta.items() if key != 'null'}
         expected_meta_form = set(sorted(meta.items()))
         total_aspects += len(expected_meta_form)
-        logging.debug('EXPECTED_META_FORM: %s', expected_meta_form)
+        logging.debug('expected_meta_form: %s', expected_meta_form)
 
         ste = SourceTargetExtractor(sentence)
         max_match_percent = 0
@@ -158,4 +158,4 @@ def log_stats_of_pre_training_stage(annoted_data_dataset, index_coverage, label,
 
 if __name__ == '__main__':
     logging.basicConfig(format='[%(name)s] [%(asctime)s] %(levelname)s : %(message)s', level=logging.INFO)
-    extract_mid_stage_label_dataset('dataset/annoted_data.json')
+    extract_mid_stage_label_dataframe('dataset/annoted_data.json')

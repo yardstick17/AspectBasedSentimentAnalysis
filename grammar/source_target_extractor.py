@@ -29,6 +29,11 @@ class SourceTargetExtractor(LanguageProcessor):
 
     def get_topic_sentiment_score_dict(self, compiled_grammar):
         # self._logger.debug('Getting topic sentiment')
+        """
+
+        :param compiled_grammar:
+        :return:
+        """
         source_target_mapping = self.get_source_and_target(compiled_grammar)
         source_target_score_mapping = {}
         for source, targets_with_polarity_dict in source_target_mapping.items():
@@ -45,13 +50,23 @@ class SourceTargetExtractor(LanguageProcessor):
         return source_target_score_mapping
 
     def remove_stop_words(self, word):
+        """
+
+        :param word:
+        :return:
+        """
         tokens = word.split()
         new_word = ' '.join([token for token in tokens if token not in STOP_WORDS]).strip()
-        if word != new_word:
-            logging.info('word: {} , new word: {}'.format(word, new_word))
+        # if word != new_word:
+        #     logging.debug('word: {} , new word: {}'.format(word, new_word))
         return new_word
 
     def get_source_and_target(self, compiled_grammar):
+        """
+
+        :param compiled_grammar:
+        :return:
+        """
         subject_to_target_mapping = {}
         chunk_dict = self._get_source_target(compiled_grammar)
         for k, v in chunk_dict.items():
@@ -63,6 +78,14 @@ class SourceTargetExtractor(LanguageProcessor):
 
     @staticmethod
     def assign_source_and_target(source_set, target_set, polarity, subject_to_target_mapping):
+        """
+
+        :param source_set:
+        :param target_set:
+        :param polarity:
+        :param subject_to_target_mapping:
+        :return:
+        """
         for subject in source_set:
             # subject = strip_to_root_word(subject)
             if subject:
@@ -72,6 +95,11 @@ class SourceTargetExtractor(LanguageProcessor):
         return subject_to_target_mapping
 
     def _get_source_target(self, grammar):
+        """
+
+        :param grammar:
+        :return:
+        """
         chunk_dict = {}
         for pos_tagged_sentence in self.pos_tagged_sentences:
             single_chunk_dict = Chunker(grammar).chunk_pos_tagged_sentence(pos_tagged_sentence)

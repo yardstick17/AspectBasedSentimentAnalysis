@@ -69,6 +69,12 @@ class LanguageProcessor:
 
     @staticmethod
     def extract_src_target_chunk(key, pos_tagged_chunk: Target):
+        """
+
+        :param key:
+        :param pos_tagged_chunk:
+        :return:
+        """
         source, target = [], []
         if key in ['JJ_DESCRIBING_NN_V4']:
             source = Chunker.get_chunk(pos_tagged_chunk, 'NP_before_VB')
@@ -169,6 +175,11 @@ class LanguageProcessor:
 
     @staticmethod
     def reject_general_english_word(subject_to_target_mapping):
+        """
+
+        :param subject_to_target_mapping:
+        :return:
+        """
         source_target_mapping_new = defaultdict(list)
         for source, list_of_targets_with_polarity in subject_to_target_mapping.items():
             for target_with_polarity in list_of_targets_with_polarity:
