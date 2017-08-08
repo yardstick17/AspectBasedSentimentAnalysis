@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
-import os
 from collections import Counter
 
-import pandas as pd
 from nltk.util import ngrams
 from spacy.en import English
 
@@ -11,7 +9,7 @@ from grammar.pattern_grammar import PatternGrammar
 from training.mid_stage_prepare_dataset import get_dataset
 
 K = 10000
-NGRAM_COUNT = 4
+NGRAM_COUNT = 3
 
 parser = English()
 
@@ -67,8 +65,9 @@ def extract_syntactic_grammar(sentence, grammar):
     trigrams_list = []
     for key, pos_tagged_sentences in chunk_dict.items():
         pos_tags = [token[1] for pos_tagged_sentence in pos_tagged_sentences for token in pos_tagged_sentence]
-        if len(pos_tags) > 2:
-            trigrams = ngrams(pos_tags, NGRAM_COUNT)
-            trigrams_list = [' '.join(trigram) for trigram in trigrams]
-
+        if len(pos_tags) >= 2:
+            ngram_list = [2, 3, 4, 5]
+            for ngram in ngram_list:
+                trigrams = ngrams(pos_tags, ngram)
+                trigrams_list.extend([' '.join(trigram).strip() for trigram in trigrams])
     return trigrams_list

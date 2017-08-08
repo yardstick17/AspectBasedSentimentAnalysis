@@ -11,7 +11,7 @@ from training.mid_stage_prepare_dataset import get_syntactic_rules_in_list
 
 LABEL = 'training_label'
 SYNTACTIC_FEATURE = 'syntactic_feature'
-from sklearn import svm
+from sklearn import svm, linear_model
 
 syntactic_rules_in_list = None
 
@@ -63,7 +63,9 @@ def main(log):
     """
     logging.basicConfig(format='[%(name)s] [%(asctime)s] %(levelname)s : %(message)s', level=logging._nameToLevel[log])
     X, Y = get_features_and_label(training_data)
-    classifier = svm.SVC(kernel='linear')
+
+    # classifier = svm.SVC(kernel='linear')
+    classifier = linear_model.SGDClassifier(verbose=True, n_iter=10)
     classifier.fit(X, Y)
     y_pred = classifier.predict(X)
     print('Classification report on training data\n', classification_report(Y, y_pred))

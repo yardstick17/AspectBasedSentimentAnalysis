@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
+import itertools
 import logging
+import os
 from collections import Counter
 
 import numpy as np
 import pandas as pd
 from sklearn.metrics import classification_report
+from sklearn.metrics import f1_score
 from tqdm import tqdm
 
 from dataset.read_dataset import read_json_formatted
@@ -41,6 +44,10 @@ def get_polarity(score):
 
 
 def get_syntactic_rules_in_list():
+    """
+
+    :return:
+    """
     global grammar_label
     if grammar_label is None:
         grammar_label = pd.read_pickle(LABEL_LIST_PKL)
@@ -48,6 +55,11 @@ def get_syntactic_rules_in_list():
 
 
 def extract_mid_stage_label_dataframe(dataset_filename):
+    """
+
+    :param dataset_filename:
+    :return:
+    """
     logging.info('Dataset: {}'.format(dataset_filename))
     initialize_globals()
     annoted_data_dataset = get_dataset(dataset_filename)
@@ -59,6 +71,7 @@ def extract_mid_stage_label_dataframe(dataset_filename):
     predicted_label = []
     mid_training_data = []
     total_aspects = 0
+    combined_correct_count = 0
     for row in tqdm(annoted_data_dataset):
         logging.debug('========================================================================================')
         sentence = row['sentence']
@@ -75,6 +88,7 @@ def extract_mid_stage_label_dataframe(dataset_filename):
         max_tmp_label = []
         max_tmp_predicted_label = []
         final_rule = -1
+        list_of_extracted_meta_dict = list()
         for index, compiled_grammar in sorted(syntactic_compiled_grammar.items(), key=lambda x: x, reverse=True):
             score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
 
@@ -87,7 +101,8 @@ def extract_mid_stage_label_dataframe(dataset_filename):
                     extracted_meta[source] = 'positive'
 
             extracted_meta_form = set(sorted(extracted_meta.items()))
-            all_data = extracted_meta_form | expected_meta_form
+            if extracted_meta_form:
+                list_of_extracted_meta_dict.append(extracted_meta_form)
             intersection = extracted_meta_form & expected_meta_form
             tmp_predicted_label = []
             tmp_label = []
@@ -103,24 +118,31 @@ def extract_mid_stage_label_dataframe(dataset_filename):
                 tmp_label.append(0)
                 tmp_predicted_label.append(1)
 
-            if len(all_data):
-                match_percent = len(intersection) / len(all_data)
-                if max_match_percent <= match_percent:  # to avoid update on the null subject cases
-                    logging.debug('------------------------------------------------')
-                    logging.debug('extracted_meta_form: %s', extracted_meta_form)
-                    logging.debug('expected_meta_form: %s', expected_meta_form)
-                    logging.debug('intersection: %s', intersection)
-                    logging.debug('------------------------------------------------')
-                    max_match_percent = match_percent
-                    max_tmp_predicted_label = tmp_predicted_label
-                    max_tmp_label = tmp_label
-                    final_rule = index
+            match_percent = f1_score(tmp_label, tmp_predicted_label)
+            if max_match_percent <= match_percent:
+                logging.debug('------------------------------------------------')
+                logging.debug('extracted_meta_form: %s', extracted_meta_form)
+                logging.debug('expected_meta_form: %s', expected_meta_form)
+                logging.debug('intersection: %s', intersection)
+                logging.debug('------------------------------------------------')
+                max_match_percent = match_percent
+                max_tmp_predicted_label = tmp_predicted_label
+                max_tmp_label = tmp_label
+                final_rule = index
+
         if len(max_tmp_label) == 0 and len(meta) == 0:
+            # logging.info('FINALLY HOPEFULLY I GETTING USED ')
             """
             case: when there is no subject in the sentence (null in the data-set)
             """
-            max_tmp_label.append(0)
-            max_tmp_predicted_label.append(0)
+            max_tmp_label = [0]
+            max_tmp_predicted_label = [0]
+        all_meta_dict_combination = list(itertools.combinations(list_of_extracted_meta_dict, 2))
+
+        if all_meta_dict_combination and expected_meta_form in all_meta_dict_combination[0]:
+            combined_correct_count += 1
+            max_tmp_label = [1, 1]
+            max_tmp_predicted_label = [1, 1]
 
         logging.debug('***************************************************************')
         logging.debug('expected_label- {}'.format(max_tmp_label))
@@ -132,6 +154,7 @@ def extract_mid_stage_label_dataframe(dataset_filename):
         lol_mean_match.append(max_match_percent)
         mid_training_data.append([sentence, final_rule])
 
+    logging.info('combined_correct_count : {} '.format(combined_correct_count))
     df = pd.DataFrame(mid_training_data, columns=['sentence', 'label'])
 
     df.to_csv(MID_TRAINING_DATASET)
@@ -140,12 +163,22 @@ def extract_mid_stage_label_dataframe(dataset_filename):
 
     global grammar_label
     grammar_label = list(index_coverage.keys())
-    pd.to_pickle(list(index_coverage.keys()), LABEL_LIST_PKL)
+    if not os.path.isfile(LABEL_LIST_PKL):
+        pd.to_pickle(list(index_coverage.keys()), LABEL_LIST_PKL)
     return df
 
 
 def log_stats_of_pre_training_stage(annoted_data_dataset, index_coverage, label, lol_mean_match, predicted_label,
                                     total_aspects):
+    """
+
+    :param annoted_data_dataset:
+    :param index_coverage:
+    :param label:
+    :param lol_mean_match:
+    :param predicted_label:
+    :param total_aspects:
+    """
     logging.info('================================================================')
     logging.info('Data-set Size: {} '.format(len(annoted_data_dataset)))
     logging.info('Total_aspects Size: {} '.format(total_aspects))

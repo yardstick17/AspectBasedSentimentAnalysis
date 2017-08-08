@@ -24,5 +24,5 @@ def get_syntactic_grammar_feature(sentence_text):
     """
     trigrams_list = extract_trio_syntactic_rules(sentence_text)
     top_syntactic_grammar_list = get_top_syntactic_grammar_list()
-    X = [i if j in trigrams_list else 0 for i, j in enumerate(top_syntactic_grammar_list)]
+    X = [1 if j in trigrams_list else 0 for i, j in enumerate(top_syntactic_grammar_list)]
     return X
