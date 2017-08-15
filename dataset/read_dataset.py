@@ -10,6 +10,11 @@ def read_json_formatted(dataset_filename):
 
 
 def read_absa_2015_restaurant_xml(filename):
+    """
+
+    :param filename:
+    :return:
+    """
     DOMTree = minidom.parse(filename)
     reviews = DOMTree.getElementsByTagName('Reviews')
     list_of_meta_dict = []
