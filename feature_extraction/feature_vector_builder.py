@@ -8,7 +8,7 @@ def get_syntactic_grammar_feature_vector(sentence_text):
     :param sentence_text:
     :return:
     """
-    trigrams_list = SyntacticPosPatternFeature.extract_syntactic_rules_from_sentence(sentence_text)
+    pos_tagger_pattern = SyntacticPosPatternFeature.extract_syntactic_rules_from_sentence(sentence_text)
     top_syntactic_grammar_list = SyntacticPosPatternFeature.get_top_syntactic_grammar_pos_pattern()
-    X = [1 if j in trigrams_list else 0 for i, j in enumerate(top_syntactic_grammar_list)]
+    X = [1 if j in pos_tagger_pattern else 0 for i, j in enumerate(top_syntactic_grammar_list)]
     return X

@@ -30,13 +30,13 @@ class SyntacticPosPatternFeature:
         """
         file = 'dataset/annoted_data.json'
         dataset = get_dataset(file)
-        trio_counter = Counter()
+        pattern_counter = Counter()
         for data in dataset:
             sentence = data['sentence']
-            trio_counter += SyntacticPosPatternFeature.extract_syntactic_rules_from_sentence(sentence)
-        frequent_trio_counter = sorted(
-                list(dict(trio_counter.most_common(K)).keys()))  # return the actual Counter object
-        return frequent_trio_counter
+            pattern_counter += SyntacticPosPatternFeature.extract_syntactic_rules_from_sentence(sentence)
+        sorted_pattern_counter = sorted(
+                list(dict(pattern_counter.most_common(K)).keys()))  # return the actual Counter object
+        return sorted_pattern_counter
 
     @staticmethod
     def extract_syntactic_rules_from_sentence(sentence):

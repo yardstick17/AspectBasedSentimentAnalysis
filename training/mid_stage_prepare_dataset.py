@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import itertools
 import logging
 
 import pandas as pd
@@ -14,7 +15,7 @@ LABEL_LIST_PKL = 'label_list.pkl'
 MID_TRAINING_DATASET = '{}_mid_training_data.csv'
 grammar_label = None
 SYNTACTIC_COMPILED_GRAMMAR_PKL_FILE = 'label_referenced_syntactic_compiled_grammar.pkl'
-MATCH_THRESHOLD = 40
+MATCH_THRESHOLD = 0.35
 
 
 def initialize_globals():
@@ -86,6 +87,36 @@ def get_syntactic_rules_in_list():
     return grammar_label
 
 
+def get_max_combination(list_of_extracted_meta, expected_meta_form):
+    """
+
+    :param list_of_extracted_meta:
+    :param expected_meta_form:
+    :return:
+    """
+    total_rules = list(range(len(list_of_extracted_meta)))
+    mid_training_label = [0] * len(list_of_extracted_meta)
+    max_match_extracted = {}
+    max_match_percent = -1
+    for i in range(1, 3):
+        all_combinations = itertools.combinations(total_rules, i)
+        for combination in all_combinations:
+            extracted_dict = {}
+            for index in combination:
+                extracted_dict.update(list_of_extracted_meta[index])
+            y_true_index, y_pred_index = get_y_pred_and_y_true_label(expected_meta_form,
+                                                                     set(sorted(extracted_dict.items())))
+            match_percent = f1_score(y_true_index, y_pred_index)
+            if match_percent >= MATCH_THRESHOLD and match_percent > max_match_percent:
+                max_match_percent = match_percent
+                max_match_extracted.update(extracted_dict)
+                mid_training_label = [0] * len(list_of_extracted_meta)
+                for i in combination:
+                    if len(list_of_extracted_meta[i]) > 0:
+                        mid_training_label[i] = 1
+    return mid_training_label, max_match_extracted
+
+
 def extract_mid_stage_label_dataframe(dataset_filename):
     """
 
@@ -104,30 +135,29 @@ def extract_mid_stage_label_dataframe(dataset_filename):
         meta = row['meta']
         expected_meta_form = set(sorted(meta.items()))
         ste = SourceTargetExtractor(sentence)
-        y_pred_for_sentence = []
-        best_result_from_rule = set()
+        list_of_extracted_meta = list()
         for index, (_, compiled_grammar) in enumerate(sorted_grammar_list):
             score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
             extracted_meta = get_polarity_form_result(score_dict)
-            extracted_meta_form = set(sorted(extracted_meta.items()))
-            y_pred_index, y_true_index = get_y_pred_and_y_true_label(expected_meta_form, extracted_meta_form)
-            match_percent = 1 if int(100 * f1_score(y_true_index, y_pred_index)) >= MATCH_THRESHOLD else 0
-            if match_percent == 1:
-                best_result_from_rule.update(extracted_meta_form)
-            y_pred_for_sentence.append(match_percent)
-
-        y_pred_index, y_true_index = get_y_pred_and_y_true_label(expected_meta_form, best_result_from_rule)
+            list_of_extracted_meta.append(extracted_meta)
+        mid_training_label, max_match_extracted = get_max_combination(list_of_extracted_meta, expected_meta_form)
+        y_pred_index, y_true_index = get_y_pred_and_y_true_label(expected_meta_form,
+                                                                 set(sorted(max_match_extracted.items())))
         Y_TRUE.extend(y_true_index)
         Y_PRED.extend(y_pred_index)
-
-        mid_training_data.append([sentence, y_pred_for_sentence, best_result_from_rule])
+        mid_training_data.append([sentence, mid_training_label, max_match_extracted])
     print('For Data-set: ', dataset_filename, '\n', classification_report(Y_TRUE, Y_PRED))
-    df = pd.DataFrame(mid_training_data, columns=['sentence', 'y_true', 'best_result_from_rule'])
-    df.to_csv(MID_TRAINING_DATASET.format(dataset_filename))
+    df = pd.DataFrame(mid_training_data, columns=['sentence', 'y_true', 'max_match_extracted'])
+    df.to_csv(MID_TRAINING_DATASET.format(dataset_filename.split('.')[0]))
     return df
 
 
 def get_polarity_form_result(score_dict):
+    """
+
+    :param score_dict:
+    :return:
+    """
     extracted_meta = {}
     for source, score in score_dict.items():
         source = source.lower()
