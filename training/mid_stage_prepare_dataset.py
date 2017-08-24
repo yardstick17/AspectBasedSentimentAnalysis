@@ -15,7 +15,7 @@ LABEL_LIST_PKL = 'label_list.pkl'
 MID_TRAINING_DATASET = '{}_mid_training_data.csv'
 grammar_label = None
 SYNTACTIC_COMPILED_GRAMMAR_PKL_FILE = 'label_referenced_syntactic_compiled_grammar.pkl'
-MATCH_THRESHOLD = 0.35
+MATCH_THRESHOLD = 0.3
 
 
 def initialize_globals():
@@ -30,7 +30,7 @@ def initialize_globals():
 def dataset_expanded(dataset_filename):
     """
 
-    :param dataset_filename: Filename of the dataset to be read
+    :param data-set_filename: Filename of the dataset to be read
     :return: return the pandas DataFrame with columns: [sentence,target,opinion]
     """
     annotated_data = read_json_formatted(dataset_filename)
@@ -50,7 +50,7 @@ def dataset_expanded(dataset_filename):
 def get_dataset(dataset_filename=None):
     """
 
-    :param dataset_filename:
+    :param data-set_filename:
     :return:
     """
     annoted_data = read_json_formatted(dataset_filename)
@@ -96,31 +96,34 @@ def get_max_combination(list_of_extracted_meta, expected_meta_form):
     """
     total_rules = list(range(len(list_of_extracted_meta)))
     mid_training_label = [0] * len(list_of_extracted_meta)
-    max_match_extracted = {}
-    max_match_percent = -1
+    max_match_extracted = set()
+    max_match_percent = 0
     for i in range(1, 3):
-        all_combinations = itertools.combinations(total_rules, i)
+        all_combinations = list(itertools.combinations(total_rules, i))
         for combination in all_combinations:
-            extracted_dict = {}
+            combination = list(combination)
+            extracted_dict = set()
             for index in combination:
                 extracted_dict.update(list_of_extracted_meta[index])
             y_true_index, y_pred_index = get_y_pred_and_y_true_label(expected_meta_form,
-                                                                     set(sorted(extracted_dict.items())))
+                                                                     extracted_dict)
+
             match_percent = f1_score(y_true_index, y_pred_index)
             if match_percent >= MATCH_THRESHOLD and match_percent > max_match_percent:
                 max_match_percent = match_percent
-                max_match_extracted.update(extracted_dict)
+                max_match_extracted = extracted_dict
                 mid_training_label = [0] * len(list_of_extracted_meta)
-                for i in combination:
-                    if len(list_of_extracted_meta[i]) > 0:
-                        mid_training_label[i] = 1
+                for i_combination in combination:
+                    if len(list_of_extracted_meta[i_combination]) > 0:
+                        mid_training_label[i_combination] = 1
+
     return mid_training_label, max_match_extracted
 
 
 def extract_mid_stage_label_dataframe(dataset_filename):
     """
 
-    :param dataset_filename:
+    :param data-set_filename:
     :return:
     """
     logging.info('Dataset: {}'.format(dataset_filename))
@@ -132,22 +135,22 @@ def extract_mid_stage_label_dataframe(dataset_filename):
     Y_TRUE = []
     for row in tqdm(annoted_data_dataset):
         sentence = row['sentence']
-        meta = row['meta']
-        expected_meta_form = set(sorted(meta.items()))
+        meta = {key: value for key, value in row['meta'].items() if key != 'null'}
+        expected_meta_form = set(sorted(meta.keys()))
         ste = SourceTargetExtractor(sentence)
         list_of_extracted_meta = list()
         for index, (_, compiled_grammar) in enumerate(sorted_grammar_list):
             score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
             extracted_meta = get_polarity_form_result(score_dict)
-            list_of_extracted_meta.append(extracted_meta)
+            list_of_extracted_meta.append(extracted_meta.keys())
         mid_training_label, max_match_extracted = get_max_combination(list_of_extracted_meta, expected_meta_form)
         y_pred_index, y_true_index = get_y_pred_and_y_true_label(expected_meta_form,
-                                                                 set(sorted(max_match_extracted.items())))
+                                                                 max_match_extracted)
         Y_TRUE.extend(y_true_index)
         Y_PRED.extend(y_pred_index)
-        mid_training_data.append([sentence, mid_training_label, max_match_extracted])
+        mid_training_data.append([sentence, meta, max_match_extracted, mid_training_label])
     print('For Data-set: ', dataset_filename, '\n', classification_report(Y_TRUE, Y_PRED))
-    df = pd.DataFrame(mid_training_data, columns=['sentence', 'y_true', 'max_match_extracted'])
+    df = pd.DataFrame(mid_training_data, columns=['sentence', 'meta', 'max_match_extracted', 'y_true'])
     df.to_csv(MID_TRAINING_DATASET.format(dataset_filename.split('.')[0]))
     return df
 
@@ -160,11 +163,12 @@ def get_polarity_form_result(score_dict):
     """
     extracted_meta = {}
     for source, score in score_dict.items():
-        source = source.lower()
-        if score['PosScore'] <= score['NegScore']:
-            extracted_meta[source] = 'negative'
-        else:
-            extracted_meta[source] = 'positive'
+        source = source.lower().strip()
+        if source != '':
+            if score['PosScore'] < score['NegScore']:
+                extracted_meta[source] = 'negative'
+            else:
+                extracted_meta[source] = 'positive'
     return extracted_meta
 
 
@@ -184,26 +188,19 @@ def get_y_pred_and_y_true_label(expected_meta_form, extracted_meta_form):
     :param extracted_meta_form:
     :return:
     """
-    intersection = extracted_meta_form & expected_meta_form
     y_true_index = []
     y_pred_index = []
-    for _ in range(len(intersection)):
-        y_true_index.append(1)
-        y_pred_index.append(1)
-    for _ in range(len(expected_meta_form - extracted_meta_form)):
-        y_true_index.append(1)
-        y_pred_index.append(0)
-    for _ in range(len(extracted_meta_form - expected_meta_form)):
-        y_true_index.append(0)
-        y_pred_index.append(1)
 
-    if len(y_true_index) == 0:
-        y_true_index.append(0)
-        y_pred_index.append(0)
+    intersection = len(extracted_meta_form & expected_meta_form)
+    y_true_index.extend([1] * intersection)
+    y_pred_index.extend([1] * intersection)
+
+    false_negatives = len(extracted_meta_form - expected_meta_form)
+    y_true_index.extend([1] * false_negatives)
+    y_pred_index.extend([0] * false_negatives)
+
+    false_positives = len(expected_meta_form - extracted_meta_form)
+    y_true_index.extend([0] * false_positives)
+    y_pred_index.extend([1] * false_positives)
 
     return y_pred_index, y_true_index
-
-
-if __name__ == '__main__':
-    logging.basicConfig(format='[%(name)s] [%(asctime)s] %(levelname)s : %(message)s', level=logging.INFO)
-    extract_mid_stage_label_dataframe('dataset/annoted_data.json')

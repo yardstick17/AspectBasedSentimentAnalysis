@@ -8,9 +8,9 @@ from grammar.chunker import Chunker
 from grammar.pattern_grammar import PatternGrammar
 from training.mid_stage_prepare_dataset import get_dataset
 
-K = 10000
+K = 100000
 
-NGRAM_RANGE = [2, 3, 4, 5]
+NGRAM_RANGE = [3, 4, 5, 6]
 parser = English()
 
 top_syntactic_grammar_list = None

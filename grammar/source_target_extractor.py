@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-import logging
 from collections import defaultdict
 
 import nltk
@@ -14,6 +13,9 @@ from grammar.sentiment import Sentiment
 
 STOP_WORDS = set(stopwords.words('english'))
 # logging.info("STOP_WORDS SIZE: {}".format(len(STOP_WORDS)))
+import pandas as pd
+
+less_adj = set(pd.read_csv('dataset/sentiment_words_text_files/less_adj.csv')['less_adjective'].tolist())
 
 
 class SourceTargetExtractor(LanguageProcessor):
@@ -87,7 +89,7 @@ class SourceTargetExtractor(LanguageProcessor):
         :return:
         """
         for subject in source_set:
-            # subject = strip_to_root_word(subject)
+            subject = SourceTargetExtractor.strip_to_root_word(subject)
             if subject:
                 for target in target_set:
                     if target not in source_set:
@@ -112,3 +114,10 @@ class SourceTargetExtractor(LanguageProcessor):
                 self.assign_source_and_target(source_set, target_set, target_tuple_with_polarity.polarity,
                                               subject_to_target_mapping)
         return subject_to_target_mapping
+
+    @staticmethod
+    def strip_to_root_word(word):
+        return word
+        word = word.split()
+        word_tokens = [w for w in word if w not in less_adj]
+        return ' '.join(word_tokens).strip()
