@@ -15,7 +15,7 @@ LABEL_LIST_PKL = 'label_list.pkl'
 MID_TRAINING_DATASET = '{}_mid_training_data.csv'
 grammar_label = None
 SYNTACTIC_COMPILED_GRAMMAR_PKL_FILE = 'label_referenced_syntactic_compiled_grammar.pkl'
-MATCH_THRESHOLD = 0.3
+MATCH_THRESHOLD = 0.1
 
 
 def initialize_globals():
@@ -98,20 +98,20 @@ def get_max_combination(list_of_extracted_meta, expected_meta_form):
     mid_training_label = [0] * len(list_of_extracted_meta)
     max_match_extracted = set()
     max_match_percent = 0
-    for i in range(1, 3):
+    for i in range(1, 4):
         all_combinations = list(itertools.combinations(total_rules, i))
         for combination in all_combinations:
             combination = list(combination)
-            extracted_dict = set()
+            extracted_tags = set()
             for index in combination:
-                extracted_dict.update(list_of_extracted_meta[index])
+                extracted_tags.update(list_of_extracted_meta[index])
             y_true_index, y_pred_index = get_y_pred_and_y_true_label(expected_meta_form,
-                                                                     extracted_dict)
+                                                                     extracted_tags)
 
             match_percent = f1_score(y_true_index, y_pred_index)
             if match_percent >= MATCH_THRESHOLD and match_percent > max_match_percent:
                 max_match_percent = match_percent
-                max_match_extracted = extracted_dict
+                max_match_extracted = extracted_tags
                 mid_training_label = [0] * len(list_of_extracted_meta)
                 for i_combination in combination:
                     if len(list_of_extracted_meta[i_combination]) > 0:
@@ -130,20 +130,35 @@ def extract_mid_stage_label_dataframe(dataset_filename):
     initialize_globals()
     annoted_data_dataset = get_dataset(dataset_filename)
     sorted_grammar_list = get_grammar()
+
+    baseline_ote = set()
+    for row in tqdm(annoted_data_dataset):
+        meta = {key: value for key, value in row['meta'].items() if key != 'null'}
+        baseline_ote.update(meta.keys())
+
     mid_training_data = []
     Y_PRED = []
     Y_TRUE = []
     for row in tqdm(annoted_data_dataset):
         sentence = row['sentence']
+        base_otes = baseline_ote & set(sentence.split())
+
         meta = {key: value for key, value in row['meta'].items() if key != 'null'}
         expected_meta_form = set(sorted(meta.keys()))
         ste = SourceTargetExtractor(sentence)
         list_of_extracted_meta = list()
+
         for index, (_, compiled_grammar) in enumerate(sorted_grammar_list):
             score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
             extracted_meta = get_polarity_form_result(score_dict)
-            list_of_extracted_meta.append(extracted_meta.keys())
+            extracted_ote = set(extracted_meta.keys())
+            base_otes = extracted_ote | base_otes
+
+            list_of_extracted_meta.append(extracted_ote)
+
         mid_training_label, max_match_extracted = get_max_combination(list_of_extracted_meta, expected_meta_form)
+        # if 'Test' in dataset_filename:
+        #     max_match_extracted = max_match_extracted | base_otes
         y_pred_index, y_true_index = get_y_pred_and_y_true_label(expected_meta_form,
                                                                  max_match_extracted)
         Y_TRUE.extend(y_true_index)

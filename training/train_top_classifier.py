@@ -34,7 +34,7 @@ training_data = ['dataset/annoted_data.json',
 training_data = training_data[0]
 
 # testing_data = 'dataset/customer_review_data/Canon G3.txt.json'
-testing_data = 'dataset/ABSA15_Restaurants_Test.json'
+TESTING_DATA_FILE = 'dataset/ABSA15_Restaurants_Test.json'
 
 
 # testing_data = 'dataset/ABSA15_Restaurants_Test.json'
@@ -76,7 +76,6 @@ def get_features_and_label(dataset):
     else:
         dataframes = []
         for dset in dataset:
-            print(dataset)
             dataframes.append(extract_mid_stage_label_dataframe(dset))
             dataframe = pd.concat(dataframes)
 
@@ -105,12 +104,12 @@ def main(log):
 
     print('Classification report on training data\n', classification_report(Y, y_pred))
 
-    X, Y, test_dataframe = get_features_and_label(testing_data)
+    X, Y, test_dataframe = get_features_and_label(TESTING_DATA_FILE)
     Y = np.delete(Y, columns_to_delete, axis=1)
     y_pred = classifier.predict(X)
     print('Classification report on testing_data\n', classification_report(Y, y_pred))
     pd.to_pickle(classifier, CLASSIFIER_PKL)
-    check_validity(testing_data, y_pred, columns_to_delete)
+    check_validity(TESTING_DATA_FILE, y_pred, columns_to_delete)
 
 
 def get_valid_columns(X):
@@ -131,16 +130,23 @@ def check_validity(dataset_filename, y_pred, columns_to_delete):
     :param dataset_filename:
     :return:
     """
+
     logging.info('Dataset: {}'.format(dataset_filename))
     initialize_globals()
-    annoted_data_dataset = get_dataset(dataset_filename)
+    test_annoted_data_dataset = get_dataset(TESTING_DATA_FILE)
+    baseline_ote = set()
+    for row in tqdm(test_annoted_data_dataset):
+        meta = {key: value for key, value in row['meta'].items() if key != 'null'}
+        baseline_ote.update(meta.keys())
+
+    annotated_data_dataset = get_dataset(dataset_filename)
     sorted_grammar_list = get_grammar()
     sorted_grammar_list = [grammar for index, grammar in enumerate(sorted_grammar_list) if
                            index not in columns_to_delete]
-
     Y_PRED = []
     Y_TRUE = []
-    for row, pred in tqdm(zip(annoted_data_dataset, y_pred)):
+
+    for row, pred in tqdm(zip(annotated_data_dataset, y_pred)):
         sentence = row['sentence']
         # meta = row['meta']
         meta = {key: value for key, value in row['meta'].items() if key != 'null'}
@@ -154,6 +160,8 @@ def check_validity(dataset_filename, y_pred, columns_to_delete):
                 extracted_meta = get_polarity_form_result(score_dict)
                 overall_extracted_meta.update(extracted_meta.keys())
 
+        base_otes = baseline_ote & set(sentence.split())
+        overall_extracted_meta = base_otes | overall_extracted_meta
         y_pred_index, y_true_index = get_y_pred_and_y_true_label(expected_meta_form,
                                                                  overall_extracted_meta)
         Y_TRUE.extend(y_true_index)

@@ -11,7 +11,7 @@ Target = namedtuple('Target', ['word', 'polarity'])
 
 NEGATE_SET = set(NEGATE) | {"n't", 'never'}
 
-
+# [0, 8, 13, 14, 16, 17, 18, 19, 21, 23, 25, 26, 30]
 class PatternGrammar:
     @property
     def syntactic_grammars(self):
