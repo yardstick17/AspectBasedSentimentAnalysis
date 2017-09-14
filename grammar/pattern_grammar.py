@@ -11,11 +11,12 @@ Target = namedtuple('Target', ['word', 'polarity'])
 
 NEGATE_SET = set(NEGATE) | {"n't", 'never'}
 
-
+# [0, 8, 13, 14, 16, 17, 18, 19, 21, 23, 25, 26, 30]
 class PatternGrammar:
     @property
     def syntactic_grammars(self):
         grammar = {
+
             1: """
                 VBG_RB_DESRIBING_NN:    {   <NN|NN.><MD>?<RB|RB.>*<VB|VB.><RB|RB.>*(<CC|,>?<RB|RB.>?<VB|VB.>)+<NN|NN.>+ }""",
             2: """
@@ -104,9 +105,12 @@ class PatternGrammar:
                 """,
             30: """
                 JJ_VBG_RB_DESRIBING_NN: {   (<CC|,>?<JJ|JJ.>*<VB.|V.>?<NN|NN.>)+<RB|RB.>*<MD>?<WDT|DT>?<VB|VB.>?<RB|RB.>*(<CC|,>?<RB|RB.>?<VB|VB.|JJ.|JJ|RB|RB.>+)+}
+                """,
+            31: """
+                AAAA_IGNORE_ALL_RULES: {  <RB> }
                 """
 
-        }
+            }
         return grammar
 
     @property

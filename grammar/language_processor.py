@@ -69,6 +69,12 @@ class LanguageProcessor:
 
     @staticmethod
     def extract_src_target_chunk(key, pos_tagged_chunk: Target):
+        """
+
+        :param key:
+        :param pos_tagged_chunk:
+        :return:
+        """
         source, target = [], []
         if key in ['JJ_DESCRIBING_NN_V4']:
             source = Chunker.get_chunk(pos_tagged_chunk, 'NP_before_VB')
@@ -144,14 +150,21 @@ class LanguageProcessor:
         elif key in ['NN_DT_NN', 'NN_desc_NN_reverse', 'NN_IN_DT_NN_reverse']:
             source = Chunker.get_chunk(pos_tagged_chunk, 'DT_NN')
             target = Chunker.get_chunk(pos_tagged_chunk, 'NN_beg')
-
-        polarity = LanguageProcessor.get_polarity(pos_tagged_chunk)
+        # print('target:',  target)
+        polarity = LanguageProcessor.get_polarity(target)
         target_tuple_with_polarity = Target(target, polarity)
         return source, target_tuple_with_polarity
 
     @staticmethod
-    def get_polarity(pos_tagged_chunk: Target):
-        negation_word = NEGATE_SET & {pos_tuple[0] for pos_tuple in pos_tagged_chunk}
+    def get_polarity(pos_tagged_chunk):
+        # print('pos_tagged_chunk:' , pos_tagged_chunk)
+        set_target = set()
+        for list_pos_chunk in pos_tagged_chunk:
+            list_pos_chunk = list_pos_chunk [0]
+            set_target.update(pos_tuple[0] for pos_tuple in list_pos_chunk)
+
+        negation_word = NEGATE_SET & set_target
+        # print('negation_word: ' , negation_word)
         return LanguageProcessor.POSITIVE_POLARITY if not negation_word else LanguageProcessor.NEGATIVE_POLARITY
 
     @staticmethod
@@ -169,6 +182,11 @@ class LanguageProcessor:
 
     @staticmethod
     def reject_general_english_word(subject_to_target_mapping):
+        """
+
+        :param subject_to_target_mapping:
+        :return:
+        """
         source_target_mapping_new = defaultdict(list)
         for source, list_of_targets_with_polarity in subject_to_target_mapping.items():
             for target_with_polarity in list_of_targets_with_polarity:

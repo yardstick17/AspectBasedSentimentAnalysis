@@ -11,15 +11,31 @@ class Chunker:
         self.grammar = grammar
 
     def chunk_sentence(self, sentence: str):
+        """
+
+        :param sentence:
+        :return:
+        """
         pos_tagged_sentence = PosTagger(sentence).pos_tag()
         return self.chunk_pos_tagged_sentence(pos_tagged_sentence)
 
     def chunk_pos_tagged_sentence(self, pos_tagged_sentence):
+        """
+
+        :param pos_tagged_sentence:
+        :return:
+        """
         chunked_tree = self.grammar.parse(pos_tagged_sentence)
         chunk_dict = self.extract_rule_and_chunk(chunked_tree)
         return chunk_dict
 
     def extract_rule_and_chunk(self, chunked_tree: nltk.Tree) -> dict:
+        """
+
+        :param chunked_tree:
+        :return:
+        """
+
         def recursively_get_pos_only(tree, collector_list=None, depth_limit=100):
             if collector_list is None:
                 collector_list = []
@@ -47,6 +63,12 @@ class Chunker:
 
     @staticmethod
     def get_chunk(pos_tagged_sentence, src_target_grammar_key: str) -> list:
+        """
+
+        :param pos_tagged_sentence:
+        :param src_target_grammar_key:
+        :return:
+        """
         compile_grammar = PatternGrammar().get_source_target_compiled_grammar(clause=src_target_grammar_key)
         return Chunker.apply_grammar_on_pos_tagged_chunk(compile_grammar, pos_tagged_sentence)
 

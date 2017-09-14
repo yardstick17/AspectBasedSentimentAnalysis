@@ -12,12 +12,105 @@ Natural Language Processing based. Multilabel classifier on top of syntactic ext
 
 ### Results
 ```bash
-             precision    recall  f1-score   support
+100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2000/2000 [01:02<00:00, 31.99it/s]
+For Data-set:  dataset/annoted_data.json
+              precision    recall  f1-score   support
 
-          0       0.85      0.77      0.81      1583
-          1       0.72      0.81      0.76      1134
+          0       0.17      0.44      0.25       671
+          1       0.71      0.40      0.51      2312
 
-avg / total       0.79      0.79      0.79      2717
+avg / total       0.59      0.41      0.45      2983
+
+[root] [2017-08-15 12:35:49,512] INFO : Shape of array for dataset:  X:(2000, 10000) , Y:(2000, 31)
+/Users/Amit/anaconda/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being set to 0.0 in labels with no predicted samples.
+  'precision', 'predicted', average, warn_for)
+/Users/Amit/anaconda/lib/python3.5/site-packages/sklearn/metrics/classification.py:1137: UndefinedMetricWarning: Recall and F-score are ill-defined and being set to 0.0 in labels with no true samples.
+  'recall', 'true', average, warn_for)
+Classification report on training data
+              precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00         0
+          1       0.98      0.99      0.99       406
+          2       1.00      1.00      1.00        10
+          3       0.99      0.82      0.90       203
+          4       1.00      1.00      1.00         3
+          5       1.00      1.00      1.00         6
+          6       1.00      1.00      1.00        10
+          7       1.00      0.97      0.99        39
+          8       1.00      1.00      1.00         2
+          9       1.00      0.88      0.93         8
+         10       1.00      0.83      0.91         6
+         11       1.00      0.94      0.97        17
+         12       1.00      1.00      1.00         1
+         13       0.00      0.00      0.00         0
+         14       0.00      0.00      0.00         0
+         15       1.00      1.00      1.00         4
+         16       0.00      0.00      0.00         0
+         17       0.00      0.00      0.00         0
+         18       0.00      0.00      0.00         0
+         19       0.00      0.00      0.00         0
+         20       0.97      0.99      0.98       294
+         21       0.00      0.00      0.00         0
+         22       0.97      0.99      0.98       103
+         23       0.00      0.00      0.00         0
+         24       1.00      1.00      1.00         1
+         25       0.00      0.00      0.00         0
+         26       0.00      0.00      0.00         0
+         27       1.00      1.00      1.00        12
+         28       0.97      0.99      0.98        87
+         29       1.00      1.00      1.00        27
+         30       0.00      0.00      0.00         0
+
+avg / total       0.98      0.96      0.97      1239
+
+[root] [2017-08-15 12:36:56,773] INFO : Dataset: dataset/ABSA15_Restaurants_Test.json
+100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 582/582 [00:12<00:00, 47.23it/s]
+For Data-set:  dataset/ABSA15_Restaurants_Test.json
+              precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00       105
+          1       0.71      0.34      0.46       761
+
+avg / total       0.62      0.30      0.40       866
+
+[root] [2017-08-15 12:37:32,053] INFO : Shape of array for dataset:  X:(582, 10000) , Y:(582, 31)
+Classification report on testing_data
+              precision    recall  f1-score   support
+
+          0       0.00      0.00      0.00         0
+          1       0.99      0.99      0.99       112
+          2       1.00      1.00      1.00         2
+          3       1.00      0.80      0.89        59
+          4       1.00      1.00      1.00         1
+          5       1.00      1.00      1.00         3
+          6       1.00      1.00      1.00         3
+          7       1.00      0.94      0.97        18
+          8       1.00      1.00      1.00         1
+          9       1.00      1.00      1.00         2
+         10       1.00      1.00      1.00         2
+         11       1.00      0.88      0.93         8
+         12       1.00      1.00      1.00         1
+         13       0.00      0.00      0.00         0
+         14       0.00      0.00      0.00         0
+         15       1.00      1.00      1.00         1
+         16       0.00      0.00      0.00         0
+         17       0.00      0.00      0.00         0
+         18       0.00      0.00      0.00         0
+         19       0.00      0.00      0.00         0
+         20       0.99      0.99      0.99        72
+         21       0.00      0.00      0.00         0
+         22       0.97      1.00      0.98        30
+         23       0.00      0.00      0.00         0
+         24       1.00      1.00      1.00         1
+         25       0.00      0.00      0.00         0
+         26       0.00      0.00      0.00         0
+         27       1.00      1.00      1.00         2
+         28       0.96      1.00      0.98        22
+         29       1.00      1.00      1.00         6
+         30       0.00      0.00      0.00         0
+
+avg / total       0.99      0.95      0.97       346
+
 ```
 
 
@@ -35,23 +128,5 @@ pip install -r requirements.txt
 
 ```bash
 # From project root, execute this command:
-PYTHONPATH='.' python3 main.py
-```
-
-#### logs
-```bash
-
-
-100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2000/2000 [00:18<00:00, 105.86it/s]
-[root] [2017-07-26 07:57:56,460] INFO : 0.292283333333
-[root] [2017-07-26 07:57:56,460] INFO : Correct Predictions: 0, Empty Correct Predictions : 0, Non empty_miss_case: 0, Data-set Size: 2000
-[root] [2017-07-26 07:57:56,460] INFO : Most Efficient Rule: [(-1, 1223), (30, 313), (28, 195), (11, 79), (9, 58), (24, 50), (20, 17), (4, 9), (2, 8), (27, 8), (29, 8), (26, 7), (3, 6), (22, 6), (25, 5), (19, 3), (16, 2), (7, 1), (23, 1), (21, 1)]
-[root] [2017-07-26 07:57:56,461] INFO : Rules that at least hit one correct: [2, 3, 4, 7, 9, 11, 16, 19, 20, 30, 22, 23, 24, 25, 26, 27, 28, 29, -1, 21]
-[root] [2017-07-26 07:57:56,463] INFO :
-             precision    recall  f1-score   support
-
-          0       0.85      0.77      0.81      1583
-          1       0.72      0.81      0.76      1134
-
-avg / total       0.79      0.79      0.79      2717
+PYTHONPATH='.' python3 training/train_top_classifier.py
 ```

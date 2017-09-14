@@ -1,14 +1,15 @@
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
 # Byte-compiled / optimized / DLL files
+BaseEvalValid1/
 __pycache__/
 *.py[cod]
 *$py.class
-
 # C extensions
 *.so
-*.xml
 *.pkl
+*.xml
+*.csv
 # Distribution / packaging
 .Python
 env/
