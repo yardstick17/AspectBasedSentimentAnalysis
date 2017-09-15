@@ -2,6 +2,7 @@
 ### Python template
 # Byte-compiled / optimized / DLL files
 BaseEvalValid1/
+.idea/workspace.xml
 __pycache__/
 *.py[cod]
 *$py.class
