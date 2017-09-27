@@ -17,7 +17,7 @@ grammar_label = None
 SYNTACTIC_COMPILED_GRAMMAR_PKL_FILE = 'label_referenced_syntactic_compiled_grammar.pkl'
 MATCH_THRESHOLD = 0.2
 ONLY_ASPECT_PREDICTION = False
-POLARITY_ONLY_TASK = True
+POLARITY_ONLY_TASK = False
 
 
 def initialize_globals():
@@ -135,11 +135,8 @@ def extract_mid_stage_label_dataframe(dataset_filename):
         logging.info('Datasets : {}'.format(', '.join(f for f in dataset_filename)))
         for dset in dataset_filename:
             annotated_dataset.extend(get_dataset(dset))
-
     initialize_globals()
-
     sorted_grammar_list = get_grammar()
-
     mid_training_data = []
     Y_PRED = []
     Y_TRUE = []
@@ -157,6 +154,7 @@ def extract_mid_stage_label_dataframe(dataset_filename):
             extracted_ote = set(extracted_meta.items())
             list_of_extracted_meta.append(extracted_ote)
         mid_training_label, max_match_extracted = get_max_combination(list_of_extracted_meta, expected_meta_form)
+
         y_pred_index, y_true_index = get_y_pred_and_y_true_label(expected_meta_form, max_match_extracted)
 
         Y_TRUE.extend(y_true_index)
@@ -200,73 +198,67 @@ def get_grammar():
 def get_y_pred_and_y_true_label(expected_meta_form, extracted_meta_form, verbose=False):
     """
 
-    :param expected_meta_form:
+    :param expected_meta_form: { ('a' , 'positive') , ('tgrfd', 'negative')}
     :param extracted_meta_form:
     :return:
     """
-    if verbose:
+    ext_dict = dict(extracted_meta_form)
+    exp_dict = dict(expected_meta_form)
+
+    if ONLY_ASPECT_PREDICTION:
+        ext_dict = {key: 'ignore' for key in ext_dict}
+        exp_dict = {key: 'ignore' for key in exp_dict}
+        expected_meta_form = exp_dict.items()
+        extracted_meta_form = ext_dict.items()
+
+    elif verbose and POLARITY_ONLY_TASK:
         # verbose = True
         polarity_default_dict = dict(extracted_meta_form)
         default_dict = dict(expected_meta_form)
-        tmp_result_dict = {key: 'positive' for key, value in default_dict.items()}
+        tmp_result_dict = {key: 'negative' for key, value in default_dict.items()}
         for key, value in tmp_result_dict.items():
             if key in polarity_default_dict:
                 tmp_result_dict[key] = polarity_default_dict[key]
 
         extracted_meta_form = set(tmp_result_dict.items())
-
-        print('expected_meta_form:', expected_meta_form)
-        print('extracted_meta_form:', extracted_meta_form)
         print('intersection:', extracted_meta_form & expected_meta_form)
         print('false_negatives:', expected_meta_form - extracted_meta_form)
         print('false_positives:', extracted_meta_form - expected_meta_form)
 
     y_true_index = []
     y_pred_index = []
+    ext_dict = dict(extracted_meta_form)
+    exp_dict = dict(expected_meta_form)
+    ext_keys = set(ext_dict.keys())
+    exp_keys = set(exp_dict.keys())
 
-    intersecion_keys = set()
-    # ext_dict = dict(extracted_meta_form)
-    # exp_dict = dict(expected_meta_form)
+    intersecion_keys = ext_keys & exp_keys
 
-    if not POLARITY_ONLY_TASK and ONLY_ASPECT_PREDICTION:
-        extracted_meta_form = {i[0] for i in extracted_meta_form}
-        expected_meta_form = {i[0] for i in expected_meta_form}
-    else:
-        ext_keys = {i[0] for i in extracted_meta_form}
-        exp_keys = {i[0] for i in expected_meta_form}
-        intersecion_keys = ext_keys & exp_keys
-
-    intersection = len(extracted_meta_form & expected_meta_form)
-
-    y_pred_index.extend([1] * intersection)
-    y_true_index.extend([1] * intersection)
+    for key in intersecion_keys:
+        if exp_dict[key] == ext_dict[key]:
+            y_pred_index.extend([1])
+            y_true_index.extend([1])
+        else:
+            y_pred_index.extend([0])
+            y_true_index.extend([1])
 
 
-    common_removed_expected_meta_form = set()
-    for item in expected_meta_form:
-        if not item[0] in intersecion_keys:
-            common_removed_expected_meta_form.add(item)
-
-    common_removed_extracted_meta_form = set()
-    for item in extracted_meta_form:
-        if not item[0] in intersecion_keys:
-            common_removed_extracted_meta_form.add(item)
-
-
-    false_positives = len(extracted_meta_form - expected_meta_form)
-    y_pred_index.extend([1] * false_positives)
-    y_true_index.extend([0] * false_positives)
+    common_removed_expected_meta_form = {item for item in expected_meta_form
+                                         if item[0] not in intersecion_keys}
+    common_removed_extracted_meta_form = {item for item in extracted_meta_form
+                                          if item[0] not in intersecion_keys}
 
     expected_meta_form = common_removed_expected_meta_form
+    extracted_meta_form = common_removed_extracted_meta_form
+
+    false_positives = len(extracted_meta_form - expected_meta_form)
+    if false_positives:
+        y_pred_index.extend([1] * false_positives)
+        y_true_index.extend([0] * false_positives)
 
     false_negatives = len(expected_meta_form - extracted_meta_form)
-    y_pred_index.extend([0] * false_negatives)
-    y_true_index.extend([1] * false_negatives)
-
-
-    # extracted_meta_form = common_removed_extracted_meta_form
-
-
-
+    if false_negatives:
+        y_pred_index.extend([0] * false_negatives)
+        y_true_index.extend([1] * false_negatives)
 
     return y_pred_index, y_true_index

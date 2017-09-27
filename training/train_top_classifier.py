@@ -23,9 +23,8 @@ FOREST = SVC(kernel='linear')
 MULTI_TARGET_FOREST = MultiOutputRegressor(FOREST, n_jobs=-1)
 LABEL = 'training_label'
 SYNTACTIC_FEATURE = 'syntactic_feature'
-CLASSIFIER_PKL = 'classifier.pkl'
-syntactic_rules_in_list = None
-
+CLASSIFIER_PKL = 'ONLY_ASPECT_PREDICTION_{}_classifier.pkl'.format(ONLY_ASPECT_PREDICTION)
+COLUMN_PKL_FILE = '_{}_column_to_delete.pkl'.format(ONLY_ASPECT_PREDICTION)
 TRAINING_DATA = [
     'dataset/annoted_data.json',
     # 'dataset/Restaurants_Train_2014.json',
@@ -39,6 +38,7 @@ TRAINING_DATA = [
 
 # TESTING_DATA_FILE = 'dataset/customer_review_data/Canon G3.txt.json'
 TESTING_DATA_FILE = 'dataset/ABSA15_Restaurants_Test.json'
+syntactic_rules_in_list = None
 
 
 def get_syntactic_feature(row):
@@ -86,22 +86,27 @@ def main(log):
     opinion target extraction is done.
     :param log:
     """
+    # print()
+    # COLUMN_PKL_FILE = 'classifier.pkl'
     logging.basicConfig(format='[%(name)s] [%(asctime)s] %(levelname)s : %(message)s', level=logging._nameToLevel[log])
-
-    X, Y, _ = get_features_and_label(TRAINING_DATA)
-
-    columns_to_delete, Y = get_valid_columns(Y)
-
-    classifier = MULTI_TARGET_FOREST
-    classifier.fit(X, Y)
-    y_pred = classifier.predict(X)
-    print('Classification report on training data\n', classification_report(Y, y_pred))
-
+    import os
+    if os.path.isfile(CLASSIFIER_PKL) and os.path.isfile(COLUMN_PKL_FILE):
+        classifier = pd.read_pickle(CLASSIFIER_PKL)
+        columns_to_delete = pd.read_pickle(COLUMN_PKL_FILE)
+    else:
+        X, Y, _ = get_features_and_label(TRAINING_DATA)
+        columns_to_delete, Y = get_valid_columns(Y)
+        classifier = MULTI_TARGET_FOREST
+        classifier.fit(X, Y)
+        pd.to_pickle(columns_to_delete, COLUMN_PKL_FILE)
+        pd.to_pickle(classifier, CLASSIFIER_PKL)
+        # print('Classification report on training data\n', classification_report(Y, y_pred))
+    print('columns_to_delete:' , columns_to_delete)
     X, Y, test_dataframe = get_features_and_label(TESTING_DATA_FILE)
     Y = np.delete(Y, columns_to_delete, axis=1)
     y_pred = classifier.predict(X)
     print('Classification report on testing_data\n', classification_report(Y, y_pred))
-    pd.to_pickle(classifier, CLASSIFIER_PKL)
+
     check_validity(TESTING_DATA_FILE, y_pred, columns_to_delete)
 
 
@@ -126,6 +131,10 @@ def check_validity(dataset_filename, y_pred, columns_to_delete):
 
     logging.info('Dataset: {}'.format(dataset_filename))
     initialize_globals()
+    trainied_dataset = get_dataset(TRAINING_DATA[0])
+    seed_aspects = set()
+    for row in trainied_dataset:
+        seed_aspects.update(set(row['meta'].keys()))
 
     annotated_data_dataset = get_dataset(dataset_filename)
     sorted_grammar_list = get_grammar()
@@ -137,21 +146,27 @@ def check_validity(dataset_filename, y_pred, columns_to_delete):
     prediction_step_rows = []
     for row, pred in tqdm(zip(annotated_data_dataset, y_pred)):
         sentence = row['sentence']
-        # print('sentence: ', sentence)
-        # meta = row['meta']
+
         meta = {key: value for key, value in row['meta'].items() if key.lower() != 'null'}
         expected_meta_form = set(meta.items())
         ste = SourceTargetExtractor(sentence)
         overall_extracted_meta = set()
-        for index, rule_flag in enumerate(pred):
-            if rule_flag == 1:
-                compiled_grammar = sorted_grammar_list[index][1]
-                score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
-                extracted_meta = get_polarity_form_result(score_dict)
-                overall_extracted_meta.update(extracted_meta.items())
-
+        if any(pred):
+            for index, rule_flag in enumerate(pred):
+                if rule_flag == 1 or (len(sentence.split()) <= 2 and index == 2):
+                    compiled_grammar = sorted_grammar_list[index][1]
+                    score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
+                    extracted_meta = get_polarity_form_result(score_dict)
+                    overall_extracted_meta.update(extracted_meta.items())
+        else:
+            for index, rule_flag in enumerate(pred):
+                if (len(sentence.split()) <= 2 and index == 2):
+                    compiled_grammar = sorted_grammar_list[index][1]
+                    score_dict = ste.get_topic_sentiment_score_dict(compiled_grammar)
+                    extracted_meta = get_polarity_form_result(score_dict)
+                    overall_extracted_meta.update(extracted_meta.items())
         y_pred_index, y_true_index = get_y_pred_and_y_true_label(expected_meta_form,
-                                                                 overall_extracted_meta)
+                                                                 overall_extracted_meta, True)
 
         Y_TRUE.extend(y_true_index)
         Y_PRED.extend(y_pred_index)
@@ -166,6 +181,8 @@ def check_validity(dataset_filename, y_pred, columns_to_delete):
             total += 1
             if x == y:
                 correct += 1
+
+    print('NO PREDICTION FOR RULE: ', sum([1 for p in y_pred if not any(p)]), ' out of: ', len(y_pred))
     print('Task: ONLY_ASPECT_PREDICTION', ONLY_ASPECT_PREDICTION)
     print('Accuracy: ', correct * 100 / float(total))
     print('Total: ', total, ', Correct: ', correct)

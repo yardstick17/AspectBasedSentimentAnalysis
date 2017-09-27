@@ -31,16 +31,10 @@ class Sentiment:
         positive_list_score, negative_list_score = [], []
         adj_list = target.split()  # Handle word like "must try" as "must", "try"
         for adj in adj_list:
-            # stemmed_adj = stemmer.stem(adj)
-            if Sentiment.positive_words(adj,adj):
-                positive_list_score.append(1)
-                negative_list_score.append(0)
-
-            elif not Sentiment.neutral_words(adj, adj):
-                pos, neg = Sentiment._find_sentiment_score_for(adj)
-                if pos or neg:
-                    positive_list_score.append(pos)
-                    negative_list_score.append(neg)
+            pos, neg = Sentiment._find_sentiment_score_for(adj)
+            if pos or neg:
+                positive_list_score.append(pos)
+                negative_list_score.append(neg)
         positive = np.mean(positive_list_score) if positive_list_score else 0
         negative = np.mean(negative_list_score) if negative_list_score else 0
         return {
@@ -61,8 +55,8 @@ class Sentiment:
 
     @staticmethod
     def _find_sentiment_score_for(word):
-        pos_matched_word = pd.Series(list(sentiwordnet.senti_synsets(word)))[:1]
-        neg_matched_word = pd.Series(list(sentiwordnet.senti_synsets(word)))[:1]
+        pos_matched_word = pd.Series(list(sentiwordnet.senti_synsets(word)))
+        neg_matched_word = pd.Series(list(sentiwordnet.senti_synsets(word)))
         pos = pos_matched_word.apply(lambda x: x.pos_score()).mean() if len(pos_matched_word) else 0
         neg = neg_matched_word.apply(lambda x: x.neg_score()).mean() if len(neg_matched_word) else 0
         return pos, neg
