@@ -1,5 +1,8 @@
-numpy==1.12.1
-tqdm==4.11.2
-pandas==0.18.1
+click==6.6
+ipdb==0.10.1
 nltk==3.2.4
-scikit_learn==0.19b2
+numpy==1.12.1
+pandas==0.17.1
+spacy==1.9.0
+tqdm==4.8.4
+scikit_learn==0.19.1
