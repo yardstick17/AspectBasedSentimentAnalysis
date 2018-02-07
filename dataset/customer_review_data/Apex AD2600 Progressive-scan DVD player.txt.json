@@ -1,0 +1,4503 @@
+[
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "repost from january 13 , 2004 with a better fit title ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "does your apex dvd player only play dvd audio without video ?"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "or does it play audio and video but scrolling in black and white ?"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "before you try to return the player or waste hours calling apex tech support , or run the player over with your car , try these simple troubleshooting ideas first ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "no picture :"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "hopefully you still have the remote control ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if you tossed it out the window , you need to fetch it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "using the remote control , press the i/p button located on the bottom right corner of the remote ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the i/p button switches the tv display between interlace and progressive ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if this doesnt bring back the picture , try pressing this button without playing a dvd ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if you dont get video back , now you can run the player over with your car !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "picture scrolling in b/w :"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you need the remote control for this so you better get it from your dog before he burries it in the backyard ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "press the p/n button located on the bottom right corner of the remote ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the p/n button switches your dvd players video output signal between pal and ntsc ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "by pressing p/n , you should be able to get a good picture on the screen ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "for other problems go to http://www.apexdigitalinc.com/support.asp"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i hope i have helped you continue to enjoy the apex dvd player with these troubleshooting tips ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have done some research and experimenting with the remote when my apex ad-2500 seemed to have lost its video signal ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "ip button"
+    ],
+    "sentence": "im a more happier person after discovering the i/p button !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the button was probably accidentally pushed to cause the black screen in the first place ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "but , if you 're looking for my opinion of the apex dvd player , i love it !"
+  },
+  {
+    "polarity": [
+      "positive",
+      "negative"
+    ],
+    "target": [
+      "player",
+      "sound"
+    ],
+    "sentence": "i 've had the player for about 2 years now and it still performs nicely with the exception of an occasional wwhhhrrr sound from the motor ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "price"
+    ],
+    "sentence": "for the price it is a well spent investment !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i would recommend buying one ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 've owned 6 or 7 dvd players since 1998 ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "look",
+      "panel button layout",
+      "feature"
+    ],
+    "sentence": "it 's very sleek looking with a very good front panel button layout , and it has a great feature set ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "forward",
+      "rewind"
+    ],
+    "sentence": "its fast-forward and rewind work much more smoothly and consistently than those of other models i 've had ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "video format"
+    ],
+    "sentence": "it plays alternate video formats ( vcds , svcds , cvds ) very well ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "price"
+    ],
+    "sentence": "and amazon.com has it for such a great price -- how can you go wrong ?"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 've bought one for the den and will buy a 2nd one for the bedroom ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "strengths are well listed by other reviewers ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "play",
+      "dvdr"
+    ],
+    "sentence": "what got me to buy was the reviewer that said it would play dvd-rs fill of files ( e. , mp3s ) ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have a dvd burner on my computer and a zillion mp3s , and it 's a lot nicer to access them 4.5 gb at a time ( dvd-r ) than 0.7 gb at a time ( cd-r ) !"
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "audio output"
+    ],
+    "sentence": "another nice thing is that the unit has both optical and coax digital audio outputs , though the latter was not mentioned in the literature i 'd scanned before buying ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "saved me from having to buy an expensive optical cable , as i already had a coax cable ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "forward"
+    ],
+    "sentence": "at double-speed ( 2x forward speed ) , it still plays mp3s with sound -- they are pitch-corrected and smooth , but twice as fast !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i wish it would do the same for movies , but that 's one rare / cool feature you will have to forgo ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "remote control",
+      "mp filename"
+    ],
+    "sentence": "weaknesses are minor : the feel and layout of the remote control are only so-so ; it does n't show the complete filenames of mp3s with really long names ; you must cycle through every zoom setting ( 2x , 3x , 4x , 1/2x , etc. ) before getting back to normal size [ sorry if i 'm just ignorant of a way to get back to 1x quickly ] ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if you 're a bargain hunter and you want a great feature set for a rock-bottom price , i highly recommend this model ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "finish"
+    ],
+    "sentence": "update : the finish is more \" mirror \" than silver -- and i like it !"
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "play",
+      "disney movie"
+    ],
+    "sentence": "many of our disney movies do n't play on this dvd player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i spoke to a rep. at apex and was told that a new format is being used and we wont be able to view any disney movies made in the last couple months ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "duallayer dvd"
+    ],
+    "sentence": "player has a problem with dual-layer dvd 's such as alias season 1 and season 2 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "for the money , get a better quality player ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "player",
+      "look"
+    ],
+    "sentence": "player works and looks great - if you can get the dvd 's to play ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i know the saying is \" you get what you pay for \" but at this stage of game dvd players must have better quality than this - there is no excuse ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "will never purchase apex again ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "customer service",
+      "technical support"
+    ],
+    "sentence": "customer service and technical support are overloaded and nonresponsive - tells you about the quality of their products and their willingness to stand behind them ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "pass this player up , and never believe the reviews on a product right before christmas !"
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "case"
+    ],
+    "sentence": "for the first few weeks , this player was everything i expected it to be , an affordable multi-format dvd player with a stylish slim case as advertised ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "dvd",
+      "read",
+      "play"
+    ],
+    "sentence": "then my dvds would stop playing in the middle , or not even be read at all ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "cd"
+    ],
+    "sentence": "new cds almost always began skipping after a few plays ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i thought it was just the player , but then i started checking the discs to find that the apex 2600 is actually ruining my media ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "there are funny little ridges on the dvd that look like the slice of a tree trunk !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "this player is not worth any price and i recommend that you do n't purchase it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i intend to contact the company , but from what i 've read ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i just got screwed out of fifty bucks ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "* sigh ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "no way to contact their customer service ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "quality"
+    ],
+    "sentence": "very bad quality ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i bought this apex 2600 dvd player for myself at christmas because it got good reviews as a good value for the money on a variety of different sites ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i took it to my father 's house to play a tom jones concert dvd and he loved the player so much i gave it to him ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "now i need to buy myself another one !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i always research electronics online before i buy because even within the same company , some models are better than others ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "my dad also has an apex tv and it was another great value for the money ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "picture quality",
+      "feature"
+    ],
+    "sentence": "great quality picture and features ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "thought i 'd weigh in here with my stats ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 've bought 3 apex dvd players now ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i am back to using # 1 ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "nice machines , but i consider their quality pretty low now ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "door"
+    ],
+    "sentence": "the door would not close ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "i tried to contact apex to return it ( i missed the amazon return period ) and it took 3 months to get through to their customer service dept ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i am still trying to resolve it four months later ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "look",
+      "feature"
+    ],
+    "sentence": "it looks great - and is loaded with features ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "play",
+      "dvd"
+    ],
+    "sentence": "- not playing some dvds and then finally after less than 60 days , it just would not recognize anything i pop in it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "save money on the long run - buy something decent once instead of buying cheap every month ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "the apex 2600 has been a steady performer for me ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "smell"
+    ],
+    "sentence": "it did also seem to have a strong \" new electronics \" smell for some time ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "freezing"
+    ],
+    "sentence": "the only thing i did experience was a problem of the player freezing while playing , which i was able to clear by opening it up and blowing it out with \" canned air . \""
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "this problem vanished after the first month , so i assume it was a temporary dust issue ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the two main reasons i had for getting this model were the range of disks types played and the recommendation of a friend ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "( he had owned two apex dvd players , and was pleased with both of them . )"
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "jpeg slideshow",
+      "mpeg"
+    ],
+    "sentence": "the fact that this model would play jpeg slideshows was a big plus for me as a visual artist , and i discovered by accident ( it is not mentioned anywhere in the literature ) that it will play mpeg1 files on a regular cd-r data disk without vcd formatting ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "the remote is okay , but i am not a fan of remotes with tiny buttons ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "button"
+    ],
+    "sentence": "i especially like the more commonly used buttons , such as play , pause , and stop , to be larger and conveniently placed ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "while it is true that it will stand on end , it is also easy to knock over that way ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "zoom mode"
+    ],
+    "sentence": "i also did n't like the way it displayed information way down into the screen when you are in zoom mode ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "zoom"
+    ],
+    "sentence": "the zoom goes up and down in magnification , which is nice , but there is always a display of the zoom size about one-quarter of the way down from the top of the screen that interferes with viewing at most settings ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "onscreen display"
+    ],
+    "sentence": "having spent considerable time with professional video gear , i find onscreen displays annoying ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have not used the progressive scan feature ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "this model has come down in price since i purchased mine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "while it seems like some people have had trouble with theirs , mine has run well , and i would recommend it if you are considering a dvd player purchase ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "any possible problems should be weighed against the bang-for-the-buck factor , along with the fact that companies like apex seldom have good after-sale support ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased this unit 3 months back and i think the unit knew when my warrenty expires ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i can only hear the sound ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i changed video cables , tried connecting to tv on input1 and input2 but no help ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i think you get what you pay for stands true ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i have had this player for 3 months and have been able to see a total of 6 dvd 's , after the frustration and aggrivation of getting the player to do it 's job ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "i have tried many times to get a hold of apex who does n't seem to answer their emails and telephone number is constantly busy as ( i believe ) the one lonely customer service rep is probably extremely overworked ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "as i emailed to the the customer service department , the only thing this player has done consistantly is use enought electricity to keep the red led burning ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "do yourself a favor and save your money to get something of better quality , or at least works ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if i could give this a negative rating , i would ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i am surprised amazon still carries this after all of the continued problems ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "play",
+      "disc"
+    ],
+    "sentence": "wo n't play a lot of discs ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i can only confirm what other customers have said - crap !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "play"
+    ],
+    "sentence": "some movies it played yesterday , it wo n't play today ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "play"
+    ],
+    "sentence": "it wo n't play 80 % of my movies , which are all store boughten ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "tech support"
+    ],
+    "sentence": "tech support from apex is literally - nonexistent ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "amazon , do your customers a big favor , do n't carry this item , and give them refunds !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "there should have been a recall on this product ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "fair warning - do not buy ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i repeat - do n't wast your money ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "it is embarassing getting phone calls from family members telling you that the dvd player you gave them less that 3 months ago is no longer working ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "one stopped working in february and the other in march ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "amazon has been working with me to refund my money , but they reminded me that i have past the 30 day return policy and this was a courtesy return ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have had great experience with amazon , but i will probably not buy electronics any more from them to avoid any future return problems ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "the dvd player does not work properly ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "the player usually plays dvd 's , but has occasional problems such as : 1 ) not recognizing a dvd 2 ) stopping a particular point in a movie every time we played it 3 ) not being able to access certain special features on a rental dvd ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer support"
+    ],
+    "sentence": "after we discovered the problems , we tried to contact apex ( fkor 3 months ) , but we never got in touch with them.the customer support telephone number is always busy , and they do not answer their web customer support ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have had this dvd player for about 3 months now ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "play",
+      "dvd"
+    ],
+    "sentence": "unfortunately it can 't play all of the dvd ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have several tv shows on dvd so they are divided by episode ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "on 2 dvds so far it refuses to play certain episodes with no problems on the others on the dvd ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "luckily i also have a ps2 which can play those episodes the player can 't ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "unfortunately i bought a player because the ps2 could n't play all my dvds , and now the player can 't play everything ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased this as a christmas gift for my husband ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "work"
+    ],
+    "sentence": "we tried it out christmas night and it worked great ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "jpeg"
+    ],
+    "sentence": "even viewed cds full of jpgs ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "we did n't get to use it again for over a month ( sad , i know ) ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "we saw reviews that said the same thing , and also saw here that their customer service stinks ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "though we were past the deadline for returns ( by a few days ) , i contacted amazon right away and pleaded for help ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "they authorized my late return , and hopefully they are giving apex heck ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "i hate apex but love amazon , and i tell everyone ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "do not buy this player ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "we 've purchased 3 universal remotes so far-all claiming to work \" apex \" dvd players and none worked ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "called customer service and basically was told to either keep buying univ. remotes to try or buy the replacement remote for $ 23 ( which is almost half of what i paid for the whole player ) ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if anybody knows of a remote to work this-i 'd love to hear from you !"
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "dvd",
+      "play"
+    ],
+    "sentence": "( on here of course ) also , a couple dvd 's would n't play and they were new ones !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "i had to return the remote on this product because it appeared to be defective ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it took over 2 months and repeated follow-up to get it replaced ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "the customer service dept did not list a toll free number and it was a real hassle to get through on their regular line ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "i would not be inclined to purchase an apex product again ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "door"
+    ],
+    "sentence": "door broke after a month ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "unit"
+    ],
+    "sentence": "unit took forever since the begiining to recognize and play discs ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "forget about it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it 's money down the drain ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "get cheaper panasonics or toshibas or even sonys ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "well , it was nice while it lasted ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "after @ 3 months , it stoppped playing higher number scenes on dvds ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i had hoped this was bought from walmart so that i could return it !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "picture"
+    ],
+    "sentence": "it sends discoutinous signals to tv , so the tv has the pictures for one moment and has only the white noise for the other moment ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "color"
+    ],
+    "sentence": "the other thing i do n't like about this 2600 is that it makes the color look over saturated ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "maybe it 's good for tvs with not so good color settings , but not good for my tv that already has very vibrant pictures ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased the ad2600 after feeling comfortable with the reviews i read here on amazon ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "as soon as i lifted the unit out of the box , i questioned my judgement ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "screw tip"
+    ],
+    "sentence": "there were sharp screw tips on the underside of the unit coming from inside that were obviously used to anchor the internal control board ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "dvd",
+      "play"
+    ],
+    "sentence": "after hooking the thing up , i found that it would only played less than 50 % of the dvds i put in it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "most of the dvds i was trying were fairly new and were in great condition ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "the dvd player just would't recognize them ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "no disc"
+    ],
+    "sentence": "it would spin , read , spin some more and then show on the display that there was no disc ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i ended up sending the unit back to amazon ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "now it would have gotten 5 stars had this baby come with features to upgrade the firmware and was able to play divx or avi videos ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "but for $ 49.99 go get one !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "features and looks this dvd player is overpriced had it come with sony or one of the other top brand names ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i have not even used my new dvd player and already i am disapointed !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have been trying for over a week to contact apex ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "they will not respond to my emails ( promised turnaround time is 24 hours ) and the phone line is constantly busy ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "all i am looking for is a rebate form !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i accually did n't buy the apex ad-2600 from amazon but , the reviews i found here helped me purchase it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have owned an apex ad-3201 for close to 3 years now and i love that deck ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "feature"
+    ],
+    "sentence": "because of it 's hidden features ( no macrovision , non-regional ) i keep this baby around to watch non-american region dvd 's ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "however , the ad-2600 does n't have this feature ( for now ) ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "play",
+      "different file"
+    ],
+    "sentence": "the cool thing about the ad-2600 it plays alot of different file like mp3 , wma cds , jpeg and kodak picture cds , dvd 's , dvd - / + r 's ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "play",
+      "mpeg"
+    ],
+    "sentence": "it 's not a listed feature but , the one thing that sold the unit is that it plays mpeg video ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "feature"
+    ],
+    "sentence": "for the money apex machines have good features ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you can 't find the mpeg playback on high priced units ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "design"
+    ],
+    "sentence": "it 's low profile , space saving design looks nice ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i received this dvd player free with the purchase of a palm tungsten e from officemax ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "this is the second apex dvd player i 've had - and the last ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "my first player ( model ad-500a ) went into the trash about 6 months after i bought it ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "service"
+    ],
+    "sentence": "same story as everybody else when trying to get service from apex - nothing ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "pay a few more bucks and get something else - it 'll be worth it in the long run ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "format"
+    ],
+    "sentence": "i was surprised to find that not only could this dvd player play mpeg2 format which allowed me to stack 2 movies on a dvd , but it also was able to play vob files which i created with smart ripper ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "aff"
+    ],
+    "sentence": "the aff feature did a great job converting the letterbox to fill 3/4 of the screen and the image still looked normal ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "design"
+    ],
+    "sentence": "loved the slim design ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "color signal"
+    ],
+    "sentence": "this unit was working fine for the 1st month and a half and then the color signal disappeared ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "apex has still not responded to my email describing the problem after almost a week and their customer service line is always busy ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it plays all my back-ups , + or - , and everything else i have put in it without a hick up ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "audio"
+    ],
+    "sentence": "audio is excellent ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "well worth the money ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "after having bought and been disappointed in another brand of dvd player , i purchased the apex ad2600 from amazon and first of all i should say it was delivered much more quickly than i had expected ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "( good going , amazon )."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "player",
+      "format"
+    ],
+    "sentence": "i am very pleased with the apex ad2600.it plays just about anything you put in the drawer ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so far i 've played regular dvd 's , backup dvd-r 's , mp3 cd 's , and regular cd 's ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have not yet tried the photo show capability , but i 'm thinking that will probably work well too , based on the success with the above mentioned disks ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i do want to mention too that it is certainly worthwhile to read the instruction manual that comes with the unit ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the comments i 've read about having problems with this dvd player all seem to stem from pushing the incorrect buttons on the dvd remote.for instance , pushing the button to play pal ( european type ) movies , when an ntsc ( usa type ) movie disk is in the disk tray ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so , if you read the instructions well , you should n't have any problems with this dvd unit ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i can 't speak to its long-term reliability , as i 've only had the apex ad2600 for a little over a week at this point ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "bottom line for me is that for the price i do n't think you can go wrong at all by purchasing this dvd player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "wow !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "comes with standard rca jacks for output , along with s-video output ( s-video cable not included , must be purchased seperately ) and also component video outputs ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "progressive scan",
+      "remote"
+    ],
+    "sentence": "the progressive scan option can be turned off easily by a button on the remote control which is one of the simplest and easiest remote controls i have ever seen or used ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i also own an \" apex ad 1201 \" dvd player and have had no problems with it since i purchased it almost 1 1/2 years ago ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "one big difference between the 1201 and the 2600 models is that the 2600 model is virtually silent ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "and does n't need to be placed in a cabinet like the 1201 does ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "friends of mine who own apex tv sets are also all very pleased ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i would not hesitate to purchase this if you are uncertain of the brand name ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "consider it for a future gift too !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "this dvd play is basicly junk ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "keeps coming up with no disk errors ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "i tried called apex cust service , no help ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "do n't waste your money ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "this is the 4 apex player that i have bought ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you might think you are saving money by buying an apex but in the long run you will spend more ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you can get a pretty good progressive scan sony or toshiba now for 68 bucks just about anywhere ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "spend the money its well worth it ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "this is the best dvd player i 've purchased ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 've owned a panasonic and sony dvd and this one outperforms in function and image quality and most of all , access speed ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "for those of you who has problems with this player , i 'd suggest checking the owners manual to get the right setting so that you are not displaying the wrong mode and have no picture , etc."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "this player has worked flawlessly for me and at this price , you can 't go wrong ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "80 % of the features on here you will not get by spending $ 100 on a sony or panasonic ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "having said that , this is what you do . \" add to cart \" !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "\" check out \" !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "\" enjoy \" !"
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "play",
+      "dvd",
+      "no disc"
+    ],
+    "sentence": "i have sent my ad2600 back to apex because it wo n't play certain disney and other dvd movies ( no disc message ) ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "they sent me a new ad2600 with the same problem ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i call apex customer service and they told me that there is a known problem with the model playing disney and other movies and that it is not there problem so i 'm stuck with a new dvd player that wo n't play my kids disney movies ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this dvd player mainly because my old sharp dvd player could not play most of the dvds from the store that i rent from and i had to watch them using my pc 's dvd-rom player ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "well , this apex dvd player turned out great !"
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "user interface"
+    ],
+    "sentence": "i have to say i 'm also pretty impressed by the user interface for playing jpeg , mp3 and mpeg files stored on cd-rs / dvds ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it 's almost like having a media player / file manager built into the dvd player ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i did not want to have high expectations for this apex player because of the price but it is definitely working out much better than what i would expect from an expensive high-end player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "what more can you ask for from a $ 40 dvd player ?"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i guess i 'm just lucky to get a good working unit !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "hope the unit lasts as i 've only had it for 3 days ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote control"
+    ],
+    "sentence": "one bad thing though , i find the remote-control a bit flimsy and i predict it will most probably ' die ' before the player does ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "shipping"
+    ],
+    "sentence": "finally , amazon 's free shipping is really getting good , it took only 3 working days for the player to reach me !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i purchased two of these players for christmas gifts , and both were bad ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "the first one would n't work from the start ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "the second lasted about two weeks before the video went out !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "amazon.com promptly refunded my money for the first one , because a replacement was not available ( thanks amazon.com !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i am still trying to resolve the problem with the second one ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i will never buy another apex digital product !"
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "for the most part this is a good dvd player ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "dvd",
+      "picture",
+      "play"
+    ],
+    "sentence": "but about 25 % of dvd 's i 've played on ithave a problem , when watching a movie the picture will freeze , but the dvd still plays , and eventualy the picture kicks back in after skipping a few moments ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "usually i just skip to the next chapter to avoid it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "annoying ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it is connected to an old television set via composite video and analog audio outputs ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "picture",
+      "sound"
+    ],
+    "sentence": "there was neither picture nor sound ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "connecting the same outputs to a video card in my computer , there was sound but still no picture ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the trouble shooting section in the user 's manual , suggesting correct and secure connections , does n't help ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i searched on the internet and found one tip which solved our problem : press i/p button on the remote control ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it makes the dvd player to switch between interlace mode and progressive scan mode ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "obviously there is no composite video output and different analog audio signals at progressive scan mode ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "product"
+    ],
+    "sentence": "we are overall pleased with product ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "manual"
+    ],
+    "sentence": "i would have rated it five stars but for the poor manual ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i think most of you people complaining about no video is due to you hitting the wrong button either the p/n = pal / ntsc or the i/p is set to progressive scan ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "another stupid move ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased this as a christmas gift on 12-4 - 03 ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "picture"
+    ],
+    "sentence": "it worked from 12-26 to 1-9 at which time the picture failed completely ( see other negative reviews-my unit was n't the only one this happened to . )"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "support"
+    ],
+    "sentence": "i tried calling the support number for a week , several times a day , and always got a busy signal ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i also registered the unit online and posted two messages to the apex support person ( there can 't possibly be more than one !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "support"
+    ],
+    "sentence": "neither message was answered ( they ask for 24 hours before replying - i 've been waiting 27 days . )"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i finally returned the unit to the company along with copies of my messages and return info ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "let me quote a customer service rep from one of the authorized apex service locations in my state ( they only service apex tv 's , not dvd players ) :"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "\" you can send it in , but i would n't count on ever seeing it or a replacement again ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "dvd",
+      "read",
+      "no disc"
+    ],
+    "sentence": "it only read the dvds 10 % of the time , otherwise i would get a no disc screen ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i got this dvd player as a gift and had to send it back ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "amazon was supposed to send me another one , but did n't and sent me a gift certificate instead ( i 'm guessing because the price has gone up on this unit since december )."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "good :"
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "progressive scan player",
+      "price"
+    ],
+    "sentence": "progressive scan player for a relatively low price ( although the better known manufacturers like toshiba , pioneer , and panasonic are now offering lower-priced progressive scan players as well ) ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "dvd",
+      "sound"
+    ],
+    "sentence": "seems to read most dvds fine , and reads quietly ( i had a pioneer player that had fairly loud disc spin noise ) ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "read",
+      "svcd",
+      "vbr mp cd"
+    ],
+    "sentence": "also , i have not had trouble reading svcds that i created and vbr mp3 cds ( my old apex ad-1200 had trouble with these ) ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "output"
+    ],
+    "sentence": "output through component connections looks very good , on my non-hd tv ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "bad :"
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "disc",
+      "recognize"
+    ],
+    "sentence": "i 've had this player for several months and it reads most discs , but it would not recognize several discs that were clean and read on other players ( from friends season 2 ) ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "no disc"
+    ],
+    "sentence": "it would just spin up and stop , and display \" no disc \" ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "my other gripe is the incredibly crappy remote , which is worse than other , cheaper apex units ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "for some reason they made the navigation buttons all one button , a ring around the enter / play button ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "button"
+    ],
+    "sentence": "you have to press the buttons hard and frequently i end up pressing enter when i meant to scroll ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "svideo"
+    ],
+    "sentence": "also , for some reason the picture looks washed out on s-video , with lots of color bleeding , compared to a component connection ( should not be much of a perceptible difference on a 27 \" tv )."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "ok this is our first dvd player so what do i know ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "auto fit"
+    ],
+    "sentence": "i like the auto fit feature = you can stretch widescreen dvd 's to normal ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "lot 's of other features that i need to find out about ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "things that i 'd prefer different - there 's a red light that shines when it 's turned off !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "and the remote is cheap and cheasy - not sure how long it 'll last , but for 50 bucks what the heck !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "compusa , memorex , fuji ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "plays them all ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i ordered 2 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i wanted a dvd player that had basic features and would be able to play dvd - r format disc 's that i had made myself ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "use",
+      "size",
+      "look"
+    ],
+    "sentence": "easy to use , small form factor , and looks good to boot ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "very happy !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i wish i could give negative stars !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this dvd player in november ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have an apex ad600 for a few years now which still works great today ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i figured with a great first product and with this one having more features than the 600 i would buy one ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "what a mistake !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 've tried several dvd 's and even new ones do the same thing ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "no disc"
+    ],
+    "sentence": "i have ice age and it keeps telling me no disc ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 've tried someone elses and the same thing happens ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i just want to at least try an exchange but you can 't get through to their number , it 's always busy ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "that makes sense though , with all the substandard products they make ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "do not buy this product or any apex product unless you are looking to be frustrated and lose money !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this as a gift for my sister ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i 've attempted to connect this unit to several different tvs , using a multitude of connection methods , and i still can 't get a video signal from the machine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i highly regret trying to save a few $ with this purchase ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "onoff button"
+    ],
+    "sentence": "the most recent is that it will stop responding to the on/off button ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the light goes from red to green but no display or any operation whatsoever ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i end up unplugging it from the wall for a few hours and when i try again it will work fine.at least until this problem arises again ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 've registered this unit at www.apexdigialinc.com and listed the problem ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "i 've sent 10 e-mails to their customer service department requesting an ra with no response ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 've called the service number and if it 's not busy , it rings forever then eventually dumps you ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "once i actually got to an answering machine and left a message ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "still no response ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i will never purchase anything from this company ever again and have logged my complaint with the bbb ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this player as a christmas present for my wife ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "3/4 way through the first disk we played on it ( naturally on 31 days after purchase ) the dvd player froze ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "now it will not load any disk or just says that there is no disk ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i should n't have been cheap , should have bought a toshiba ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this product from amazon ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "play"
+    ],
+    "sentence": "after using it for just a month , i could not play any dvd ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "picture"
+    ],
+    "sentence": "i can only hear the sound but no picture !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "customer service"
+    ],
+    "sentence": "their customer ( www.apexdigitalinc.com ) service is very poor ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "no contact phone number , only eamil contact which did not respond me ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this player during a christmas sale at an excellent price ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "however , i should have followed my instincts :"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you get what you pay for ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "one of the dvd 's i received as a christmas present kept freezing ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "some dvd 's i rented would not play ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "now , i suddenly have no picture ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i will say this ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "when the player was working it was great ,but ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the physical appearance of this apex compared to one previous ( ad1100w ) is most appreciated ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the prior one looked and felt lightweight , cheesy , and assembled by the oppressed :"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased it for it 's easy ability to accept cd-r hacks ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i used it lightly , and it lasted just over one year ( forgot to kill the power one day , and now it only plays dvds )."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "back to the 2600 :"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "1 ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "smell"
+    ],
+    "sentence": "it does n't smell like burning plastic when you open the drive ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "2 ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "look"
+    ],
+    "sentence": "without a doubt the finest looking apex dvd player that i 've seen ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "3 ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "picture quality"
+    ],
+    "sentence": "excellent picture quality - on par with my pioneer , panasonic , and jvc players ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "4 ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "remote : you can stand it on end ( harder to lose ) , and it 's far better designed than the 1100s ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "anyway , the initial impression is much better than when i opened the box on the 1100 over a year ago - you can telll that apex is trying harder to improve their product ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 'd have given it 5 stars , but i 'm waiting to see if this one holds up to more frequent use than the last one :"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "with progressive scan , i expect it to play play play - and give my old pioneer a rest ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "first of all , i bought this dvd as a christmas present for my girlfriend and i am somewhat disappointed ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "unlike some of the other people who received a \" lemon \" , my dvd player came in perfect working condition ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "design",
+      "player"
+    ],
+    "sentence": "as a whole , the dvd player has a sleek design and works fine ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "what disappointed me is the fact that it does not seem to read certain dvds ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "read"
+    ],
+    "sentence": "for example , i tried playing my new \" pirates of the carribean \" extra features dvd , but this dvd player can not read it ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "read",
+      "dvd"
+    ],
+    "sentence": "at first i thought it is only a isolated incident , but i was proven wrong when the player would not read my \" alias \" dvds as well ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "this player seems to work fine with everything else ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so i do n't understand why it would not work with dvds that seem to have more features in them ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i had apex regular ( non-progressive ) dvd-player for two years ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "had no problem with it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "now , i thought it 's time to upgrade ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so , i bought apex ad-2600 in november ' 03 from amazon ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "run",
+      "dvd"
+    ],
+    "sentence": "it 's running great for all the dvds i have and rented ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i have a dvd burner ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "run",
+      "dvd media"
+    ],
+    "sentence": "apex ad-2600 runs all the dvd media including dvd + r/rw and dvd-r / rw ( unlike sony or panasonic - one supports only + r/rw and another supports - r/rw ) ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "i think , apex is the best dvd player you can get for the price ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "some of my friends had well branded dvd-players but they keep complaining that sometime it stucks and sucks !"
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "most of them are already switched to apex and they are happy ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if you are skeptical about trying apex ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "take my words and give it a try ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "hopefully you wo n't regret ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "goodluck !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this to replace an expensive ( $ 300 + ) onkyo dvd player that quit after only 3 years !"
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "sound",
+      "picture clarity"
+    ],
+    "sentence": "i use this with a home theater system and it 's amazing how it sounds , the picture clarity is unmatched !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "worked for two weeks ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "spend the extra 20 $ and buy a name brand dvd player ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "apex sucks !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "only the cheap and poor would buy one ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i got one of these to serve as a second dvd player in my house ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "size",
+      "machine"
+    ],
+    "sentence": "it 's a compact , attractive machine and was easy to set up ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "usage"
+    ],
+    "sentence": "basic usage is easy , but the remote has a lot of buttons that i have n't used ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "picture",
+      "sound"
+    ],
+    "sentence": "the picture is clear , bright and sharp and the sound is good ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "again , though , it has only been used sparingly ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "read",
+      "disc"
+    ],
+    "sentence": "the catch is that , while it plays movies just fine , it has refused to read second discs with the movie \" extras \" on them on the two occaisions when i tried to do that ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it 's not a big deal for me ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i simply watched the extra features on another player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "had this been my only dvd player , though , it would have been a real problem ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "as it is , i 'm keeping the machine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "but i would expect that , since my movie discs have all played with no problem , the extras discs would , too , without any additional tweaking ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i 'm giving this player cautious recommendation ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "be advised , however , that you may encounter problems ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "picture"
+    ],
+    "sentence": "received apex dvd and the picture was great when set up with s connector ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "the remote is a little hard to understand ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "jpeg picture"
+    ],
+    "sentence": "my jpeg pictures are viewable ( not so sharp and vivid ) on my 27 \" screen but seem not as clear as when i view them on my 17 \" monitor ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "so far the dvd works so i hope it does n't break down like the reviews i 've read ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "prior to christmas , it seems the reviews were very good but after that it seems the reviews went bad !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i would n't gotten this dvd based on the reviews i read after christmas ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "video output"
+    ],
+    "sentence": "video output stopped workin ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "video output"
+    ],
+    "sentence": "this was an awesome player , before the video output no longer worked ( after about 3 weeks ) ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i might have gotten a lemon , but this is not the first report of video output failure on this machine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i am returning it , and again in the market for a multiformat dvd , svcd , vcd , mp3 , etc. player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought the apex ad-2600 dvd player for the family for christmas ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "negative"
+    ],
+    "target": [
+      "set up",
+      "player"
+    ],
+    "sentence": "set up was easy and we enjoyed it for just over a week ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "lipsync"
+    ],
+    "sentence": "there was occasionally a lip-sync issue ( the lips were n't moving in time to the dialogue ) ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "video"
+    ],
+    "sentence": "but after 10 days , the sound worked , but the video quit working ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "amazon"
+    ],
+    "sentence": "amazon was wonderful about picking it up the next day and paying for the return shipping ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "perhaps this experience will teach me not to buy \" off \" brands ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 'm editing my review , because now i wish i read the manual before returning the player i bought for my girlfriend ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the button on the remote to switch from pal to ntsc was undoubtedly my problem ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "now i may buy two !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "( my orignal review is below : )"
+  },
+  {
+    "polarity": [
+      "positive",
+      "negative"
+    ],
+    "target": [
+      "feature",
+      "reliability"
+    ],
+    "sentence": "great feature list , poor reliability ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "output"
+    ],
+    "sentence": "output went black and white only via both s-video and composite connections , and with no v-hold ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "thankfully amazon has free return shipping !"
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "display"
+    ],
+    "sentence": "retraction : said mine had silver plate : it does have display ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i should have looked at it harder ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased two apex 2600 for christmas presents ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so far we have only hooked up one of them ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "unit",
+      "format"
+    ],
+    "sentence": "the unit seems to play all formats that i have put in it ( jpeg , kodak pic 's and dvd-r ) i have read other reviews and some good and soom not so good , but my feeling at this time is \" two thumbs up \" !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "( i guess only time will tell ? )"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "p.s the remote control does seem to get confused at times and doesnt respond but it may be just operator error ?"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this thing because it plays everything ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "this is the third apex dvd i bought ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the first one was the 705 which i hacked successfully to play all region dvds and disable macrovision ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the second one was the 2500 which i think is better than the 2600 because it has more features such as karoake which i do use sometimes for parties ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "but heck it plays my alias dvds ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "what the heck is up with the 2600 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it suppose to play everything ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "wrong !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "by the way my alias dvds are legit too not no bootleg from the internet ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 'm sending this pup back to amazon and looking for the 2500 on ebay ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you should too ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "play",
+      "dvd"
+    ],
+    "sentence": "forget about the sleek looks if it can 't play some of your real dvds."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought the 2600 because it plays everything !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "video output"
+    ],
+    "sentence": "well , within 45 days the video output quit working ( both rca & optic ) ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "we ordered two apex ad-2600 's for our family for christmas - finally decided to join the rest of the world and watch dvd 's - well ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the second one is up and running ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i am returning the broken one today ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i will not be ordering another one to replace it ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "update : january 27th 2004 - the second one crapped out only after a week - dont buy this product !"
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "look",
+      "feature"
+    ],
+    "sentence": "the player looked good right out of the box , offering lots of features and good styling ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "i immediately had problems getting the player to recognize two of my favorite dvds ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "after \" loading \" for what seemed like a very long time , the display indicated \" no disk \" ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "video"
+    ],
+    "sentence": "after multilple tries , one of the disks was finally recognized but video was poor and features not available ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "disk"
+    ],
+    "sentence": "only one disk played through to completion successfully ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "at $ 49 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i guess you get what you pay for ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 'd recommend against this unit ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i ordered two of these puppies for christmas gifts ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "strike 1 ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "when i tried to install the second dvd player in my brothers house , that one didn \" t work either !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "imagine my shock - and absolute instant disdain for any products made by apex ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "power supply"
+    ],
+    "sentence": "the 2nd dvd player had a faulty power supply which caused to occasionally not turn on ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "do not recommend ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "what can i say , i bought the ad600 2 years ago and it was probly the best dvd player ever , quality design , stable , plus it uses a standard ide interface so you can use an old dvd drive from your computer if the player dies ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "in the last month i bought the apex ad-1600 and the ad-1220 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "and have returned both ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "ad",
+      "ad"
+    ],
+    "sentence": "the ad-1600 did n't work corectly from the start and the ad-1220 lasted about a week and a half before it started to act up ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "my recommendation is to wait on buying one from this company as they will surely get sent a message of many returned dvd players after christmas 2003 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i hoping they will then begin building quality dvd players again , as i do like them ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it really does n't make any cents $ $ to build a great reputation then destroy it from lack a research and testing in one season ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "amazon"
+    ],
+    "sentence": "amazon is awaesome !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "they refunded my $ $ $ so fast and paid for the shipping back ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "what more could you ask for ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "for the price , it 's a very nice dvd player ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "door"
+    ],
+    "sentence": "the front door is miss aligned on my unit and you have to manually life it up just so slightly for the door to close , a very annoying thing after ahwile ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "format"
+    ],
+    "sentence": "it does play a wide range of formats as advertised which is very nice ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "and so far have not had any problems with dvds not being able to play ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "recommended to anyone looking to purchase a low priced dvd player and not expecting any bells or whistles from a brand name one like sony ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i finally joined the 21st century and bought this dvd player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i knew nothing about dvds before this but with this machine i figured it all out very quickly ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "feature"
+    ],
+    "sentence": "i only wanted something to play dvds on but this machine has all these other features that i probably will never use but it 's nice to know that there 're there ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "size",
+      "weight"
+    ],
+    "sentence": "the machine is very light and slim and fits nicely into my tv stand ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i applied a $ 25 amazon gift voucher i got for christmas so i only ended up paying $ 29 for this machine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "even if i had paid full price i would have considered this a good deal ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "bought the apex ad-2600 from amazon in 12/03 mainly on price , $ 49.99 - $ 10 rebate = $ 39.99 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "that was a mistake ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "we tried the \" finding nemo \" dvd and when we got to ~ chapter 28 , the frames started to freeze for no reason ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "cleaned the dvd , tried again , no luck ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i pulled out our old non-progressive scan toshiba , hooked it back-up and the \" finding nemo \" dvd works fine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i agree with previous posts that you get what you pay for ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i can 't rate it one star only because when it does work it 's pretty good ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "only owned it about two weeks so i expect we 're looking at getting another progressive scan dvd player of higher quality very soon ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased the ad 2600 from another company last month and was very satisfied with my purchase , until last night ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i was watching pirates of the caribbean and decided to watch the extras disc ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "player",
+      "no disc"
+    ],
+    "sentence": "the player kept displaying \" no disc \" , so i tried the disc in another machine and sure as @ # * !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it worked ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i even went as far as calling the technical support number on the disc ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the person i talked to suggested i take the dvd player back and swap it out with another ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the other company is currently \" out of stock \" so i ordered another from amazon and will be taking the original back to the competitor today ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "hopefully the replacement from amazon will work just fine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if not i will avoid apex products in the future ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "besides the one problem , this machine is amazing !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if only it played stand alone avi files ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if no problems occur with replacement unit i will keep the 4 star rating ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if problem occurs again i will repost my new rating ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i was , however ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "somewhat disappointed that i could not \" hook up \" to my sony multi brand remote commander ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "small problem ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "hi , many people are saying , \" you get what you pay for , i guess . \""
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "well that is not true ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you could have paid more and got a lot less ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i paid $ 49 and now it 's $ 125 !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you have to ask yourself , \" how much money is dissapointment worth ? \""
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "because , you will be dissapointed ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "then you can say , \" my dissapointment only cost $ 39 . \""
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i think a $ 39 dissapointment is better then a $ 125 dissapointment !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so , without further adoo ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "freeze",
+      "player"
+    ],
+    "sentence": "1 ) frame freezes and the family yells , \" dad ! somethings wrong with the dvd player ! come quick ! \""
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "2 ) the remote works , but then it does not work , and you are left standing there thinking you are doing something wrong ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "3 ) you must press the play button and hold it for a couple of seconds otherwise it will not work and you will think the whole unit is broken ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "4 ) it did play my jpeg photos but wow , trying to figure it out was really something !"
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "universal remote control"
+    ],
+    "sentence": "5 ) this apex model 2600 will not work with my universal remote control ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i dare you to surf the net and find the code ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "you will be told goldstar codes work , and you will be told zenith codes will work , and radio shack will give you apex codes but they will not work ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "code"
+    ],
+    "sentence": "finally you will read a post somewhere that all codes are useless for the apex 2600 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "and then you will start to belive them ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if this is your fist dvd player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "save yourself some aggrivation ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "bought two ad2600 's for christmas ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "one still works fine , the other quit after one day ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "manual"
+    ],
+    "sentence": "owner 's manual has substandard troubleshooting guide ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "the dvd player is fine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "to get back to the menu of the dvd you have to press \" menu \" on the remote while the dvd is playing ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if the dvd is stopped , it will display \" playback only \" ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "little inconveinent , but unlike other players i only paid 40 $ ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased one of these to replace an ailing dvd player that 's a few years old ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "picture"
+    ],
+    "sentence": "the picture is perfect , although i 'm not watching on an hdtv ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "also , if you 're an audiophile , you 'll want to get your own cables because the supplied ones are thin and short ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "but , dollar for dollar , this dvd player is probably the best out there ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought this for my dad for christmas ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "picture"
+    ],
+    "sentence": "when i hooked it up it only produced sound - a cd played fine , but with a dvd i only got the audio - no picture !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "let 's face it - when you want to watch a movie you want to see a picture ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "as i travelled internationally and did n't want to haul it back on a plane with me it was an expensive addition to the recycling bin ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "had to buy my dad a different dvd player locally ( panasonic ) which worked just fine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "save your cash - go for a brand that actually cares about their reputation ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "bought one for $ 49.99 ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "dvd",
+      "cd",
+      "no disc"
+    ],
+    "sentence": "seemed like a good deal , but this pos frequently cannot recognize dvds and music cds -- takes a long time loading and then concludes , \" no disc \" ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "sent mine back ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i 'd look elsewhere ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "granted , i have only used this dvd player for about 2 hours setting it up for my mom for christmas , but that was long enough for me to find problems with this dvd player ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "menu"
+    ],
+    "sentence": "first , the player did not allow me to access the menus of dvds ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "when i hit \" menu \" it told me , \" playback only . \""
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i actually had to re-open the drawer and close it to get back to the dvd menu ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "the remote is flimsy-feeling and awkward to use ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote"
+    ],
+    "sentence": "in addition , it only seems to work if you 're about five feet away from the player , although that may have been just the batteries that came with it ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "the player does seem to play dvds adequately enough ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it also has an optical out , which it should ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i think for about $ 40 more , you can probably find a much better dvd player than this though ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i purchased the apex 2600 after reading good reviews of it , both here and in other places ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "it played only one out of three dvd 's without problems , the other two being afflicted by a number of glitches ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "dvd"
+    ],
+    "sentence": "both of the problem dvd 's would repeatedly freeze during playback , while the counter on the player kept going ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "speed"
+    ],
+    "sentence": "one also exhibited extremely slow speed when going to the menu ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "these problems were consistent , and also not present on another dvd player ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "door"
+    ],
+    "sentence": "the dvd door would scratch the top of the disc every time it closed ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "size",
+      "remote layout"
+    ],
+    "sentence": "there were a few attractive features , such as the small size and the layout of the remote ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "all in all , trying to save some money on this player resulted in me shelling a great deal more when i purchased a much nicer dvd vcr combo player to make up for blazing crappiness of this very embarassing gift ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i was impressed by this very inexpensive player.for the first three hours , and then it died ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i was told that it is no longer available , so there must be something really wrong with it ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i looked into buying an inexpensive dvd player that had more than the standard set of features and this item seemed to be the best in that category ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "noise",
+      "external display"
+    ],
+    "sentence": "there are a couple of quirks that were a bit annoying like having to actually press the power button before the tray will open ( my prev. machine did it automatically ) , and the fact that the external display is too small and too faded to read from any significant distance ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "look",
+      "feature"
+    ],
+    "sentence": "still , i was willing to overlook those things as this unit looks sleek and has a myriad of features !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so i pop-in my first dvd and start to watch ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "freeze"
+    ],
+    "sentence": "i get to chapter 34 and everything freezes !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "ok , that happens , so i try to skip the chapter ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "nothing !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "my next thought was that the dvd must be damaged ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "upon inspection i did find a small scratch on the surface and figured that to be the cause ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i decided to check one more thing though and plugged in my 3-year - old unit again just to see ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the dvd played without flaw through the chapter in question ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i then played it through my ps2 and there was no problem there either ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "guess where this unit is headed ?"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "yup , right back for a refund !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i was so excited about the price and reviews of this dvd player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i am even a bit technology oriented , so i thought it would be a breeze to set this up ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "dvd",
+      "read"
+    ],
+    "sentence": "unfortunately , the player would not read any of my region one dvds. even though they were not damaged in any way ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "support"
+    ],
+    "sentence": "i called apex 's support number numerous times but it just kept ringing ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i hope that amazon will let me trade it for a different , more trusted brand of dvd player ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "this is probably one of the few dvd players at $ 40 that can play almost everything you throw at it ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the plus points are -"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "1 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "price"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "2 ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "format"
+    ],
+    "sentence": "ability to play most discs - i tried dvd , vcd , dvd-r , audio cd and it played all"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "3 ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "look"
+    ],
+    "sentence": "good looks"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the downside -"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "1 ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "quality"
+    ],
+    "sentence": "the build quality shows why its so cheap - small scratches on the base plate , something that you would n't see on a sony and an overall plasticky feel"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "2 ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "remote button"
+    ],
+    "sentence": "remote buttons are small and closely spaced , especially with the menu buttons ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if these otherwise minor issues can be fixed , i would rate this a 5 star machine ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "this is wonderful to have for your first dvd player ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "i brought it for my sister in college and she loves it !"
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "apex is the best cheap quality brand for dvd players ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "weight"
+    ],
+    "sentence": "also , very light and portable ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "dvd disc",
+      "read"
+    ],
+    "sentence": "the one i purchased for a frend as a gift will not read any dvd disc ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "read",
+      "cd audio disc"
+    ],
+    "sentence": "it will read and play all cd audio disc ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "guess i will return it for an exchange and hope for the best with the new one ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so far not going to get a good review ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "a disipointed customer ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "amazon"
+    ],
+    "sentence": "i have shopped with amazon before and have been very happy with their performance thus far ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i received the apex ad-2600 before i expected ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "that is where my satisfaction ends ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i bought the apex ad-2600 because of the ability to play jpegs and it seemed like it was the most bang for the buck ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "quality"
+    ],
+    "sentence": "however , it has failed to deliver on quality ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "jpeg",
+      "dvd"
+    ],
+    "sentence": "it does not only have difficulty playing jpegs , it even has trouble properly playing dvd movies ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "no disc"
+    ],
+    "sentence": "on several different occasions it has displayed \" no disc \" with a disc inside ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "after reading several other reviews this appears to be relatively common ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "apex"
+    ],
+    "sentence": "i read in consumer reports that apex is a reliable brand , but with my experience and reading the other reviews , i think i will be doing a little more homework before considering another apex product ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i am returning mine for a replacement , but if i receive another ad-2600 with the same or similar problems i will not only return it for a refund , but never buy another apex product in the future ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i guess you get what you pay for ."
+  },
+  {
+    "polarity": [
+      "negative"
+    ],
+    "target": [
+      "silver plate"
+    ],
+    "sentence": "the 2600 had false silver plate instead of play display ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "the case had ad2600 ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "bait and switch ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "picture on web site clearly has the play display pictured , yet false silver plate ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "what is up ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "clearly a large lawsuit if i were so inclined ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i feel that once i contact amazon that they will get to the bottom of this ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i just got it today and have tried to verify the claims of other reviewers ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "no go on most formats ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive",
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "play",
+      "cd",
+      "mp",
+      "jpeg"
+    ],
+    "sentence": "it plays original dvds and cds and plays mp3s and jpegs ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "play",
+      "windows media",
+      "divx rip"
+    ],
+    "sentence": "however , it does not play windows media and i can not get it to play any of my divx rips ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i guess that i can not complain since it does not actually claim to play vcd / svcd formats , but others say they can ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "player"
+    ],
+    "sentence": "also , it was only $ 39.99 ( after rebate ) with free shipping and no tax so overall it is a decent player ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "video quality"
+    ],
+    "sentence": "good quality video ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "bought this player after reading the reviews here which identify it as reading most formats including dvd + rw 's and vcd 's ."
+  },
+  {
+    "polarity": [
+      "negative",
+      "negative",
+      "negative"
+    ],
+    "target": [
+      "read",
+      "dvd",
+      "vcd"
+    ],
+    "sentence": "can 't say whether i rec 'd an \" updated \" model but it will not read dvd + rw 's or vcd 's for me ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "play",
+      "dvdr"
+    ],
+    "sentence": "it did play a dvd-r which was unplayable in my older philips machine ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i do n't have a dvd + r to try"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "so ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "price"
+    ],
+    "sentence": "mixed bag i guess but the price was right ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "price"
+    ],
+    "sentence": "this is the third apex product i 've bought and they continue to impress for the price ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "it goes nicely with my apex 27 \" in my bedroom ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "build quality",
+      "picture",
+      "sound"
+    ],
+    "sentence": "the build quality feels solid , it does n't shake or whine while playing discs , and the picture and sound is top notch ( both dts and dd5.1 sound good ) ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "i paid twenty dollars more than the current price , and even then it was a steal ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "hooray !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "think you need to pay a fortune for a good qulaity dvd player ?"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "well , not with this one ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "format"
+    ],
+    "sentence": "i tried as bunch of different formats to see if it would play and it did ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "product"
+    ],
+    "sentence": "i am very pleased with this product and the price to match and have n't had any problems ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "direction"
+    ],
+    "sentence": "there are really easy directions for setup and fiddling around with the picture , zoom etc ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "so sit back , relax and brag to all your friends who paid a mountain of money for a dvd player that can 't do half the things this one can , and for a fraction of the price !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "only problem , if you think it 's going to be delivered in the 24hrs amazon claims , do n't hold your breath ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "otherwise it 'll get there the day you get back from the hospital !"
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "sound",
+      "weight"
+    ],
+    "sentence": "noiseless , lightweight and oh yeah ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "color"
+    ],
+    "sentence": "silverish color really adds a special touch ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "who cares if it does n't have multiple slots ?"
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "format"
+    ],
+    "sentence": "it plays just about any format ( check before you buy if it plays yours . )"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if you watch dvds once in a while like i do , get this !"
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "apex is made in usa and is one of the underrated brands out there ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if you watch one dvd per weekm its yours ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "however , i do n't know the dvd 's performance on a heavy load of every-day viewing ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "price"
+    ],
+    "sentence": "either way , can 't go wrong with this price ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "dvd player"
+    ],
+    "sentence": "i am really impressed by this dvd player ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "if it can fit in the drive bay , this dvd player will play it ."
+  },
+  {
+    "polarity": [
+      "positive",
+      "positive"
+    ],
+    "target": [
+      "play",
+      "dvd"
+    ],
+    "sentence": "for instance , i made several back-ups of my dvd movies using dvd-r ( w ) and + r ( w ) and it plays the dvds ."
+  },
+  {
+    "polarity": [
+      "positive"
+    ],
+    "target": [
+      "format"
+    ],
+    "sentence": "no matter the format ."
+  },
+  {
+    "polarity": [],
+    "target": [],
+    "sentence": "awesome !"
+  }
+]

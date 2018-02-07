@@ -1,0 +1,6512 @@
+[
+  {
+    "target": [
+      "bread"
+    ],
+    "sentence": "The bread is top notch as well.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "delivery times"
+    ],
+    "sentence": "I have to say they have one of the fastest delivery times in the city.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Food"
+    ],
+    "sentence": "Food is always fresh and hot- ready to eat!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "coffee"
+    ],
+    "sentence": "Did I mention that the coffee is OUTSTANDING?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi",
+      "place"
+    ],
+    "sentence": "Certainly not the best sushi in New York, however, it is always fresh, and the place is very clean, sterile.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "people"
+    ],
+    "sentence": "I trust the people at Go Sushi, it never disappoints.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Japanese food"
+    ],
+    "sentence": "Straight-forward, no surprises, very decent Japanese food.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "asian salad",
+      "spicy tuna roll"
+    ],
+    "sentence": "BEST spicy tuna roll, great asian salad.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "rose roll",
+      "menu"
+    ],
+    "sentence": "Try the rose roll (not on menu).",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "drinks",
+      "lychee martini",
+      "food"
+    ],
+    "sentence": "I love the drinks, esp lychee martini, and the food is also VERY good.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Nicoise salad"
+    ],
+    "sentence": "In fact, this was not a Nicoise salad and was barely eatable.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu",
+      "drinks",
+      "dessert pizza"
+    ],
+    "sentence": "While there's a decent menu, it shouldn't take ten minutes to get your drinks and 45 for a dessert pizza.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "live entertainment"
+    ],
+    "sentence": "Once we sailed, the top-notch food and live entertainment sold us on a unforgettable evening.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter"
+    ],
+    "sentence": "Our waiter was horrible; so rude and disinterested.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sangria"
+    ],
+    "sentence": "The sangria's - watered down.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu"
+    ],
+    "sentence": "menu - uneventful, small.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi",
+      "portions",
+      "price"
+    ],
+    "sentence": "Anytime and everytime I find myself in the neighborhood I will go to Sushi Rose for fresh sushi and great portions all at a reasonable price.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service"
+    ],
+    "sentence": "Great food but the service was dreadful!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "portions of the food"
+    ],
+    "sentence": "The portions of the food that came out were mediocre.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waitress's"
+    ],
+    "sentence": "the two waitress's looked like they had been sucking on lemons.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff memebers",
+      "parking"
+    ],
+    "sentence": "From the beginning, we were met by friendly staff memebers, and the convienent parking at Chelsea Piers made it easy for us to get to the boat.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "desserts"
+    ],
+    "sentence": "We enjoyed ourselves thoroughly and will be going back for the desserts ....",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Desserts",
+      "Tart of the Day"
+    ],
+    "sentence": "Desserts are almost incredible: my personal favorite is their Tart of the Day.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "wine"
+    ],
+    "sentence": "The food was extremely tasty, creatively presented and the wine excellent.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "LASAGNA"
+    ],
+    "sentence": "THE LASAGNA WAS PROBABLY THE BEST I HAVE TASTED.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "array of sushi"
+    ],
+    "sentence": "Harumi Sushi has the freshest and most delicious array of sushi in NYC.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "cuisine",
+      "owners",
+      "staff"
+    ],
+    "sentence": "I highly recommend it for not just its superb cuisine, but also for its friendly owners and staff.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "indian food",
+      "ambiance"
+    ],
+    "sentence": "If you're craving some serious indian food and desire a cozy ambiance, this is quite and exquisite choice.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "I definitely enjoyed the food as well.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "garden",
+      "food",
+      "appetizers",
+      "entrees"
+    ],
+    "sentence": "It was pleasantly uncrowded, the service was delightful, the garden adorable, the food (from appetizers to entrees) was delectable.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "decor"
+    ],
+    "sentence": "The food is surprisingly good, and the decor is nice.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lunch",
+      "dinners"
+    ],
+    "sentence": "How pretentious and inappropriate for MJ Grill to claim that it provides power lunch and dinners!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "steaks"
+    ],
+    "sentence": "Two wasted steaks -- what a crime!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff"
+    ],
+    "sentence": "The staff should be a bit more friendly.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meatball parm"
+    ],
+    "sentence": "I think the meatball parm is good.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "latin food"
+    ],
+    "sentence": "If you want good tasting, well seasoned latin food eat at Cabana and you can't go wrong.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "taglierini with truffles"
+    ],
+    "sentence": "Definitely try the taglierini with truffles - it was incredible.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff"
+    ],
+    "sentence": "Also, the staff is very attentive and really personable.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "gnocchi"
+    ],
+    "sentence": "The gnocchi literally melts in your mouth!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff",
+      "food",
+      "portion size",
+      "portobello/gorgonzola/sausage appetizer",
+      "lobster risotto"
+    ],
+    "sentence": "Had a great experience at Trio ... staff was pleasant; food was tasty and large in portion size - I would highly recommend the portobello/gorgonzola/sausage appetizer and the lobster risotto.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Entrees",
+      "lasagna",
+      "fettuccine Alfredo",
+      "chicken parmigiana"
+    ],
+    "sentence": "Entrees include classics like lasagna, fettuccine Alfredo and chicken parmigiana.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "teriyaki"
+    ],
+    "sentence": "The food is good, the teriyaki I recommend.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Meal"
+    ],
+    "sentence": "Meal was very expensive for what you get.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Peanut Butter Sorbet",
+      "pizza with soy cheese"
+    ],
+    "sentence": "Try the Peanut Butter Sorbet and the pizza with soy cheese!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "price"
+    ],
+    "sentence": "Good food at the right price, what more can you ask for.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service",
+      "atmosphere"
+    ],
+    "sentence": "The food is top notch, the service is attentive, and the atmosphere is great.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "waitstaff",
+      "atmosphere",
+      "beer"
+    ],
+    "sentence": "Great food, great waitstaff, great atmosphere, and best of all GREAT beer!",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "kimono shrimp special",
+      "atmosphere"
+    ],
+    "sentence": "this is still one of my most favorite restaurants in the area the food is inexpensive but very good (kimono shrimp special was excellent) and has a great atmosphere.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu",
+      "priced"
+    ],
+    "sentence": "The menu is interesting and quite reasonably priced.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "ingredients"
+    ],
+    "sentence": "The food was delicious and clearly fresh ingredients were used.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "This made it obvious that the food wasn't cooked fresh; it was obviously made before hand and then reheated.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Appetizer",
+      "meal"
+    ],
+    "sentence": "Appetizer are excellent here; you can make a great (and inexpensive) meal out of them.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "spicy mussels"
+    ],
+    "sentence": "The spicy mussels are a highlight.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Onion Rings"
+    ],
+    "sentence": "Also get the Onion Rings -- best we've ever had.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "However, being foodies, we were utterly disappointed with the food.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "portions",
+      "service",
+      "prices"
+    ],
+    "sentence": "Huge portions, great and attentive service, and pretty good prices.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food"
+    ],
+    "sentence": "I was highly disappointed by their service and food.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter",
+      "manager"
+    ],
+    "sentence": "I complained to the waiter and then to the manager, but the intensity of rudeness from them just went up.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "milkshakes"
+    ],
+    "sentence": "The food is great and the milkshakes are even better!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "mushroom barley soup"
+    ],
+    "sentence": "the mushroom barley soup is amazing.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "staff"
+    ],
+    "sentence": "I'm glad I did as the food was very good and the staff was friendly, courteous and efficient.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "duck"
+    ],
+    "sentence": "Their duck here is also absolutely delicious.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "drinks",
+      "food"
+    ],
+    "sentence": "While it was large and a bit noisy, the drinks were fantastic, and the food was superb.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "curried casseroles"
+    ],
+    "sentence": "One caveat: Some of the curried casseroles can be a trifle harsh.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "The food was almost always EXCELLENT.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "taste"
+    ],
+    "sentence": "I was pleasently surprised at the taste.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "seafood",
+      "space",
+      "cuisine"
+    ],
+    "sentence": "A nice space, as long as it doesn't get too crowded and a singleminded devotion to its chosen cuisine make Mare a great choice for seafood lovers.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "orange donut"
+    ],
+    "sentence": "I never had an orange donut before so I gave it a shot.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere"
+    ],
+    "sentence": "they really provide a relaxing, laid-back atmosphere.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meats"
+    ],
+    "sentence": "This particular location certainly uses substandard meats.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Management"
+    ],
+    "sentence": "The Management was less than accomodating.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "ambience"
+    ],
+    "sentence": "The ambience is also more laid-back and relaxed.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "teas",
+      "sweets"
+    ],
+    "sentence": "the teas are great and all the sweets are homemade.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "mojitos",
+      "service"
+    ],
+    "sentence": "mojitos and the service are the best part in there",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Sandwiches",
+      "burgers",
+      "salads",
+      "lemon-dressed cobb"
+    ],
+    "sentence": "Sandwiches, burgers and salads, like the lemon-dressed cobb, are classic successes.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "design"
+    ],
+    "sentence": "The design is very intimate and romantic.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "The food was wonderful and imaginative.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff"
+    ],
+    "sentence": "The staff is very sharp and they look good too.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "taste"
+    ],
+    "sentence": "The worst though was the taste.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "fajita",
+      "mole sauce"
+    ],
+    "sentence": "The fajita we tried was tasteless and burned and the mole sauce was way too sweet.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "roasted chickens"
+    ],
+    "sentence": "Stay with the roasted chickens and you'll be fine.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere"
+    ],
+    "sentence": "The atmosphere is warm, comfortable, artsy and sexy.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "selection",
+      "prices",
+      "drinks"
+    ],
+    "sentence": "The food is great (big selection, reasonable prices) and the drinks are really good.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "steak"
+    ],
+    "sentence": "The steak melted in my mouth.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiters",
+      "food"
+    ],
+    "sentence": "The food did take a few extra minutes to come, but the cute waiters' jokes and friendliness made up for it.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "priced"
+    ],
+    "sentence": "Most importantly, it is reasonably priced.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "selection of food",
+      "atmosphere"
+    ],
+    "sentence": "The selection of food is excellent (I'm not used to having much choice at restaurants), and the atmosphere is great.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dessert",
+      "taste"
+    ],
+    "sentence": "Only suggestion is that you skip the dessert, it was overpriced and fell short on taste.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Food"
+    ],
+    "sentence": "Food was decent, but not great.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "hot dog"
+    ],
+    "sentence": "i dont know what some people who rave about this hot dog are talking about.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bar",
+      "food"
+    ],
+    "sentence": "it is a hidden delight complete with a quaint bar and good food.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiters"
+    ],
+    "sentence": "The waiters ALWAYS look angry and even ignore their high-tipping regulars.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere"
+    ],
+    "sentence": "the atmosphere is very nice, and a welcome escape from the rest of the SI mall.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "Yes, they're a bit more expensive then typical, but then again, so is their food.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wraps",
+      "burgers",
+      "salads",
+      "mango margareta"
+    ],
+    "sentence": "I can say that the wraps, burgers and salads were all fresh, tasty and the mango margareta at $9 was WELL WORTH the money.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "prices"
+    ],
+    "sentence": "Anywhere else, the prices would be 3x as high!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service we experienced was friendly and good.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter",
+      "staff"
+    ],
+    "sentence": "Our waiter was friendly and it is a shame that he didnt have a supportive staff to work with.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "folding chair"
+    ],
+    "sentence": "The folding chair I was seated at was uncomfortable.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Service"
+    ],
+    "sentence": "Service was among the best I have ever had in NYC.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "fettucino alfredo"
+    ],
+    "sentence": "The fettucino alfredo was amazing.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "vegan options"
+    ],
+    "sentence": "The food was very good and I was pleasantly surprised to see so many vegan options.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Indian food"
+    ],
+    "sentence": "I know real Indian food and this wasn't it.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Smoked Trout",
+      "Lamb Chops",
+      "Veal Chops",
+      "Rabbit",
+      "potato gratin"
+    ],
+    "sentence": "Be sure to try the Smoked Trout...Lamb Chops, Veal Chops, Rabbit, the potato gratin, on and on and on...",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chef",
+      "food",
+      "service"
+    ],
+    "sentence": "Even when the chef is not in the house, the food and service are right on target.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "eggs benedict",
+      "mussels",
+      "hamburger"
+    ],
+    "sentence": "Everything from the eggs benedict to the mussels and even the hamburger were done well and very tasty.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiters"
+    ],
+    "sentence": "The waiters were very professional, courteous and attentive.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "falafal",
+      "chicken"
+    ],
+    "sentence": "The falafal was rather over cooked and dried but the chicken was fine.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "grand marnier shrimp"
+    ],
+    "sentence": "I highly reccomend the grand marnier shrimp, it's insanely good.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "food",
+      "service"
+    ],
+    "sentence": "We been there and we really enjoy the food, was areally great food, and the service was really good.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Desserts",
+      "flan",
+      "sopaipillas"
+    ],
+    "sentence": "Desserts include flan and sopaipillas.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "portions"
+    ],
+    "sentence": "I was starving and the small portions were driving me crazy!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wait staff"
+    ],
+    "sentence": "The wait staff was loud and inconsiderate.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service"
+    ],
+    "sentence": "However, the food and service and dramatically lacking.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi"
+    ],
+    "sentence": "The sushi is cut in blocks bigger than my cell phone.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "soup"
+    ],
+    "sentence": "The service is great, my soup always arrives nice and hot.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "crepes"
+    ],
+    "sentence": "It had been awhile and I forgot just how delicious crepes can be.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "desserts",
+      "creme brulee",
+      "apple tart"
+    ],
+    "sentence": "Montparnasse's desserts--especially the silken creme brulee and paper-thin apple tart--are good enough on their own to make the restaurant worth the trip.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "shrimp creole"
+    ],
+    "sentence": "i had a delicious shrimp creole.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chicken dinner"
+    ],
+    "sentence": "The chicken dinner was real good.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chili signed food items"
+    ],
+    "sentence": "Beware of the chili signed food items not unless you want to call the fire department to douse the flames in your mouth.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "decor"
+    ],
+    "sentence": "The decor is designed in a contemporary Japanese style restaurant.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "but the food was delicious.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "coconut rice",
+      "ribs",
+      "beef"
+    ],
+    "sentence": "Try the ribs, sizzling beef and couple it with coconut rice.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "avocado salad"
+    ],
+    "sentence": "The avocado salad is a personal fave.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "honey BBQ rib tips"
+    ],
+    "sentence": "And, the honey BBQ rib tips are yummy!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Chinese food"
+    ],
+    "sentence": "The BEST Chinese food Uptown!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Service"
+    ],
+    "sentence": "Service is known for bending over backwards to make everyone happy.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere"
+    ],
+    "sentence": "The atmosphere is attractive, but a little uncomfortable.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff"
+    ],
+    "sentence": "The staff is very friendly.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Waiters",
+      "pasta"
+    ],
+    "sentence": "Waiters are very friendly and the pasta is out of this world.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wine list",
+      "cocktail menu"
+    ],
+    "sentence": "Great wine list and great cocktail menu.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "crab cakes",
+      "BBQ rib"
+    ],
+    "sentence": "The crab cakes are delicious and the BBQ rib was perfect.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "The food is wonderful, artfully done and simply delicious.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "Tiny restaurant with very fast service.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sauce"
+    ],
+    "sentence": "The sauce may not be for everyone, since it is distintive.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "desserts"
+    ],
+    "sentence": "My husband and I have been there at least 6 times and we've always been given the highest service and often free desserts.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere",
+      "drinks",
+      "appetizers"
+    ],
+    "sentence": "A beautiful atmosphere, perfect for drinks and/or appetizers.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza"
+    ],
+    "sentence": "They make the best pizza in New Jersey.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food",
+      "beer list"
+    ],
+    "sentence": "What a difference, the service was very comforting and the food was better than average, but what really standed out was such a dynamic and extensive beer list.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chinese food"
+    ],
+    "sentence": "Frankly, the chinese food here is something I can make better at home.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter"
+    ],
+    "sentence": "There was only one waiter for the whole restaurant upstairs.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "scallops",
+      "asparagus",
+      "soft shell crab",
+      "cheese plate"
+    ],
+    "sentence": "We started with the scallops and asparagus and also had the soft shell crab as well as the cheese plate.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "Not to be overlooked, the service is excellent.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "hotdogs"
+    ],
+    "sentence": "this without question is one of the worst hotdogs i have ever had.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff",
+      "Saag gosht"
+    ],
+    "sentence": "The staff is unbelievably friendly, and I dream about their Saag gosht...so good.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "garlic knots"
+    ],
+    "sentence": "I also recommend the garlic knots.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Indian food"
+    ],
+    "sentence": "Best Indian food I have ever eaten.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza"
+    ],
+    "sentence": "This place has the best pizza.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "music"
+    ],
+    "sentence": "The music which is sometimes a little too heavy for my taste.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service is excellent and always informative without an air.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "owner",
+      "staff"
+    ],
+    "sentence": "The owner and staff go to great lengths to make you feel comfortable.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi",
+      "menu"
+    ],
+    "sentence": "The sushi is always fresh and yummy and the menu is pretty varied.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "sushi",
+      "cooked food"
+    ],
+    "sentence": "The food was great - sushi was good, but the cooked food amazed us.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner specials"
+    ],
+    "sentence": "their dinner specials are fantastic.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "drinks",
+      "dining atmosphere"
+    ],
+    "sentence": "Great food, great drinks, nice dining atmosphere.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "price",
+      "food"
+    ],
+    "sentence": "For the price you pay for the food here, you'd expect it to be at least on par with other Japanese restaurants.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Food portion"
+    ],
+    "sentence": "Food portion was SMALL and below average.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chairs"
+    ],
+    "sentence": "Sit back in one of those comfortable chairs.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Tacos Pastor",
+      "Tostada de Tinga"
+    ],
+    "sentence": "My favs here are the Tacos Pastor and the Tostada de Tinga...",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bartenders",
+      "managers",
+      "decor"
+    ],
+    "sentence": "The bartenders and the managers are really nice and the decor is very comfy and laid-back, all the while being trendy.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "hot and sour soup",
+      "soup and sandwich meal"
+    ],
+    "sentence": "For a savory take on the soup and sandwich meal, try the hot and sour soup.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "drinks",
+      "atmosphere",
+      "service",
+      "food"
+    ],
+    "sentence": "This bar has it all - great drinks, cool atmosphere, excellent service and delicious food.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chick peas with shrimp (appetizer)"
+    ],
+    "sentence": "Also, the chick peas with shrimp (appetizer) is divine.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "Finally, I got sick of the bad service, obnoxious smirks, and snotty back talk.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lamb"
+    ],
+    "sentence": "We ordered lamb which was perfectly cooked and tasted awesome.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "soft shell crab sandwich with fries"
+    ],
+    "sentence": "i especially like their soft shell crab sandwich with fries.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "hong kong-style food"
+    ],
+    "sentence": "if you're looking for authentic hong kong-style food, look no further.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "wine"
+    ],
+    "sentence": "good food good wine that's it.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff"
+    ],
+    "sentence": "The staff was extremely friendly and pleasant.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "kitchen food",
+      "Sushi"
+    ],
+    "sentence": "While their kitchen food is delicious, their Sushi is out of this world.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "waitresses",
+      "atmosphere"
+    ],
+    "sentence": "everything is scrumptious, from the excellent service by cute waitresses, to the extremely lush atmosphere.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "italian food"
+    ],
+    "sentence": "It's traditional, simple italian food.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "rolls",
+      "sushi/sashimi"
+    ],
+    "sentence": "The food is all-around good, with the rolls usually excellent and the sushi/sashimi not quite on the same level.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sashimi"
+    ],
+    "sentence": "(The sashimi is cut a little thinly.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "price"
+    ],
+    "sentence": "Could have had better for 1/3 the price in Chinatown.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "hot dogs",
+      "breakfast sandwiches",
+      "tator tots",
+      "English muffins",
+      "Taylor ham",
+      "pork product"
+    ],
+    "sentence": "In addition to great hot dogs, DOTP has wonderful breakfast sandwiches that feature, in addition to great things like tator tots and English muffins, a delicious NJ-based pork product know to us Jersey girls and boys as Taylor ham.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "manager",
+      "bartender",
+      "drinks",
+      "waiting"
+    ],
+    "sentence": "Well, it happened because of a graceless manager and a rude bartender who had us waiting 20 minutes for drinks, and then tells us to chill out.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "atmosphere"
+    ],
+    "sentence": "Not only is the service great, but forming conversation around a table is so easy beacuse the atmosphere can be both romantic and comfortable.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "green chillis",
+      "dish"
+    ],
+    "sentence": "When the dish arrived it was blazing with green chillis, definitely not edible by a human.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food",
+      "meals"
+    ],
+    "sentence": "The absolute worst service I've ever experienced and the food was below average (when they actually gave people the meals they ordered).",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lunch",
+      "take-out",
+      "dine-in"
+    ],
+    "sentence": "It's about $7 for lunch and they have take-out or dine-in.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "fresh juice concoctions"
+    ],
+    "sentence": "Be sure to accompany your food with one of their fresh juice concoctions.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "prices"
+    ],
+    "sentence": "The food is great and the prices are reasonable.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place",
+      "soul food"
+    ],
+    "sentence": "The place is clean, and if you like soul food, then this is the place to be!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "roast chicken",
+      "salad"
+    ],
+    "sentence": "I had roast chicken and a salad.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chicken with avocado",
+      "tuna"
+    ],
+    "sentence": "They have a very good chicken with avocado and good tuna as well.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meals"
+    ],
+    "sentence": "But the meals were terrible.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chicken",
+      "sauce"
+    ],
+    "sentence": "My chicken was completely dried out and on the cold side and the sauce was not very flavorful.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Malted Milk Ball Gelato"
+    ],
+    "sentence": "Malted Milk Ball Gelato - have you ever in your life heard of anything so ridiculously wonderful?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meal"
+    ],
+    "sentence": "Way too much money for such a terrible meal.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "However, the service is absolutely horrible.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bar service"
+    ],
+    "sentence": "A con was the slow bar service.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Dessert"
+    ],
+    "sentence": "Dessert was also to die for!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "BTW, the service is very good .",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "black vinegar",
+      "shredded ginger"
+    ],
+    "sentence": "It's eaten with black vinegar and shredded ginger.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lighting",
+      "food",
+      "disco pop duo",
+      "escargot"
+    ],
+    "sentence": "The unattractive lighting made me want to gag, the food was overpriced, there was the most awful disco pop duo performing-and my escargot looked like it might crawl off the plate.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place"
+    ],
+    "sentence": "it is a cozy place to go with a couple of friends.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "owner"
+    ],
+    "sentence": "The service is always great, and the owner walks around to make sure you enjoy.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiters"
+    ],
+    "sentence": "because the waiters need SEVERE ATTITUE ADJUSTMENTS.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "the food is delicious and highly recommended.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter"
+    ],
+    "sentence": "When it came time to take the order the waiter gave us a hard time, walked away then came back with a paper and pen for us to write down what we wanted...excuse me but isn't that his job???",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "salads",
+      "vegetarian platters"
+    ],
+    "sentence": "Dieters stick to salads or indulge in vegetarian platters.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meal"
+    ],
+    "sentence": "So for a filling and healthy meal give it a go.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "Since I cook for a living, I'm very fussy about the food I eat in restaurants.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service was outstanding.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza"
+    ],
+    "sentence": "My friends and I stop here for pizza before hitting the Kips Bay movie theater.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza"
+    ],
+    "sentence": "We always enjoy the pizza.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service is pretty good.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chicken"
+    ],
+    "sentence": "Yum, the chicken is great here.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "The food here was great, a treat from beginning to end.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "host (owner)",
+      "servers"
+    ],
+    "sentence": "The host (owner) and servers are personable and caring.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "atmosphere",
+      "hostess"
+    ],
+    "sentence": "It's just everything...the food, the atmosphere...the incrediby kind and gracious hostess.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service"
+    ],
+    "sentence": "The food is very good and the service is great.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Vietnamese Beef Noodle Soup"
+    ],
+    "sentence": "I usually get one the Vietnamese Beef Noodle Soup.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dining experience"
+    ],
+    "sentence": "We were wondering why they were there to make our dining experience miserable?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Indian food"
+    ],
+    "sentence": "This place has the best Indian food in New York, hands down.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiters"
+    ],
+    "sentence": "The waiters are very friendly and helpful and if you frequent they will remember you.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "interior",
+      "service"
+    ],
+    "sentence": "Intimate but charming interior with extremely friendly and attentive service.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "decor"
+    ],
+    "sentence": "The food was as creative as the decor and both worked.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu",
+      "selection"
+    ],
+    "sentence": "The menu is great, with a good selection, and everything that I have tried is absolutely delicious.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sauce",
+      "crust"
+    ],
+    "sentence": "The sauce is zesty and flavorful and the crust is nice and crispy.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi"
+    ],
+    "sentence": "This place has the best sushi in the city.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "selection",
+      "rolls with crab"
+    ],
+    "sentence": "They have an excellent selection (the rolls with crab are really great).",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "host",
+      "bartender",
+      "servers"
+    ],
+    "sentence": "Everyone who works there (the host, the bartender, the servers) is so helpful.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "And the food is fantastic.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "potato spinach gnocchi",
+      "lamb"
+    ],
+    "sentence": "Favourites include: potato spinach gnocchi and the lamb.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lunch"
+    ],
+    "sentence": "Unfortunately, we chose this spot for lunch as we had done a lot of walking and ended up at the South St Seaport.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sandwiches"
+    ],
+    "sentence": "But regulars know that the sandwiches are the real star here.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "port",
+      "Portuguese cheese cart"
+    ],
+    "sentence": "The skillfully chosen Portuguese cheese cart paired with quality port provides the perfect Iberian ending.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "burger",
+      "blueberry pancakes"
+    ],
+    "sentence": "My friend had a burger and I had these wonderful blueberry pancakes.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "bill"
+    ],
+    "sentence": "We were so happy with our food and were even more thrilled when we saw the bill.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "toppings",
+      "crust"
+    ],
+    "sentence": "All toppings are so fresh you'd think they had their own vegetable garden and the crust is so perfect, that one actually thinks of how it was made.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food"
+    ],
+    "sentence": "We've always gotten amazing service and we love the food.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waitstaff",
+      "food"
+    ],
+    "sentence": "The waitstaff is solicitous and friendly and always seems glad to see us, and the food is wonderful, if not stunningly creative.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lobster ravioli"
+    ],
+    "sentence": "I'm in love with the lobster ravioli!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meal"
+    ],
+    "sentence": "We came across this restaurant by accident while at a DUMBO art festival and thoroughly enjoyed our meal.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Service",
+      "price",
+      "wait"
+    ],
+    "sentence": "Service is excellent, no wait, and you get a lot for the price.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "I thought the food isn't cheap at all compared to Chinatown.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Coffee",
+      "Cosi sandwiches"
+    ],
+    "sentence": "Coffee is a better deal than overpriced Cosi sandwiches.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "drink"
+    ],
+    "sentence": "We didn't know if we should order a drink or leave?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "prices"
+    ],
+    "sentence": ") It's not the best Japanese restaurant in the East Village, but it's a pretty solid one for its modest prices, and worth repeat visits.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "waiting"
+    ],
+    "sentence": "The food is so good and so popular that waiting can really be a nightmare.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place",
+      "ambience"
+    ],
+    "sentence": "First walking in the place seemed to have great ambience.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "brunch"
+    ],
+    "sentence": "I went to Kitchenette this weekend for brunch.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "Even for two very hungry people there is plenty of food left to be taken home (it reheats really well also).",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "crust"
+    ],
+    "sentence": "Then they somehow made a dry and burnt crust, around a raw and cold inside.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "It's just good food, nothing more and that's all we want!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "cake"
+    ],
+    "sentence": "Average cake thats been courted by a LOT of hype.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner"
+    ],
+    "sentence": "My wife and I recently visited the bistro for dinner and had a wonderful experience.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "SERVICE"
+    ],
+    "sentence": "THE SERVICE IS PERFECT TOO  NOTHING WRONG IN THIS ITALIAN/FRENCH RESTAURANT",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Delmonico steak"
+    ],
+    "sentence": "The $72 Delmonico steak had to be sent back because it was not cooked to order.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu"
+    ],
+    "sentence": "Everytime I go there I can't pick anything to eat and not because the menu is filled with great things to eat.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "rice",
+      "beans",
+      "chicken"
+    ],
+    "sentence": "Half a chicken with a mountain of rice and beans for $6.25.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "value"
+    ],
+    "sentence": "The service is really fast and friendly, and the value is great.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "value"
+    ],
+    "sentence": "We were very impressed with the food and value.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "garlic soup"
+    ],
+    "sentence": "You must try the garlic soup!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "falafel",
+      "tabouleh",
+      "humus",
+      "Mediterranean delights"
+    ],
+    "sentence": "Casablanca servces delicious falafel, tabouleh, humus and other Mediterranean delights, which are all very inexpensive.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza's"
+    ],
+    "sentence": "The pizza's are made fresh, crispy, and ready to serve.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Staff"
+    ],
+    "sentence": "Staff is accomodating make sure you are satified.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Chef"
+    ],
+    "sentence": "Chef Waldy's always measures up.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi",
+      "priced"
+    ],
+    "sentence": "Reasonably priced with very fresh sushi.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Seafood Paella for two"
+    ],
+    "sentence": "Go for the Seafood Paella for two.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "apetizers",
+      "Sangria"
+    ],
+    "sentence": "All of the apetizers are good and the Sangria is very good.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "server"
+    ],
+    "sentence": "The one positive thing I can say is that the service was prompt, we got seated right away and the server was very friendly.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff",
+      "food"
+    ],
+    "sentence": "The staff greeted me warmly at the door and I was seated promptly and the food was excellent.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Service"
+    ],
+    "sentence": "Service is usually pretty good.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Host",
+      "Hostess"
+    ],
+    "sentence": "Host and Hostess was quite rude.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wait staff",
+      "meal"
+    ],
+    "sentence": "the wait staff is very friendly, if your not rude or picky.......our meal at Leon last weekend was great -.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "salmon dishes"
+    ],
+    "sentence": "I recommend any of their salmon dishes......",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "foie gras"
+    ],
+    "sentence": "The foie gras was sweet and luscious.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu"
+    ],
+    "sentence": "The menu, which changes seasonally, shows both regional and international influences.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "mac cheese"
+    ],
+    "sentence": "but their mac cheese was YUMMY!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "brunch menu"
+    ],
+    "sentence": "their brunch menu had something for everyone.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "jazz singer"
+    ],
+    "sentence": "jazz singer had a nice voice + she made us all get up to dance to shake some cals to eat some more.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "They have very quick service which is great when you don't have much time.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "breakfast food",
+      "soups",
+      "salads",
+      "sandwiches"
+    ],
+    "sentence": "The food is average: breakfast food, soups, salads, sandwiches, etc.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "FOOD"
+    ],
+    "sentence": "I WAS HIGHLY DISAPPOINTED BY THE FOOD.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "BANANA PUDDING",
+      "CRABCAKES",
+      "MAC AND CHEESE"
+    ],
+    "sentence": "THE BANANA PUDDING THEY SERVE HAS NEVER SEEN AN OVEN,THE CRABCAKES ARE WAY OVER SALTED AND DON'T GET ME STARTED ON THE VERY GREASY MAC AND CHEESE.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff",
+      "prices"
+    ],
+    "sentence": "The staff is arrogant, the prices are way high for Brooklyn.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "the service is prompt friendly.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "This is literally a hot spot when it comes to the food.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "downstairs bar scene"
+    ],
+    "sentence": "The downstairs bar scene is very cool and chill...",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "price",
+      "drinks"
+    ],
+    "sentence": "The food was definitely good, but when all was said and done, I just couldn't justify it for the price (including 2 drinks, $100/person)...",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "casual lunches"
+    ],
+    "sentence": "I've come here for casual lunches as well as for a friend's birthday and I always enjoy myself.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Tequila"
+    ],
+    "sentence": "If you are a Tequila fan you will not be disappointed.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "beer selection",
+      "beers"
+    ],
+    "sentence": "Great beer selection too, something like 50 beers.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "delivary"
+    ],
+    "sentence": "Not to sound too negative but be wary of the delivary.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "owner"
+    ],
+    "sentence": "I found the food to be just as good as its owner, Da Silvano, just much less expensive.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "homemade pastas",
+      "gnocchi"
+    ],
+    "sentence": "They have homemade pastas of all kinds -- I recommend the gnocchi -- yum!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "vegetable risotto",
+      "flavor"
+    ],
+    "sentence": "My vegetable risotto was burnt, and infused totally in a burnt flavor.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "price"
+    ],
+    "sentence": "The main draw of this place is the price.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "How can hope to stay in business with service like this?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner",
+      "prices"
+    ],
+    "sentence": "But dinner here is never disappointing, even if the prices are a bit over the top.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sandwiches",
+      "soup",
+      "pizza",
+      "homemade sorbets"
+    ],
+    "sentence": "Not only did they have amazing, sandwiches, soup, pizza etc, but their homemade sorbets are out of this world!",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "homemade Guacamole",
+      "entree",
+      "deserts"
+    ],
+    "sentence": "the homemade Guacamole, the unbelievable entree, and thee most amazing deserts.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi",
+      "priced"
+    ],
+    "sentence": "The sushi is reasonably priced and fresh.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "deserts"
+    ],
+    "sentence": "Save room for deserts - they're to die for.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "grill",
+      "Churrasco",
+      "Ribs"
+    ],
+    "sentence": "Best things to order are from the grill (Churrasco and Ribs).",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "traditional Italian items",
+      "setting",
+      "served"
+    ],
+    "sentence": "The traditional Italian items are great - cheap and served in a cozy setting.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "iced blended mocha",
+      "hot white mocha"
+    ],
+    "sentence": "Whether your choose the iced blended mocha or the hot white mocha you are sure to be extremely happy.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "late lunch"
+    ],
+    "sentence": "last Tuesday for a late lunch with a friend.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "parmesan cheese"
+    ],
+    "sentence": "Another friend had to ask 3 times for parmesan cheese.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waitress",
+      "food",
+      "wine"
+    ],
+    "sentence": "Our waitress had apparently never tried any of the food, and there was no one to recommend any wine.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "portions"
+    ],
+    "sentence": "The service was a bit slow and the portions are a bit small so if you are hungry and in a rush, this is not the place for you.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "ambiance"
+    ],
+    "sentence": "The ambiance was pretty cool, but not worth the hassle.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "salad",
+      "salad dressing",
+      "quesedilla"
+    ],
+    "sentence": "The unfortunate lady next to us thought she had ordered a salad (including asking for salad dressing) and was instead given a quesedilla.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza's"
+    ],
+    "sentence": "El Nidos one of the best restaurants in New York which I've ever been to, has a great variety of tasty, mouth watering pizza's.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food",
+      "cost"
+    ],
+    "sentence": "The service was pretty poor all around, the food was well below average relative to the cost, and outside there is a crazy bum who harasses every customer who leaves the place.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "staff"
+    ],
+    "sentence": "Although I moved uptown I try to stop in as often as possible for the GREAT cheap food and to pay the friendly staff a visit.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bar"
+    ],
+    "sentence": "I had to wait for my friend at the bar for a few minutes",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Chef"
+    ],
+    "sentence": "Chef Vincenzo, always there if you need him, is a real talent and a real Roman.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Indian food",
+      "service"
+    ],
+    "sentence": "If you're looking to taste some great Indian food and want good service, definitely visit Curry Leaf.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Odessa stew",
+      "Rabbit stew",
+      "salads",
+      "kompot"
+    ],
+    "sentence": "You must try Odessa stew or Rabbit stew; salads-all good; and kompot is soo refreshing during the hot summer day (they make it the way my mom does, reminds me of home a lot).",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lunch"
+    ],
+    "sentence": "My daughter and I left feeling satisfied (not stuffed) and it felt good to know we had a healthy lunch.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waitress"
+    ],
+    "sentence": "When she complained, the waitress said, Sorry.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "quality of the meat"
+    ],
+    "sentence": "The quality of the meat was on par with your local grocery store.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "smoothies",
+      "fresh juices"
+    ],
+    "sentence": "They specialize in smoothies and fresh juices.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "black roasted codfish",
+      "dish"
+    ],
+    "sentence": "I recommend the black roasted codfish, it was the best dish of the evening.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter",
+      "menu",
+      "manager"
+    ],
+    "sentence": "The manager then told us we could order from whatever menu we wanted but by that time we were so annoyed with the waiter and the resturant that we let and went some place else.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "taste",
+      "chicken"
+    ],
+    "sentence": "In mi burrito, here was nothing but dark chicken that had that cooked last week and just warmed up in a microwave taste.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "reservation"
+    ],
+    "sentence": "during busy hrs, i recommend that you make a reservation.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "brunch"
+    ],
+    "sentence": "I went to Common Stock for brunch and I was so impressed.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi"
+    ],
+    "sentence": "now called nikki sushi, sushi is OK.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "served"
+    ],
+    "sentence": "The food is also outstanding and is served quite quickly.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "erbazzone emiliana",
+      "mostarda on the cheese plate",
+      "dishes"
+    ],
+    "sentence": "From the erbazzone emiliana to the mostarda on the cheese plate, the dishes at this restaurant are all handled with delicate care.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "bar",
+      "vibe"
+    ],
+    "sentence": "The food is delicious and the bar has a great vibe.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "candlelight",
+      "music"
+    ],
+    "sentence": "There's candlelight and music.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "Simple healthy unglamorous food cheap.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dining experience"
+    ],
+    "sentence": "It was such a fantastic dining experience, that I returned again the same week.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service"
+    ],
+    "sentence": "To be fair, the food still is good and the service is quick and attentative even though its usually very busy.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place",
+      "food"
+    ],
+    "sentence": "The place is absolutely adorable and the food is delicious.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Chicken Teriyaki",
+      "Garlic Shrimp"
+    ],
+    "sentence": "I ordered the Chicken Teriyaki and my husband got Garlic Shrimp.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Japanese food"
+    ],
+    "sentence": "I've had better Japanese food at a mall food court.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff members",
+      "drink"
+    ],
+    "sentence": "The staff members are extremely friendly and even replaced my drink once when I dropped it outside.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere"
+    ],
+    "sentence": "Cool atmosphere but such a let down.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Sashimi portion",
+      "artifical lobster meat"
+    ],
+    "sentence": "The Sashimi portion are big enough to appease most people, but I didn't like the fact they used artifical lobster meat.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wheat crusted pizza",
+      "ingredients"
+    ],
+    "sentence": "They have wheat crusted pizza made with really fresh and yummy ingredients.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner",
+      "food",
+      "service"
+    ],
+    "sentence": "Had a lovely dinner in this dedicated seafood joint, food was well-prepared and -presented and the service was pleasant and prompt.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "cake"
+    ],
+    "sentence": "the icing MADE this cake, it was fluffy, not ultra sweet, creamy and light.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff",
+      "slices"
+    ],
+    "sentence": "Finally let into the store 5 at a time, to buy expensive slices from a harried staff.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wait staff"
+    ],
+    "sentence": "We ended up having to just leave because we were essentially being ignored by the wait staff--even though the rest of the restaurant was largely empty.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wine list",
+      "priced"
+    ],
+    "sentence": "The wine list is extensive, well priced and covers alot of regions.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "salads"
+    ],
+    "sentence": "Go here if you want fresh and tasty salads of any type you can imagine.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bathroom"
+    ],
+    "sentence": "Everything about this place is adorable - even the bathroom!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "delivers",
+      "food",
+      "prices",
+      "service",
+      "repast"
+    ],
+    "sentence": "Speedy delivers, great food, decent prices, and friendly service combine to ensure an enjoyable repast.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "WAITERS"
+    ],
+    "sentence": "THEY HAVE WAITERS ON THE SIDEWALK TRYING TO PULL YOU IN WHICH MADE US SUSPICIOUS.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "ITALIAN MEAL"
+    ],
+    "sentence": "IT WAS OUR ONLY OPPORTUNITY TO VISIT AND WANTED AN AUTHENTIC ITALIAN MEAL.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza"
+    ],
+    "sentence": "It took 100 years for Parisi to get around to making pizza (at least I don't think they ever made it before this year)...but it was worth the wait.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "steak"
+    ],
+    "sentence": "I asked for a simple medium rare steak.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "organic grilled burgers",
+      "dish",
+      "Jerusalem market-style falafel wraps",
+      "Mediterranean salads--layered with beets, goat cheese and walnuts"
+    ],
+    "sentence": "Generously garnished, organic grilled burgers are the most popular dish, but the Jerusalem market-style falafel wraps and Mediterranean salads--layered with beets, goat cheese and walnuts--are equally scrumptious.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dining experience",
+      "waiter"
+    ],
+    "sentence": "Probably my worst dining experience in new york, and I'm a former waiter so I know what I'm talking about.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "texture",
+      "hint of cocoa"
+    ],
+    "sentence": "Result (red velvet): Great texture, soft and velvety, nice hint of cocoa.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "round corner table next to the large window"
+    ],
+    "sentence": "Ask for the round corner table next to the large window.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "flavor",
+      "twist on pizza"
+    ],
+    "sentence": "Their twist on pizza is heatlhy, but full of flavor.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "AC"
+    ],
+    "sentence": "The lack of AC and the fact that there are a million swarming bodies (although everyone is polite and no one is pushing) is a slight turn off.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "sales people"
+    ],
+    "sentence": "I love the Little Pie Company as much as anyone else who has written reviews, but must discourage anyone from visiting the Grand Central location due to their RUDE service from two sales people.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "location"
+    ],
+    "sentence": "Unfortunately, unless you live in the neighborhood, it's not in a convenient location but is more like a hidden treasure.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "display and quality of the food"
+    ],
+    "sentence": "Didn't seem like any effort was made to the display and quality of the food.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "The food--though mostly deep-fried--is simple and satisfying.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "Glechik might be way too tiny for a restaurant by Russian standards, but it is cozy and the food is simply GREAT.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "Italian cuisine"
+    ],
+    "sentence": "The food was excellent - authentic Italian cuisine made absolutely fresh.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmoshere"
+    ],
+    "sentence": "At night the atmoshere changes turning into this hidden jewel that is waiting to be discovered.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "booth by the windows",
+      "place",
+      "food",
+      "service"
+    ],
+    "sentence": "The other times I've gone it's romantic date heaven, you can walk in get a booth by the windows, be treated like a VIP in a not-crowded place, with great food and service.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "coffee"
+    ],
+    "sentence": "I would only go for the coffee which is way better than Starbucks or the like.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wine list",
+      "vintages"
+    ],
+    "sentence": "Somewhat disappointing wine list (only new vintages.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "priced",
+      "food",
+      "scenery"
+    ],
+    "sentence": "If your looking for nasty high priced food with a dash of ghetto scenery cheap BX A$$ this is the place to be!!",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "new hamburger with special sauce",
+      "big mac"
+    ],
+    "sentence": "new hamburger with special sauce is ok - at least better than big mac!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pasta",
+      "sauce",
+      "portions"
+    ],
+    "sentence": "Perfectly al dente pasta, not drowned in sauce -- generous portions.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "prices",
+      "food"
+    ],
+    "sentence": "I can understand the prices if it served better food, like some Chinese restaurants in midtown/uptown area.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Service",
+      "staff"
+    ],
+    "sentence": "Service was awful - mostly because staff were overwhelmed on a Saturday night.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "owners"
+    ],
+    "sentence": "To the owners; good job guys, this place is a keeper!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "owner"
+    ],
+    "sentence": "and the owner is simply lovely and friendly.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place"
+    ],
+    "sentence": "This little place is wonderfully warm welcoming.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meal"
+    ],
+    "sentence": "perfect for a quick meal.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place"
+    ],
+    "sentence": "Has the warmth of a family local yet it is a great place to watch sporting events.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service was great, and they have a whole great deal for birthdays.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff",
+      "food"
+    ],
+    "sentence": "The staff is 100% Italian and the food is as authentic as it gets.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "fortune cookies",
+      "cookie"
+    ],
+    "sentence": "My only complaint might be the fortune cookies - I've never had a cookie predict bad luck for me before I visited Kar.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi lunch"
+    ],
+    "sentence": "Good for a quick sushi lunch.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "mojito",
+      "back patio"
+    ],
+    "sentence": "Have a mojito and sit in the back patio.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service was dreadfully slow (the place was only half full) and a smile would have been nice...",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meal",
+      "braised lamb shank with mashed potatoes"
+    ],
+    "sentence": "I went this past Saturday and had a excellent meal of consisting of a braised lamb shank with mashed potatoes.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waitress",
+      "soy sauce",
+      "lunch"
+    ],
+    "sentence": "The waitress came by to pick up the soy sauce WHILE we were eating our lunch!!!!!",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bar",
+      "bartender"
+    ],
+    "sentence": "So we sat at the bar, the bartender didn't seem like he wanted to be there.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "fried pork dumplings",
+      "orange chicken/beef",
+      "fried rice"
+    ],
+    "sentence": "I reccomend the fried pork dumplings, the orange chicken/beef, and the fried rice.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu"
+    ],
+    "sentence": "You will not be dissapointed by any of the choices in the menu.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "french fries -- with the kalmata dip"
+    ],
+    "sentence": "The french fries -- with the kalmata dip were terrific!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wait",
+      "manager",
+      "bartender",
+      "drinks"
+    ],
+    "sentence": "Would you ever believe that when you complain about over an hour wait, when they tell you it will be 20-30 minutes, the manager tells the bartender to spill the drinks you just paid for?",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "boutique selection of wines"
+    ],
+    "sentence": "The boutique selection of wines covers a wide variety without being imposeing.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "assortment of wraps",
+      "traditional Mediterranean fare"
+    ],
+    "sentence": "They also have a great assortment of wraps if your not in the mood for traditional Mediterranean fare.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Fresh veggies",
+      "middle eastern spreads",
+      "cheese",
+      "falafel",
+      "soup",
+      "fish",
+      "rice",
+      "root vegetables",
+      "rice medley",
+      "spinach thing",
+      "lamb kebabs",
+      "cheese baclava",
+      "fooood"
+    ],
+    "sentence": "Fresh veggies, all sorts of middle eastern spreads, cheese and falafel, soup, fish, rice, root vegetables, a rice medley, some spinach thing, lamb kebabs, cheese baclava... soooo much fooood, and all of it delicious.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Saketini",
+      "bar menu"
+    ],
+    "sentence": "Disappointingly, their wonderful Saketini has been taken off the bar menu.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "look"
+    ],
+    "sentence": "In Short The Black Sheep distinguishes itself from the Midtown pub herd with a look that's a mix of sports-bar butch and ornate kitsch.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "martinis"
+    ],
+    "sentence": "I would definitely go back -- if only for some of those exotic martinis on the blackboard.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chairs",
+      "table"
+    ],
+    "sentence": "then she made a fuss about not being able to add 1 or 2 chairs on either end of the table for additional people.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "happy hour",
+      "service",
+      "atmosphere"
+    ],
+    "sentence": "The happy hour is so cheap, but that does not reflect the service or the atmosphere.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter",
+      "kitchen",
+      "waiting"
+    ],
+    "sentence": "After waiting for almost an hour, the waiter brusquely told us he'd forgotten to give the kitchen our order.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "quaility",
+      "atmosphere"
+    ],
+    "sentence": "With all the mundane or mediocre places on 8th avenue it is nice to have one that is a step above in quaility and atmosphere.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "space",
+      "prices",
+      "treats"
+    ],
+    "sentence": "A mix of students and area residents crowd into this narrow, barely there space for its quick, tasty treats at dirt-cheap prices.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu"
+    ],
+    "sentence": "Give it a try, menu is typical French but varied.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "seats"
+    ],
+    "sentence": "It gets crowded at lunchtime but there are lots of seats in back and everyone who works there is so nice.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "value"
+    ],
+    "sentence": "but for the value, it was a great affordable spot to enjoy a fun night out with small group.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "attitude"
+    ],
+    "sentence": "the negative reviews on city search are probably from jealous competing restaurants who realize they can't compete with Temple's entire positive attitude about the proper way to treat their customers and deliver top quality food.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "glass of wine"
+    ],
+    "sentence": "We ordered a glass of wine and were finished eating and paying before the wine came.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "flavors"
+    ],
+    "sentence": "It was good, but none of the flavors WOW.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place",
+      "service"
+    ],
+    "sentence": "Overall, this is a nice place to take a few friends to hang out at and the service is excellent.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Food",
+      "price"
+    ],
+    "sentence": "Food is excellent quality for a good restaurant price.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "burrito",
+      "tacos",
+      "margarita",
+      "dessert"
+    ],
+    "sentence": "for about eleven bucks you get a gigantic burrito (or tacos), margarita, and dessert.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "space"
+    ],
+    "sentence": "The space is traditional in feel.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "reservations"
+    ],
+    "sentence": "the restaurant was completely empty, but she gave me a dirty look and asked, no reservations?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "interior",
+      "owners",
+      "dining"
+    ],
+    "sentence": "the food was mediocre to be kind - the interior is small and average - the owners are a tag-team of unpleasantries - so rude and snotty i actually let out a hearty guffaw whilst dining.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food",
+      "value",
+      "wait"
+    ],
+    "sentence": "Good service, great food, good value, and never have to wait in line!",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Egg McMuffin sandwich",
+      "hot cakes",
+      "breakfast"
+    ],
+    "sentence": "Offerings like hot cakes and the Egg McMuffin sandwich are available for breakfast.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food"
+    ],
+    "sentence": "I have been going to this restaurant for years, in the past the service was average and the food inconsistant.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "music",
+      "bartender",
+      "drinks"
+    ],
+    "sentence": "The music was fascinating, but left room for conversation, and the bartender made superb drinks.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "rice dishes",
+      "noodle dishes",
+      "ice drink"
+    ],
+    "sentence": "rice dishes and noodle dishes rarely exceed $5 and add on a refreshing ice drink for $2 and you're set for the night!",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Cuisine",
+      "bill",
+      "asian fusion",
+      "billed"
+    ],
+    "sentence": "Cuisine is billed as asian fusion - doesn't meet the bill.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dishes",
+      "king crab salad with passion fruit vinaigrette",
+      "fettuccine with grilled seafood in a rosemary-orange sauce",
+      "bistro menu"
+    ],
+    "sentence": "Creative dishes like king crab salad with passion fruit vinaigrette and fettuccine with grilled seafood in a rosemary-orange sauce are unexpected elements on an otherwise predictable bistro menu.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Dishes",
+      "\"Roy's Classics\"",
+      "menu",
+      "recipes",
+      "macadamia-crusted mahi mahi",
+      "sweet honey-mustard beef short ribs"
+    ],
+    "sentence": "Dishes denoted as \"Roy's Classics\" (marked on the menu with asterisks) are tried-and-true recipes, such as macadamia-crusted mahi mahi, or subtly sweet honey-mustard beef short ribs.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "cold sesame noodles"
+    ],
+    "sentence": "The cold sesame noodles, which are a freebie when you order $10+, are delectable.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "meal",
+      "served"
+    ],
+    "sentence": "I came to fresh expecting a great meal, and all I got was marginally so-so food served in a restaurant that was just so freezing we couldn't enjoy eating.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "argentine chorizo appetizer",
+      "fennel flavored Italian sausage"
+    ],
+    "sentence": "The lone argentine chorizo appetizer at $8.95 was a heavy fennel flavored Italian sausage like the ones that sell for $2.99/lb at the store.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner"
+    ],
+    "sentence": "I went to Swiftys with some friends of the family and we had a very nice dinner, but nothing amazing.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "delivery",
+      "value"
+    ],
+    "sentence": "Best Chinese on the Upper East, prompt delivery, good value.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sandwiches",
+      "soy mayonaise"
+    ],
+    "sentence": "Most of the sandwiches are made with soy mayonaise which is actually pretty good.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "hostess",
+      "table"
+    ],
+    "sentence": "i went in one day asking for a table for a group and was greeted by a very rude hostess.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner"
+    ],
+    "sentence": "It's worthwhile to take a cab to Chelsea just for an awesome dinner at My Chelsea.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "staff",
+      "food",
+      "wine"
+    ],
+    "sentence": "Not only is the food authentic, but the staff here are practically off-the-boat, they are young and hip and know what they are doing when it comes to food and wine.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "music",
+      "tapas",
+      "selection of wines (primarily Spanish)",
+      "clientele"
+    ],
+    "sentence": "It has good music, nice tapas, an interesting selection of wines (primarily Spanish) and a lowkey hip neighborhood clientele.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "dumplings",
+      "cold sesame noodles",
+      "chicken",
+      "shrimp dishs"
+    ],
+    "sentence": "The food is great, I love their dumplings, cold sesame noodles, chicken and shrimp dishs.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "food"
+    ],
+    "sentence": "And the food, well the food will keep you coming back.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "entrees",
+      "Waiting"
+    ],
+    "sentence": "Waiting three hours before getting our entrees was a treat as well.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place"
+    ],
+    "sentence": "It's the conversations that make this a fun place to be.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "duck confitte"
+    ],
+    "sentence": "My gf's duck confitte was very solid as well, although i have little base of reference.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wine list",
+      "tapas",
+      "atmosphere"
+    ],
+    "sentence": "The wine list was superb, our tapas delightful, and the quiet atmosphere perfect for good conversation.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "price",
+      "food"
+    ],
+    "sentence": "You can eat gourmet food at a fast food price.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service",
+      "prices"
+    ],
+    "sentence": "I've eaten at all three locations and I always love, love the food, the service is always wonderful and the prices are really reasonable.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "Not because I was pregnant, but the food here is always delicious.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meal"
+    ],
+    "sentence": "Had a great meal there this weekend before heading to the movies!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service"
+    ],
+    "sentence": "We had a birthday party here recently and the food and service was amazing.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner menu",
+      "entrees",
+      "seafood",
+      "steaks",
+      "non-meat alternatives"
+    ],
+    "sentence": "the dinner menu offers a variety of great entrees, including fresh seafood and huge steaks, there's also a couple of non-meat alternatives.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu",
+      "food"
+    ],
+    "sentence": "This place has the strangest menu and the restaurants tries too hard to make fancy food.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "appetizers",
+      "service"
+    ],
+    "sentence": "The appetizers are ok, but the service is slow.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "price"
+    ],
+    "sentence": "the food - not worth the price.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waitress",
+      "entree"
+    ],
+    "sentence": "What can you say about a place where the waitress brings out the wrong entree, then verbally assaults your 80 year old grandmother and gives her lip about sending it back (which she did politely, by the way).",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "prices"
+    ],
+    "sentence": "The prices are not terrible.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bill",
+      "gratuity"
+    ],
+    "sentence": "15% gratuity automatically added to the bill.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "halibut cheek appetizer",
+      "portion of foie gras",
+      "meal"
+    ],
+    "sentence": "The halibut cheek appetizer came with a generous portion of foie gras, but that's about the only positive thing I can say about the meal.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Food",
+      "empenadas",
+      "plaintains",
+      "afternoon snack"
+    ],
+    "sentence": "Food is excellent and they also have empenadas and plaintains which are good for an afternoon snack.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pasta specials",
+      "appetizer"
+    ],
+    "sentence": "Both a number of the appetizer and pasta specials were amazing.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Big Mac",
+      "Chicken McNuggets",
+      "Filet-O-Fish sandwich",
+      "McDonald's famous french fries",
+      "entree-sized salads"
+    ],
+    "sentence": "All-time favorites include the Big Mac, Chicken McNuggets, Filet-O-Fish sandwich and McDonald's famous french fries; lighter options like entree-sized salads are also available.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "noise"
+    ],
+    "sentence": "Although somewhat loud, the noise was minimally intrusive.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza"
+    ],
+    "sentence": "It's a basic pizza joint, not much to look at, but the pizza is what I go for.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Tables"
+    ],
+    "sentence": "Tables are close, so you better be comfortable bumping elbows with other patrons.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lunch"
+    ],
+    "sentence": "Was her Monday for lunch - was working on a film in the area - and found this rare jewel.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "scene"
+    ],
+    "sentence": "Not too much so, but enough that there's a great scene.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "blue bar area"
+    ],
+    "sentence": "Dug the blue bar area too.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "upstrairs dining area"
+    ],
+    "sentence": "I got the opportunity to dine at your establishment again a few weeks ago, I was in your upstrairs dining area.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "veggie burger",
+      "chickpeas",
+      "carrots",
+      "vegetables",
+      "spices"
+    ],
+    "sentence": "Meat-phobes are in luck with the extraordinary veggie burger, made from a distinctive blend of chickpeas, carrots and other vegetables and spices.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "tables"
+    ],
+    "sentence": "At peak times, the restaurant is overcrowded and tables are uncomfortably close.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service was on point - what else you would expect from a Ritz?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Menus",
+      "sweet corn-foie gras brulee"
+    ],
+    "sentence": "Menus feature seasonal picks, like sweet corn-foie gras brulee.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Carinthia cheese ravioli with wild mushrooms",
+      "caviar-topped sturgeon",
+      "green spinach-vodka sauce"
+    ],
+    "sentence": "Innovations are just as assured, from the simple Carinthia cheese ravioli with wild mushrooms to the caviar-topped sturgeon, beautifully matched with a bright green spinach-vodka sauce.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "burgers",
+      "patties"
+    ],
+    "sentence": "And these are not small, wimpy fast food type burgers - these are real, full sized patties.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lunch",
+      "delivery service"
+    ],
+    "sentence": "There restaurant is very casual, but perfect for lunch, and their delivery service is always very fast.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "quality",
+      "prices"
+    ],
+    "sentence": "Chinatown definitely has better quality with cheaper prices.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "staff person",
+      "fork"
+    ],
+    "sentence": "I had to flag down a third staff person for a fork... so now it's goodbye Little RUDE Pie Company.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "specials",
+      "salmon"
+    ],
+    "sentence": "Go with the specials, and stay away from the salmon. ",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pastas"
+    ],
+    "sentence": "The pastas were pretty good.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Atmosphere"
+    ],
+    "sentence": "Atmosphere is a bore.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "decor"
+    ],
+    "sentence": "The decor is what initially got me in the door.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wait staff"
+    ],
+    "sentence": "The wait staff was very attentive and polite.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "Great restaurant, and even greater food!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dishes",
+      "place"
+    ],
+    "sentence": "The dishes are remarkably tasty and such a cozy and intimate place!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "desserts"
+    ],
+    "sentence": "Save room for the desserts! ;-)",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "staff"
+    ],
+    "sentence": "I love the simplicity and respect which was given to the food, as well the staff was freindly and knowledgable.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Service",
+      "atmosphere"
+    ],
+    "sentence": "Service was good and so was the atmosphere.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Branzini",
+      "fish"
+    ],
+    "sentence": "MY date and I both ordered the Branzini and both felt the fish was very average.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service",
+      "price"
+    ],
+    "sentence": "The food was good, the service prompt, and the price very reasonable. ",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu",
+      "ambiance",
+      "service",
+      "FOOD"
+    ],
+    "sentence": "Wonderful menu, warm inviting ambiance, great service the FOOD keeps me coming back!",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "wine",
+      "host"
+    ],
+    "sentence": "Great food, good wine and an excellent host.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Pizzas",
+      "appetizers",
+      "main courses"
+    ],
+    "sentence": "Pizzas were excellent in addition to appetizers and main courses.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "calamari",
+      "pasta",
+      "Sliced steak entree"
+    ],
+    "sentence": "Definitely try the calamari, any pasta, or even the Sliced steak entree.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "caeser salad"
+    ],
+    "sentence": "The caeser salad was great.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "fried calamari"
+    ],
+    "sentence": "The fried calamari was even better!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere"
+    ],
+    "sentence": "The atmosphere was nice but it was a little too dark.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "The food was good overall. ",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service"
+    ],
+    "sentence": "The food was outstanding and the service was tops.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "portions",
+      "service"
+    ],
+    "sentence": "The portions are very large and the service is fantastic!!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chicken milanese"
+    ],
+    "sentence": "I recomend the chicken milanese.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "tapas",
+      "prices"
+    ],
+    "sentence": "excellent tapas at great prices, romantic, small but not overly crowed, excellent",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service is a quite slow, but friendly.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chocolate raspberry cake",
+      "flavor"
+    ],
+    "sentence": "The chocolate raspberry cake is heavenly- not too sweet, but full of flavor.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter",
+      "food",
+      "wine"
+    ],
+    "sentence": "Our waiter was helpful and charming, the food was perfect, and the wine was good, too.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "MEAL",
+      "SERVICE"
+    ],
+    "sentence": "I HAVE NEVER HAD A BAD MEAL(OR BAD SERVICE )@ PIGALLE.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "hot dogs"
+    ],
+    "sentence": "Best hot dogs in the tri-state area.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "The service was very attentive and very generous.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "wine",
+      "desserts"
+    ],
+    "sentence": "We had tons of great food, wine, and desserts.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dining experience"
+    ],
+    "sentence": "Really Lovely dining experience in the midst of buzzing midtown area.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "service"
+    ],
+    "sentence": "The food really isn't very good and the service is terrible.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "escargot"
+    ],
+    "sentence": "Not only do they have the best escargot in town,they always try to accomodate our toddler.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu"
+    ],
+    "sentence": "Between my guest and I, we sampled at least 80% of the menu, and they were all hits.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Deco",
+      "ambiance"
+    ],
+    "sentence": "The Deco and ambiance was really romantic.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "french food"
+    ],
+    "sentence": "Just go in and sample the greatest french food west of Daniel.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Indian food"
+    ],
+    "sentence": "For someone who used to hate Indian food, Baluchi's has changed my mid.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "curry"
+    ],
+    "sentence": "Finally a curry that I can eat, enjoy and not suffer from gastritis from 3 hours later.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "poori",
+      "naan",
+      "paratha"
+    ],
+    "sentence": "All are GREAT - poori, naan, paratha all FRESH.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "homemade breads"
+    ],
+    "sentence": "Try the homemade breads.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi"
+    ],
+    "sentence": "This place has beautiful sushi, and it's delicious CHEAP. ",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Korean dishes"
+    ],
+    "sentence": "It also has lots of other Korean dishes that are affordable and just as yummy.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "prix fixe menu"
+    ],
+    "sentence": "I went for restaurant week and ordered off the prix fixe menu",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter"
+    ],
+    "sentence": "Not only was the waiter efficient and courteous, but also extremely helpful. ",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place",
+      "service",
+      "food"
+    ],
+    "sentence": "This place is classy, chic, the service is warm and hospitable, and the food is outstanding.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "burgers",
+      "grilled cheeses",
+      "french fries"
+    ],
+    "sentence": "Great burgers, grilled cheeses and french fries.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Yellowfin Tuna",
+      "Calf's liver"
+    ],
+    "sentence": "The Yellowfin Tuna and Calf's liver are my favorites!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Sushi"
+    ],
+    "sentence": "Sushi so fresh that it crunches in your mouth.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bill"
+    ],
+    "sentence": "But make sure you have enough room on your credit card as the bill will leave a big dent in your wallet.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "steak",
+      "choices of sauces",
+      "sauce cart",
+      "table"
+    ],
+    "sentence": "They bring a sauce cart up to your table and offer you up to 7 or 8 choices of sauces for your steak (I tried them ALL).",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi",
+      "duck",
+      "entrees"
+    ],
+    "sentence": "Not only was the sushi fresh, they also served other entrees allowed each guest something to choose from and we all left happy (try the duck!",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "variety"
+    ],
+    "sentence": "good variety but nothing surprising.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "utensils",
+      "pie"
+    ],
+    "sentence": "After I paid for my purchase, I noticed they had not given me utensils so I could eat my pie.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "thin crust",
+      "slices"
+    ],
+    "sentence": "Likewise if you like really thin crust or really big slices then Nick and Joe's may not be your favorite.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "green beans",
+      "egg",
+      "anchovy dressing",
+      "nicoise olives",
+      "red onion"
+    ],
+    "sentence": "No green beans, no egg, no anchovy dressing, no nicoise olives, no red onion.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meal",
+      "Amazin' Greens salads",
+      "Buffalo Chicken Kickers",
+      "Cinna Stix",
+      "side orders"
+    ],
+    "sentence": "Build a meal with side orders like Amazin' Greens salads, Buffalo Chicken Kickers and Cinna Stix.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "fries",
+      "meaty chili",
+      "stuffed baked potatoes",
+      "menu",
+      "chocolate Frosty"
+    ],
+    "sentence": "Thick fries, meaty chili and stuffed baked potatoes round out a menu that includes a cool, ultra-thick chocolate Frosty.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter",
+      "menu"
+    ],
+    "sentence": "I always find myself asking the waiter to make something bland and different than what is on the menu.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "cake",
+      "employees",
+      "cake"
+    ],
+    "sentence": "Good cake BUT: it was not the best cake i've ever had, and definately not worth standing outside on the sidewalk being herded like cattle by indifferent and overworked employees.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Cherry Marscapone"
+    ],
+    "sentence": "The closest that I got was the Cherry Marscapone, but they were out of it that day.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "roti canai appetizer",
+      "mango chicken",
+      "fried pancake served with pungent curry dipping sauce"
+    ],
+    "sentence": "The homage to India is most evident in the delectable roti canai appetizer, a fried pancake served with pungent curry dipping sauce, while the mango chicken offers a surprisingly sophisticated, fresh take on sweet-and-sour.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "outside",
+      "atmosphere"
+    ],
+    "sentence": "It doesn't look like much on the outside, but the minute you walk inside, it's a whole other atmosphere.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "ground chickpea soup",
+      "starter"
+    ],
+    "sentence": "The ground chickpea soup we sampled as a starter tasted somewhat thin.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi"
+    ],
+    "sentence": "We requested they re-slice the sushi, and it was returned to us in small cheese-like cubes.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "quality of food",
+      "bartenders",
+      "clientele",
+      "staff"
+    ],
+    "sentence": "The service, however, is a peg or two below the quality of food (horrible bartenders), and the clientele, for the most part, are rowdy, loud-mouthed commuters (this could explain the bad attitudes from the staff) getting loaded for an AC/DC concert or a Knicks game.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "meal"
+    ],
+    "sentence": "If you're in the neighborhood, definitely stop by for a great meal.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "desserts"
+    ],
+    "sentence": "Unfortunately, with our show tickets, we didn't have time to sample any desserts.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "tables",
+      "rooftop bar"
+    ],
+    "sentence": "Make more tables- perhaps a rooftop bar?",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "decoration"
+    ],
+    "sentence": "The decoration was feeling like we was on the Cairo, actually the street is part of that adventure.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "ambience",
+      "food",
+      "catfish",
+      "service"
+    ],
+    "sentence": "Although small, it has beautiful ambience, excellent food (the catfish is delicious - if ya don't mind it a lil salty) and attentive service.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "I didn't go there for food so I can't comment.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "brisket",
+      "ribs",
+      "wings",
+      "cajun shrimp"
+    ],
+    "sentence": "Stick to the items the place does best, brisket, ribs, wings, cajun shrimp is good, not great.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere"
+    ],
+    "sentence": "Hip boutiques and bars on Ludlow add to the artsy, laid-back atmosphere at this Israeli-style takeout and eat-in burger joint.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "counter"
+    ],
+    "sentence": "Young neighborhood trendies graze at the counter during the day, while chic, art-house drinkers with heavy doses of the munchies pile in late at night.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bottle of wine"
+    ],
+    "sentence": "Bring your date and a bottle of wine!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu",
+      "Japanese dishes",
+      "Foie Gras Unagi Napolean",
+      "Jap style hamburger steak",
+      "spicy cod roe spaghetti",
+      "black cod with miso base",
+      "rack of lamb in black truffle sauce"
+    ],
+    "sentence": "My Chelsea's impressive and creative menu includes modern, Westernized Japanese dishes such as Foie Gras Unagi Napolean, Jap style hamburger steak, spicy cod roe spaghetti, black cod with miso base, and rack of lamb in black truffle sauce, to name a few.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "appetizers",
+      "entrees"
+    ],
+    "sentence": "His food is excellent (and not expensive by NYC standards- no entrees over $30, most appetizers $12 to 14).",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "The food is consistant and good but how it got name Best Diner In Manhattan is beyond me.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pasta primavera",
+      "fresh veggies"
+    ],
+    "sentence": "The pasta primavera was outstanding as well, lots of fresh veggies.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "sushi"
+    ],
+    "sentence": "don't get me wrong - sushi was good, just not fantastic.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "flan"
+    ],
+    "sentence": "Being Puerto Rican I know a thing or two about flan and this place serves one of the best (I hope Mom doesn't read this!).",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pizza"
+    ],
+    "sentence": "Been to the one in Brooklyn for over 25 years, now I dont have to go over the bridge for the best pizza ....Hanx",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner",
+      "food"
+    ],
+    "sentence": "Had dinner here on a Friday and the food was great.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "wine",
+      "dessert menu"
+    ],
+    "sentence": "We recently spent New Year's Eve at the restaurant, and had a great experience, from the wine to the dessert menu.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place",
+      "bar",
+      "takeout"
+    ],
+    "sentence": "Highly recommended...  As stated, I haven't dined *in* the restaurant but stopped by there to pick up takeout and it seems a very relaxing place; also, the bar looks nice.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "ambiance"
+    ],
+    "sentence": "The ambiance was fine, a little loud but still nice and romantic.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "cocktail hour",
+      "filet mignon",
+      "non-sushi selection",
+      "appetizers"
+    ],
+    "sentence": "but, the filet mignon was not very good at all cocktail hour includes free appetizers (nice non-sushi selection).",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "courses",
+      "served"
+    ],
+    "sentence": "It took about 2 1/2 hours to be served our 2 courses.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place"
+    ],
+    "sentence": "Who said go when the place is quiet during the day?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "size"
+    ],
+    "sentence": "Can be a bit busy around peak times because of the size.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chicken tacos",
+      "Hibiscus lemonade",
+      "place"
+    ],
+    "sentence": "I was on jury duty, rode my bike up Centre Street on my lunch break and came across this great little place with awesome chicken tacos and Hibiscus lemonade.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place",
+      "soup",
+      "french dish",
+      "glass of wine"
+    ],
+    "sentence": "good place to hang out during the day after shopping or to grab a simple soup or classic french dish over a glass of wine.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "place"
+    ],
+    "sentence": "Very nice touch that very much fits the place.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "casual drink",
+      "outdoors",
+      "place"
+    ],
+    "sentence": "However, there is just something so great about being outdoors, in great landscaping, enjoying a casual drink that makes going to this place worthwhile.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dance floor"
+    ],
+    "sentence": "We were seated promptly in close proximity to the dance floor.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "pre-show meal"
+    ],
+    "sentence": "If you are here as a pre-show meal, hop in a cab and take the extra 10 minutes to go to the uptown location.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "fried foods",
+      "dishes",
+      "lamb entree",
+      "salads (avocado shrimp)"
+    ],
+    "sentence": "The comments about fried foods is correct (below) but the other dishes, including the lamb entree and many of the salads (avocado shrimp) were quite good.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service"
+    ],
+    "sentence": "Slow service, but when you're hanging around with groups of 10 or 20, who really notices?",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dabs of real mozzarella",
+      "sauce"
+    ],
+    "sentence": "The sauce is excellent (very fresh) with dabs of real mozzarella.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "drinks",
+      "people",
+      "dining"
+    ],
+    "sentence": "Don't ever bother - the drinks were awful, but it was the people who work there that really made this the worst experience at dining.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "room",
+      "place"
+    ],
+    "sentence": "The room is a little plain, but it's difficult to make such a small place exciting and I would not suggest that as a reason not to go.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Prices"
+    ],
+    "sentence": "Prices even outside of restaurant week were great.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "space",
+      "outdoor eating area"
+    ],
+    "sentence": "A small, outdoor eating area makes for a private, comfortable space to study alone or meet up with friends.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "[female] servers"
+    ],
+    "sentence": "And all the [female] servers are cute too, which is always nice.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dessert",
+      "chocolate and peanut butter tart",
+      "sweets"
+    ],
+    "sentence": "The best dessert, a chocolate and peanut butter tart, isn't particularly Hawaiian, but it's a small world when it comes to sweets.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "appetizer",
+      "calamari"
+    ],
+    "sentence": "for an appetizer, their calamari is a winner.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food"
+    ],
+    "sentence": "Satay is one of those favorite haunts on Washington where the service and food is always on the money.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "dinner",
+      "music",
+      "lounge"
+    ],
+    "sentence": "After dinner I heard music playing and discovered that there is a lounge downstairs.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "room",
+      "bi-level space",
+      "long bar",
+      "drink"
+    ],
+    "sentence": "The room is a gorgeous, bi-level space and the long bar perfect for a drink.",
+    "polarity": [
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "appetizer selection",
+      "mozzarella sticks",
+      "menu"
+    ],
+    "sentence": "Two complaints- their appetizer selection stinks, it would be nice to get some mozzarella sticks on the menu.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waitstaff",
+      "service"
+    ],
+    "sentence": "I was especially impressed during the bday party when the waitstaff went above and beyond in helping me decorate and bring out a bday cake as well as offering prompt and friendly service to a 15 person party.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "chicken and falafel platters",
+      "fresh leaf salad"
+    ],
+    "sentence": "The chicken and falafel platters were nondescript combinations with fresh leaf salad.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "atmosphere"
+    ],
+    "sentence": "The atmosphere takes you to that place, the place many dream of.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiters"
+    ],
+    "sentence": "several times and put up with the waiters' bad manners, knowing that their job isn't easy.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "desserts",
+      "coffee"
+    ],
+    "sentence": "The service is great (maybe even borderline nagging but at least you get attention), the desserts are excellent and the coffee is so very good...",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "served",
+      "Focacchia bread"
+    ],
+    "sentence": "They are served on Focacchia bread and are to die for.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "smoothies",
+      "fresh juices"
+    ],
+    "sentence": "While the smoothies are a little big for me, the fresh juices are the best I have ever had!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "pialla",
+      "dish"
+    ],
+    "sentence": "The food is just OKAY, and it's almost not worth going unless you're getting the pialla, which is the only dish that's really good.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "guac",
+      "fresh salsa",
+      "flavor"
+    ],
+    "sentence": "The guac is fresh, yet lacking flavor, we like to add our fresh salsa into it.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "prices",
+      "staff",
+      "new menu"
+    ],
+    "sentence": "The new menu has a few creative items,they were smart enough to keep some of the old favorites (but they raised the prices), the staff is friendly most of the time, but I must agree with the person that wrote about their favorite words: No, can't, sorry..., boy, they won't bend the rules for anyone.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "lunch",
+      "food"
+    ],
+    "sentence": "It' only open for lunch but the food is so good!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "seafood",
+      "Greek food"
+    ],
+    "sentence": "If you like seafood and/or Greek food you will love this place though it is not limited to just these things.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu",
+      "burgers",
+      "steaks",
+      "shepherds pie",
+      "portabella lasagna",
+      "pub fare"
+    ],
+    "sentence": "\" The menu includes pub fare--burgers, steaks and shepherds pie--and even a portabella lasagna for those black sheep known as \"vegetarians.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "prices"
+    ],
+    "sentence": "How can they survive serving mediocre food at exorbitant prices?!",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "food"
+    ],
+    "sentence": "The food was mediocre and the service was severely slow.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "prices"
+    ],
+    "sentence": "i have eaten here on a different occasion - the food is mediocre for the prices.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu"
+    ],
+    "sentence": "I'm looking forward to going back soon and eventually trying most everything on the menu!",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "menu"
+    ],
+    "sentence": "I just had my first visit to this place and can't wait to go back and slowly work my way through the menu.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "waiter",
+      "meal"
+    ],
+    "sentence": "I asked repeatedly what the status of the meal was and was pretty much grunted at by the unbelievably rude waiter.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "brunch",
+      "vegan cranberry pancakes",
+      "rice milk"
+    ],
+    "sentence": "I stopped by for some brunch today and had the vegan cranberry pancakes and some rice milk.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "bartender"
+    ],
+    "sentence": "Sweet Irish bartender is always happy and able to bring a smile to my friends a my face.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "service",
+      "drink",
+      "drinks"
+    ],
+    "sentence": "Its good to go there for drinks if you don't want to get drunk because you'll be lucky if you can get one drink an hour the service is so bad.",
+    "polarity": [
+      "",
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "owner"
+    ],
+    "sentence": "Anyway, the owner was fake.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Owner"
+    ],
+    "sentence": "Owner is pleasant and entertaining.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food",
+      "waiter"
+    ],
+    "sentence": "I have never in my life sent back food before, but I simply had to, and the waiter argued with me over this.",
+    "polarity": [
+      "",
+      ""
+    ]
+  },
+  {
+    "target": [
+      "food"
+    ],
+    "sentence": "Although the restaurant itself is nice, I prefer not to go for the food.",
+    "polarity": [
+      ""
+    ]
+  },
+  {
+    "target": [
+      "Creamy appetizers",
+      "warm pitas",
+      "taramasalata",
+      "eggplant salad",
+      "Greek yogurt (with cuccumber, dill, and garlic)"
+    ],
+    "sentence": "Creamy appetizers--taramasalata, eggplant salad, and Greek yogurt (with cuccumber, dill, and garlic) taste excellent when on warm pitas.",
+    "polarity": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  }
+]
