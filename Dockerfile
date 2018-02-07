@@ -1,6 +1,8 @@
 FROM continuumio/miniconda3:4.3.14
 MAINTAINER Amit Kushwaha <kushwahamit2016@gmail.com>
 
+ADD . /usr/src/app
+
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
