@@ -4,27 +4,20 @@ import os
 
 import luigi
 import pandas as pd
-from tqdm import tqdm
 
 from dataset.read_dataset import read_json_formatted
+from training.helpers import format_dataset
+from training.helpers import makedirs_with_mode
 
 logger = logging.getLogger(__name__)
 
 BASE_PROCESSED_DIR = os.path.expanduser('~/processed')
 
 
-def makedirs_with_mode(path, mode=0o775):
-    try:
-        old_mask = os.umask(0)
-        os.makedirs(path, mode)
-    finally:
-        os.umask(old_mask)
-
-
 class BaseTask(luigi.Task):
     @property
     def outfilename(self):
-        return 'processed_{}.{}'.format(self.__class__.__name__,
+        return 'processed_{}.{}'.format(self.__class__.__name__.lower(),
                                         self.output_file_extension)
 
     @property
@@ -49,18 +42,7 @@ class AcquireDataset(BaseTask):
 
     def run(self):
         annotated_dataset = self.read_dataset()
-        dataset = []
-        for row in tqdm(
-                annotated_dataset,
-                total=len(annotated_dataset),
-                unit='Reading Section'):
-            sources = [s.lower() for s in row['target']]
-            targets = [s.lower() for s in row['polarity']]
-            sentence_meta = {}
-            sentence = row['sentence']
-            for source, target in zip(sources, targets):
-                sentence_meta[source] = target
-            dataset.append({'sentence': sentence, 'meta': sentence_meta})
+        dataset = format_dataset(annotated_dataset)
         pd.to_pickle(dataset, self.output().path)
 
     def read_dataset(self):

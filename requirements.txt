@@ -7,9 +7,4 @@ spacy==1.9.0
 tqdm==4.8.4
 scikit_learn==0.19.1
 scipy
-
-
-
-
-
-
+luigi
