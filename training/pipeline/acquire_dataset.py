@@ -35,6 +35,14 @@ class BaseTask(luigi.Task):
     def base_folder_path(self):
         return BASE_PROCESSED_DIR
 
+    def output(self):
+        if not os.path.isdir(self.base_folder_path):
+            logger.debug('Creating non-existent path: %s',
+                         self.base_folder_path)
+            makedirs_with_mode(self.base_folder_path)
+        filepath = os.path.join(self.base_folder_path, self.outfilename)
+        return luigi.LocalTarget(filepath)
+
 
 class AcquireDataset(BaseTask):
     dataset_filename = luigi.Parameter()
@@ -57,14 +65,6 @@ class AcquireDataset(BaseTask):
 
     def read_dataset(self):
         return read_json_formatted(self.dataset_filename)
-
-    def output(self):
-        if not os.path.isdir(self.base_folder_path):
-            logger.debug('Creating non-existent path: %s',
-                         self.base_folder_path)
-            makedirs_with_mode(self.base_folder_path)
-        filepath = os.path.join(self.base_folder_path, self.outfilename)
-        return luigi.LocalTarget(filepath)
 
 
 def get_dataset(dataset_filename=None):
