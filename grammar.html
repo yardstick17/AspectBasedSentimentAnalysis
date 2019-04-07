@@ -1,0 +1,698 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>grammar package &mdash; Aspect Based Sentiment Analysis  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AspectBasedSentimentAnalysis" href="modules.html" />
+    <link rel="prev" title="feature_extraction.word_level_feature package" href="feature_extraction.word_level_feature.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Aspect Based Sentiment Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">dataset package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_extraction.html">feature_extraction package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">grammar package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grammar.chunker">grammar.chunker module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grammar.language_processor">grammar.language_processor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grammar.pattern_grammar">grammar.pattern_grammar module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grammar.pos_tagger">grammar.pos_tagger module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grammar.sentiment">grammar.sentiment module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grammar.source_target_extractor">grammar.source_target_extractor module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-grammar">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">AspectBasedSentimentAnalysis</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="conf.html">conf module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dataset.html">dataset package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="feature_extraction.html">feature_extraction package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">grammar package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-grammar.chunker">grammar.chunker module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-grammar.language_processor">grammar.language_processor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-grammar.pattern_grammar">grammar.pattern_grammar module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-grammar.pos_tagger">grammar.pos_tagger module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-grammar.sentiment">grammar.sentiment module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-grammar.source_target_extractor">grammar.source_target_extractor module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-grammar">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Aspect Based Sentiment Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>grammar package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/grammar.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="grammar-package">
+<h1>grammar package<a class="headerlink" href="#grammar-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-grammar.chunker">
+<span id="grammar-chunker-module"></span><h2>grammar.chunker module<a class="headerlink" href="#module-grammar.chunker" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grammar.chunker.Chunker">
+<em class="property">class </em><code class="descclassname">grammar.chunker.</code><code class="descname">Chunker</code><span class="sig-paren">(</span><em>grammar: nltk.chunk.regexp.RegexpParser</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/chunker.html#Chunker"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.chunker.Chunker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="grammar.chunker.Chunker.apply_grammar_on_pos_tagged_chunk">
+<em class="property">static </em><code class="descname">apply_grammar_on_pos_tagged_chunk</code><span class="sig-paren">(</span><em>compile_grammar</em>, <em>pos_tagged_sentence</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/chunker.html#Chunker.apply_grammar_on_pos_tagged_chunk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.chunker.Chunker.apply_grammar_on_pos_tagged_chunk" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="grammar.chunker.Chunker.chunk_pos_tagged_sentence">
+<code class="descname">chunk_pos_tagged_sentence</code><span class="sig-paren">(</span><em>pos_tagged_sentence</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/chunker.html#Chunker.chunk_pos_tagged_sentence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.chunker.Chunker.chunk_pos_tagged_sentence" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>pos_tagged_sentence</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grammar.chunker.Chunker.chunk_sentence">
+<code class="descname">chunk_sentence</code><span class="sig-paren">(</span><em>sentence: str</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/chunker.html#Chunker.chunk_sentence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.chunker.Chunker.chunk_sentence" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sentence</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grammar.chunker.Chunker.extract_rule_and_chunk">
+<code class="descname">extract_rule_and_chunk</code><span class="sig-paren">(</span><em>chunked_tree: nltk.tree.Tree</em><span class="sig-paren">)</span> &#x2192; dict<a class="reference internal" href="_modules/grammar/chunker.html#Chunker.extract_rule_and_chunk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.chunker.Chunker.extract_rule_and_chunk" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chunked_tree</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.chunker.Chunker.get_chunk">
+<em class="property">static </em><code class="descname">get_chunk</code><span class="sig-paren">(</span><em>pos_tagged_sentence</em>, <em>src_target_grammar_key: str</em><span class="sig-paren">)</span> &#x2192; list<a class="reference internal" href="_modules/grammar/chunker.html#Chunker.get_chunk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.chunker.Chunker.get_chunk" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>pos_tagged_sentence</strong> – </li>
+<li><strong>src_target_grammar_key</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-grammar.language_processor">
+<span id="grammar-language-processor-module"></span><h2>grammar.language_processor module<a class="headerlink" href="#module-grammar.language_processor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grammar.language_processor.LanguageProcessor">
+<em class="property">class </em><code class="descclassname">grammar.language_processor.</code><code class="descname">LanguageProcessor</code><a class="reference internal" href="_modules/grammar/language_processor.html#LanguageProcessor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.language_processor.LanguageProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="attribute">
+<dt id="grammar.language_processor.LanguageProcessor.NEGATIVE_POLARITY">
+<code class="descname">NEGATIVE_POLARITY</code><em class="property"> = 'negative'</em><a class="headerlink" href="#grammar.language_processor.LanguageProcessor.NEGATIVE_POLARITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="grammar.language_processor.LanguageProcessor.POSITIVE_POLARITY">
+<code class="descname">POSITIVE_POLARITY</code><em class="property"> = 'positive'</em><a class="headerlink" href="#grammar.language_processor.LanguageProcessor.POSITIVE_POLARITY" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.language_processor.LanguageProcessor.extract_src_target_chunk">
+<em class="property">static </em><code class="descname">extract_src_target_chunk</code><span class="sig-paren">(</span><em>key</em>, <em>pos_tagged_chunk: grammar.language_processor.Target</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/language_processor.html#LanguageProcessor.extract_src_target_chunk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.language_processor.LanguageProcessor.extract_src_target_chunk" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>key</strong> – </li>
+<li><strong>pos_tagged_chunk</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.language_processor.LanguageProcessor.get_polarity">
+<em class="property">static </em><code class="descname">get_polarity</code><span class="sig-paren">(</span><em>pos_tagged_chunk</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/language_processor.html#LanguageProcessor.get_polarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.language_processor.LanguageProcessor.get_polarity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.language_processor.LanguageProcessor.get_source_target_set">
+<em class="property">static </em><code class="descname">get_source_target_set</code><span class="sig-paren">(</span><em>source_chunk</em>, <em>target_chunk_with_polarity: grammar.language_processor.Target</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/language_processor.html#LanguageProcessor.get_source_target_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.language_processor.LanguageProcessor.get_source_target_set" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source_chunk</strong> – list of source chunk , extracted using</li>
+<li><strong>target_chunk_with_polarity</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.language_processor.LanguageProcessor.get_target_pos_neg_scores_mean">
+<em class="property">static </em><code class="descname">get_target_pos_neg_scores_mean</code><span class="sig-paren">(</span><em>target_pos_neg_scores</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/language_processor.html#LanguageProcessor.get_target_pos_neg_scores_mean"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.language_processor.LanguageProcessor.get_target_pos_neg_scores_mean" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>target_pos_neg_scores</strong> – [{‘NegScore’: 0.21875, ‘PosScore’: 0.375},
+{‘NegScore’: 0.0625, ‘PosScore’: 0.0},
+{‘NegScore’: 0.21875, ‘PosScore’: 0.375}]</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">{‘NegScore’: 0.16666, ‘PosScore’: 0.25}</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.language_processor.LanguageProcessor.merge_two_dict">
+<em class="property">static </em><code class="descname">merge_two_dict</code><span class="sig-paren">(</span><em>dict_x</em>, <em>dict_y</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/language_processor.html#LanguageProcessor.merge_two_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.language_processor.LanguageProcessor.merge_two_dict" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dict_x</strong> – {‘a’: [3, 4], ‘b’: [6]}</li>
+<li><strong>dict_y</strong> – {‘c’: [3], ‘a’: [1, 2]}</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">{‘c’: [3], ‘a’: [3, 4, 1, 2], ‘b’: [6]}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.language_processor.LanguageProcessor.reject_general_english_word">
+<em class="property">static </em><code class="descname">reject_general_english_word</code><span class="sig-paren">(</span><em>subject_to_target_mapping</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/language_processor.html#LanguageProcessor.reject_general_english_word"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.language_processor.LanguageProcessor.reject_general_english_word" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>subject_to_target_mapping</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="grammar.language_processor.Target">
+<em class="property">class </em><code class="descclassname">grammar.language_processor.</code><code class="descname">Target</code><span class="sig-paren">(</span><em>word</em>, <em>polarity</em><span class="sig-paren">)</span><a class="headerlink" href="#grammar.language_processor.Target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="grammar.language_processor.Target.polarity">
+<code class="descname">polarity</code><a class="headerlink" href="#grammar.language_processor.Target.polarity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="grammar.language_processor.Target.word">
+<code class="descname">word</code><a class="headerlink" href="#grammar.language_processor.Target.word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-grammar.pattern_grammar">
+<span id="grammar-pattern-grammar-module"></span><h2>grammar.pattern_grammar module<a class="headerlink" href="#module-grammar.pattern_grammar" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grammar.pattern_grammar.PatternGrammar">
+<em class="property">class </em><code class="descclassname">grammar.pattern_grammar.</code><code class="descname">PatternGrammar</code><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="grammar.pattern_grammar.PatternGrammar.compile_all_source_target_grammar">
+<code class="descname">compile_all_source_target_grammar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar.compile_all_source_target_grammar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.compile_all_source_target_grammar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="grammar.pattern_grammar.PatternGrammar.compile_all_syntactic_grammar">
+<code class="descname">compile_all_syntactic_grammar</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar.compile_all_syntactic_grammar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.compile_all_syntactic_grammar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="grammar.pattern_grammar.PatternGrammar.compile_source_target_grammar">
+<code class="descname">compile_source_target_grammar</code><span class="sig-paren">(</span><em>clause</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar.compile_source_target_grammar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.compile_source_target_grammar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="grammar.pattern_grammar.PatternGrammar.compile_syntactic_grammar">
+<code class="descname">compile_syntactic_grammar</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar.compile_syntactic_grammar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.compile_syntactic_grammar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.pattern_grammar.PatternGrammar.extractor_mapping_dict">
+<em class="property">static </em><code class="descname">extractor_mapping_dict</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar.extractor_mapping_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.extractor_mapping_dict" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="grammar.pattern_grammar.PatternGrammar.get_source_target_compiled_grammar">
+<code class="descname">get_source_target_compiled_grammar</code><span class="sig-paren">(</span><em>clause</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar.get_source_target_compiled_grammar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.get_source_target_compiled_grammar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.pattern_grammar.PatternGrammar.get_source_target_set">
+<em class="property">static </em><code class="descname">get_source_target_set</code><span class="sig-paren">(</span><em>source_chunk</em>, <em>target_tuple_with_polarity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar.get_source_target_set"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.get_source_target_set" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="grammar.pattern_grammar.PatternGrammar.get_syntactic_grammar">
+<code class="descname">get_syntactic_grammar</code><span class="sig-paren">(</span><em>index</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pattern_grammar.html#PatternGrammar.get_syntactic_grammar"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.get_syntactic_grammar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="grammar.pattern_grammar.PatternGrammar.source_target_extraction_grammars">
+<code class="descname">source_target_extraction_grammars</code><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.source_target_extraction_grammars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="grammar.pattern_grammar.PatternGrammar.syntactic_grammars">
+<code class="descname">syntactic_grammars</code><a class="headerlink" href="#grammar.pattern_grammar.PatternGrammar.syntactic_grammars" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="grammar.pattern_grammar.Target">
+<em class="property">class </em><code class="descclassname">grammar.pattern_grammar.</code><code class="descname">Target</code><span class="sig-paren">(</span><em>word</em>, <em>polarity</em><span class="sig-paren">)</span><a class="headerlink" href="#grammar.pattern_grammar.Target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">tuple</span></code></p>
+<dl class="attribute">
+<dt id="grammar.pattern_grammar.Target.polarity">
+<code class="descname">polarity</code><a class="headerlink" href="#grammar.pattern_grammar.Target.polarity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="grammar.pattern_grammar.Target.word">
+<code class="descname">word</code><a class="headerlink" href="#grammar.pattern_grammar.Target.word" title="Permalink to this definition">¶</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-grammar.pos_tagger">
+<span id="grammar-pos-tagger-module"></span><h2>grammar.pos_tagger module<a class="headerlink" href="#module-grammar.pos_tagger" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grammar.pos_tagger.PosTagger">
+<em class="property">class </em><code class="descclassname">grammar.pos_tagger.</code><code class="descname">PosTagger</code><span class="sig-paren">(</span><em>sentence</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pos_tagger.html#PosTagger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pos_tagger.PosTagger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="grammar.pos_tagger.PosTagger.get_tagger">
+<em class="property">static </em><code class="descname">get_tagger</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pos_tagger.html#PosTagger.get_tagger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pos_tagger.PosTagger.get_tagger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="grammar.pos_tagger.PosTagger.pos_tag">
+<code class="descname">pos_tag</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/pos_tagger.html#PosTagger.pos_tag"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.pos_tagger.PosTagger.pos_tag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns:</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-grammar.sentiment">
+<span id="grammar-sentiment-module"></span><h2>grammar.sentiment module<a class="headerlink" href="#module-grammar.sentiment" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grammar.sentiment.Sentiment">
+<em class="property">class </em><code class="descclassname">grammar.sentiment.</code><code class="descname">Sentiment</code><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="staticmethod">
+<dt id="grammar.sentiment.Sentiment.get_negative_modifiers">
+<em class="property">static </em><code class="descname">get_negative_modifiers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment.get_negative_modifiers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment.get_negative_modifiers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.sentiment.Sentiment.get_neutral_modifiers">
+<em class="property">static </em><code class="descname">get_neutral_modifiers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment.get_neutral_modifiers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment.get_neutral_modifiers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.sentiment.Sentiment.get_positive_modifiers">
+<em class="property">static </em><code class="descname">get_positive_modifiers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment.get_positive_modifiers"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment.get_positive_modifiers" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="grammar.sentiment.Sentiment.get_sentiment_for_word">
+<code class="descname">get_sentiment_for_word</code><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment.get_sentiment_for_word"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment.get_sentiment_for_word" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.sentiment.Sentiment.get_sentiment_with_polarity">
+<em class="property">static </em><code class="descname">get_sentiment_with_polarity</code><span class="sig-paren">(</span><em>target_polarity</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment.get_sentiment_with_polarity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment.get_sentiment_with_polarity" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.sentiment.Sentiment.negative_words">
+<em class="property">static </em><code class="descname">negative_words</code><span class="sig-paren">(</span><em>word</em>, <em>stemmed_adj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment.negative_words"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment.negative_words" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.sentiment.Sentiment.neutral_words">
+<em class="property">static </em><code class="descname">neutral_words</code><span class="sig-paren">(</span><em>word</em>, <em>stemmed_adj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment.neutral_words"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment.neutral_words" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.sentiment.Sentiment.positive_words">
+<em class="property">static </em><code class="descname">positive_words</code><span class="sig-paren">(</span><em>word</em>, <em>stemmed_adj</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/sentiment.html#Sentiment.positive_words"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.sentiment.Sentiment.positive_words" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-grammar.source_target_extractor">
+<span id="grammar-source-target-extractor-module"></span><h2>grammar.source_target_extractor module<a class="headerlink" href="#module-grammar.source_target_extractor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="grammar.source_target_extractor.SourceTargetExtractor">
+<em class="property">class </em><code class="descclassname">grammar.source_target_extractor.</code><code class="descname">SourceTargetExtractor</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/source_target_extractor.html#SourceTargetExtractor"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.source_target_extractor.SourceTargetExtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#grammar.language_processor.LanguageProcessor" title="grammar.language_processor.LanguageProcessor"><code class="xref py py-class docutils literal notranslate"><span class="pre">grammar.language_processor.LanguageProcessor</span></code></a></p>
+<dl class="staticmethod">
+<dt id="grammar.source_target_extractor.SourceTargetExtractor.assign_source_and_target">
+<em class="property">static </em><code class="descname">assign_source_and_target</code><span class="sig-paren">(</span><em>source_set</em>, <em>target_set</em>, <em>polarity</em>, <em>subject_to_target_mapping</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/source_target_extractor.html#SourceTargetExtractor.assign_source_and_target"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.source_target_extractor.SourceTargetExtractor.assign_source_and_target" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>source_set</strong> – </li>
+<li><strong>target_set</strong> – </li>
+<li><strong>polarity</strong> – </li>
+<li><strong>subject_to_target_mapping</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grammar.source_target_extractor.SourceTargetExtractor.get_source_and_target">
+<code class="descname">get_source_and_target</code><span class="sig-paren">(</span><em>compiled_grammar</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/source_target_extractor.html#SourceTargetExtractor.get_source_and_target"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.source_target_extractor.SourceTargetExtractor.get_source_and_target" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>compiled_grammar</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grammar.source_target_extractor.SourceTargetExtractor.get_topic_sentiment_score_dict">
+<code class="descname">get_topic_sentiment_score_dict</code><span class="sig-paren">(</span><em>compiled_grammar</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/source_target_extractor.html#SourceTargetExtractor.get_topic_sentiment_score_dict"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.source_target_extractor.SourceTargetExtractor.get_topic_sentiment_score_dict" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>compiled_grammar</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="grammar.source_target_extractor.SourceTargetExtractor.remove_stop_words">
+<code class="descname">remove_stop_words</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/source_target_extractor.html#SourceTargetExtractor.remove_stop_words"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.source_target_extractor.SourceTargetExtractor.remove_stop_words" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>word</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="grammar.source_target_extractor.SourceTargetExtractor.strip_to_root_word">
+<em class="property">static </em><code class="descname">strip_to_root_word</code><span class="sig-paren">(</span><em>word</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/grammar/source_target_extractor.html#SourceTargetExtractor.strip_to_root_word"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#grammar.source_target_extractor.SourceTargetExtractor.strip_to_root_word" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-grammar">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-grammar" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="modules.html" class="btn btn-neutral float-right" title="AspectBasedSentimentAnalysis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="feature_extraction.word_level_feature.html" class="btn btn-neutral" title="feature_extraction.word_level_feature package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Amit Kushwaha.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

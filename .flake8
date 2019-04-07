@@ -1,0 +1,10 @@
+[flake8]
+#exclude = .git,__pycache__,docs/source/conf.py,old,build,dist  # defaults to: .svn,CVS,.bzr,.hg,.git,__pycache__,.tox
+exclude = .git,__pycache__,build,dist,.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,env
+max-line-length = 120
+max-complexity = 10
+#show_source = True
+# Count the number of occurrences of each error/warning code and print a report.
+statistics = True
+# Print the total number of errors.
+count = True

@@ -1,0 +1,407 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>grammar.language_processor &mdash; Aspect Based Sentiment Analysis  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Aspect Based Sentiment Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset.html">dataset package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feature_extraction.html">feature_extraction package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grammar.html">grammar package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">AspectBasedSentimentAnalysis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Aspect Based Sentiment Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>grammar.language_processor</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for grammar.language_processor</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">nltk.sentiment.vader</span> <span class="k">import</span> <span class="n">NEGATE</span>
+
+<span class="kn">from</span> <span class="nn">grammar.chunker</span> <span class="k">import</span> <span class="n">Chunker</span>
+<span class="kn">from</span> <span class="nn">grammar.sentiment</span> <span class="k">import</span> <span class="n">NEGATIVE_SENTIMENT_SCORE</span>
+<span class="kn">from</span> <span class="nn">grammar.sentiment</span> <span class="k">import</span> <span class="n">POSITIVE_SENTIMENT_SCORE</span>
+
+<span class="n">Target</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Target&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;polarity&#39;</span><span class="p">])</span>
+
+<span class="n">NEGATE_SET</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">NEGATE</span><span class="p">)</span> <span class="o">|</span> <span class="p">{</span><span class="s2">&quot;n&#39;t&quot;</span><span class="p">,</span> <span class="s1">&#39;never&#39;</span><span class="p">}</span>
+
+
+<div class="viewcode-block" id="LanguageProcessor"><a class="viewcode-back" href="../../grammar.html#grammar.language_processor.LanguageProcessor">[docs]</a><span class="k">class</span> <span class="nc">LanguageProcessor</span><span class="p">:</span>
+    <span class="n">POSITIVE_POLARITY</span> <span class="o">=</span> <span class="s1">&#39;positive&#39;</span>
+    <span class="n">NEGATIVE_POLARITY</span> <span class="o">=</span> <span class="s1">&#39;negative&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">logging</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+
+<div class="viewcode-block" id="LanguageProcessor.merge_two_dict"><a class="viewcode-back" href="../../grammar.html#grammar.language_processor.LanguageProcessor.merge_two_dict">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">merge_two_dict</span><span class="p">(</span><span class="n">dict_x</span><span class="p">,</span> <span class="n">dict_y</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param dict_x: {&#39;a&#39;: [3, 4], &#39;b&#39;: [6]}</span>
+<span class="sd">        :param dict_y: {&#39;c&#39;: [3], &#39;a&#39;: [1, 2]}</span>
+<span class="sd">        :return: {&#39;c&#39;: [3], &#39;a&#39;: [3, 4, 1, 2], &#39;b&#39;: [6]}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">dict_z</span> <span class="o">=</span> <span class="n">dict_x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># Never modify input param , or take inplace as param for explicit use case</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">dict_y</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">dict_z</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">):</span>
+                <span class="n">dict_z</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">dict_z</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">return</span> <span class="n">dict_z</span></div>
+
+<div class="viewcode-block" id="LanguageProcessor.get_source_target_set"><a class="viewcode-back" href="../../grammar.html#grammar.language_processor.LanguageProcessor.get_source_target_set">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_source_target_set</span><span class="p">(</span><span class="n">source_chunk</span><span class="p">,</span> <span class="n">target_chunk_with_polarity</span><span class="p">:</span> <span class="n">Target</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param source_chunk: list of source chunk , extracted using</span>
+<span class="sd">        :param target_chunk_with_polarity:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">target_chunk</span> <span class="o">=</span> <span class="n">target_chunk_with_polarity</span><span class="o">.</span><span class="n">word</span>
+        <span class="n">source_set</span><span class="p">,</span> <span class="n">target_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(),</span> <span class="nb">set</span><span class="p">()</span>
+
+        <span class="n">target_chunk</span> <span class="o">=</span> <span class="p">[</span><span class="n">tgt</span> <span class="k">for</span> <span class="n">tgt</span> <span class="ow">in</span> <span class="n">target_chunk</span> <span class="k">if</span> <span class="n">tgt</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">source_chunk</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">source_chunk</span><span class="p">:</span>
+            <span class="n">src_pos_tagged_part</span> <span class="o">=</span> <span class="n">src</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">np_phrase_pos_tagged_list</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">src_pos_tagged_part</span><span class="p">,</span> <span class="s1">&#39;NN_all&#39;</span><span class="p">)</span>
+            <span class="c1"># np_phrase_pos_tagged_part = np_phrase_pos_tagged_list[0]</span>
+            <span class="k">for</span> <span class="n">np_phrase_pos_tagged_part</span> <span class="ow">in</span> <span class="n">np_phrase_pos_tagged_list</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">single_np_phrase</span> <span class="ow">in</span> <span class="n">np_phrase_pos_tagged_part</span><span class="p">:</span>
+                    <span class="n">source_word</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">single_np_phrase</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="n">source_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">source_word</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">tgt</span> <span class="ow">in</span> <span class="n">target_chunk</span><span class="p">:</span>
+            <span class="n">tgt_pos_tagged_part</span> <span class="o">=</span> <span class="n">tgt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">sentiment_phrase_pos_tagged_list</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">tgt_pos_tagged_part</span><span class="p">,</span> <span class="s1">&#39;JJ_NN_RB_VB&#39;</span><span class="p">)</span>
+            <span class="c1"># sentiment_phrase_pos_tagged_part = sentiment_phrase_pos_tagged_list[0]</span>
+            <span class="k">for</span> <span class="n">sentiment_phrase_pos_tagged_part</span> <span class="ow">in</span> <span class="n">sentiment_phrase_pos_tagged_list</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">single_sentiment_phrase</span> <span class="ow">in</span> <span class="n">sentiment_phrase_pos_tagged_part</span><span class="p">:</span>
+                    <span class="n">target_word</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">single_sentiment_phrase</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="n">target_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target_word</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">source_set</span><span class="p">,</span> <span class="n">target_set</span></div>
+
+<div class="viewcode-block" id="LanguageProcessor.extract_src_target_chunk"><a class="viewcode-back" href="../../grammar.html#grammar.language_processor.LanguageProcessor.extract_src_target_chunk">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">extract_src_target_chunk</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">pos_tagged_chunk</span><span class="p">:</span> <span class="n">Target</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param key:</span>
+<span class="sd">        :param pos_tagged_chunk:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">source</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;JJ_DESCRIBING_NN_V4&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NP_before_VB&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">target</span><span class="p">:</span>
+                <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_JJ_desc&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">source</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">target</span><span class="p">:</span>
+                <span class="n">source</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span> <span class="o">=</span> <span class="n">LanguageProcessor</span><span class="o">.</span><span class="n">extract_src_target_chunk</span><span class="p">(</span><span class="s1">&#39;VBG_DESCRIBING_NN_V3&#39;</span><span class="p">,</span>
+                                                                                                <span class="n">pos_tagged_chunk</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">source</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;VBG_RB_DESRIBING_NN&#39;</span><span class="p">,</span> <span class="s1">&#39;VBN_DESCRING_THE_FOLLOWING_NOUN&#39;</span><span class="p">,</span> <span class="s1">&#39;VBG_DESRIBING_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NP_After_VB_i&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;VB_JJ_RB_desc&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;JJ_VBG_RB_DESRIBING_NN&#39;</span><span class="p">,</span> <span class="s1">&#39;JJ_VBG_RB_DESRIBING_NN_2&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NP_before_VB&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_JJ_desc&#39;</span><span class="p">)</span>
+            <span class="n">target</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;RB_AFTER_VB&#39;</span><span class="p">))</span>
+            <span class="n">target</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;VB_JJ_RB_desc&#39;</span><span class="p">))</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">source</span><span class="p">:</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_all&#39;</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">source</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">target</span><span class="p">:</span>
+                <span class="n">source</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span> <span class="o">=</span> <span class="n">LanguageProcessor</span><span class="o">.</span><span class="n">extract_src_target_chunk</span><span class="p">(</span><span class="s1">&#39;VBG_DESCRIBING_NN_V3&#39;</span><span class="p">,</span>
+                                                                                                <span class="n">pos_tagged_chunk</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">source</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span>
+
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;VBG_DESCRIBING_NN_V3&#39;</span><span class="p">,</span> <span class="s1">&#39;VBG_NN_DESCRIBING_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NP_After_VB&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;VB_all&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;VBG_DESRIBING_NN_V2&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NP_After_VB&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;VB_JJ_RB_desc&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;VBG_DESCRIBIN_NN_V4&#39;</span><span class="p">,</span> <span class="s1">&#39;VB_DESCRBING_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NP_After_VB&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;VB_JJ_RB_desc&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;RB_BEFORE_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_all&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;RB_all&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;JJ_BEFORE_NN&#39;</span><span class="p">,</span> <span class="s1">&#39;NN_JJ&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_all&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;JJ_all&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;JJ_IN_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NE_grammar&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;JJ_any_IN&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;JJ_TO_NN_VB&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;TO_NN&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;JJ_multi&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;NN_MD_VB&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NE_grammar&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;VB_desc&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;VBN_IN_PRP_NN&#39;</span><span class="p">,</span> <span class="s1">&#39;VB_PRP_NNS&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NP_After_VB&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;VB_desc&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;PR_VB_JJ_JJ&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;JJ_multi&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;VB_desc&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;JJ_BEFORE_NN_V3&#39;</span><span class="p">,</span> <span class="s1">&#39;I_JJ_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_only&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;JJ_multi&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;NN_IN_DT_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_IN&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;DT_NN&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;NN_VB_DT_JJ_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;JJ_NN_end&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_beg&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;NN_Phrase&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_FW_only&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_beg&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;NN_desc_NN&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_beg&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NP_After_VB_must&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;NN_DT_NN&#39;</span><span class="p">,</span> <span class="s1">&#39;NN_desc_NN_reverse&#39;</span><span class="p">,</span> <span class="s1">&#39;NN_IN_DT_NN_reverse&#39;</span><span class="p">]:</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;DT_NN&#39;</span><span class="p">)</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">,</span> <span class="s1">&#39;NN_beg&#39;</span><span class="p">)</span>
+        <span class="c1"># print(&#39;target:&#39;,  target)</span>
+        <span class="n">polarity</span> <span class="o">=</span> <span class="n">LanguageProcessor</span><span class="o">.</span><span class="n">get_polarity</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+        <span class="n">target_tuple_with_polarity</span> <span class="o">=</span> <span class="n">Target</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">polarity</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">source</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span></div>
+
+<div class="viewcode-block" id="LanguageProcessor.get_polarity"><a class="viewcode-back" href="../../grammar.html#grammar.language_processor.LanguageProcessor.get_polarity">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_polarity</span><span class="p">(</span><span class="n">pos_tagged_chunk</span><span class="p">):</span>
+        <span class="c1"># print(&#39;pos_tagged_chunk:&#39; , pos_tagged_chunk)</span>
+        <span class="n">set_target</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">list_pos_chunk</span> <span class="ow">in</span> <span class="n">pos_tagged_chunk</span><span class="p">:</span>
+            <span class="n">list_pos_chunk</span> <span class="o">=</span> <span class="n">list_pos_chunk</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">set_target</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pos_tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">pos_tuple</span> <span class="ow">in</span> <span class="n">list_pos_chunk</span><span class="p">)</span>
+
+        <span class="n">negation_word</span> <span class="o">=</span> <span class="n">NEGATE_SET</span> <span class="o">&amp;</span> <span class="n">set_target</span>
+        <span class="c1"># print(&#39;negation_word: &#39; , negation_word)</span>
+        <span class="k">return</span> <span class="n">LanguageProcessor</span><span class="o">.</span><span class="n">POSITIVE_POLARITY</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">negation_word</span> <span class="k">else</span> <span class="n">LanguageProcessor</span><span class="o">.</span><span class="n">NEGATIVE_POLARITY</span></div>
+
+<div class="viewcode-block" id="LanguageProcessor.get_target_pos_neg_scores_mean"><a class="viewcode-back" href="../../grammar.html#grammar.language_processor.LanguageProcessor.get_target_pos_neg_scores_mean">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_target_pos_neg_scores_mean</span><span class="p">(</span><span class="n">target_pos_neg_scores</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param target_pos_neg_scores:  [{&#39;NegScore&#39;: 0.21875, &#39;PosScore&#39;: 0.375},</span>
+<span class="sd">                                        {&#39;NegScore&#39;: 0.0625, &#39;PosScore&#39;: 0.0},</span>
+<span class="sd">                                        {&#39;NegScore&#39;: 0.21875, &#39;PosScore&#39;: 0.375}]</span>
+<span class="sd">        :return: {&#39;NegScore&#39;: 0.16666, &#39;PosScore&#39;: 0.25}</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pos_scores_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">POSITIVE_SENTIMENT_SCORE</span><span class="p">],</span> <span class="n">target_pos_neg_scores</span><span class="p">)))</span>
+        <span class="n">neg_scores_mean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="n">NEGATIVE_SENTIMENT_SCORE</span><span class="p">],</span> <span class="n">target_pos_neg_scores</span><span class="p">)))</span>
+        <span class="k">return</span> <span class="p">{</span><span class="n">POSITIVE_SENTIMENT_SCORE</span><span class="p">:</span> <span class="n">pos_scores_mean</span><span class="p">,</span>
+                <span class="n">NEGATIVE_SENTIMENT_SCORE</span><span class="p">:</span> <span class="n">neg_scores_mean</span><span class="p">}</span></div>
+
+<div class="viewcode-block" id="LanguageProcessor.reject_general_english_word"><a class="viewcode-back" href="../../grammar.html#grammar.language_processor.LanguageProcessor.reject_general_english_word">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">reject_general_english_word</span><span class="p">(</span><span class="n">subject_to_target_mapping</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param subject_to_target_mapping:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">source_target_mapping_new</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">list_of_targets_with_polarity</span> <span class="ow">in</span> <span class="n">subject_to_target_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">target_with_polarity</span> <span class="ow">in</span> <span class="n">list_of_targets_with_polarity</span><span class="p">:</span>
+                <span class="n">word</span> <span class="o">=</span> <span class="n">target_with_polarity</span><span class="o">.</span><span class="n">word</span>
+                <span class="k">if</span> <span class="n">word</span><span class="p">:</span>
+                    <span class="n">source_target_mapping_new</span><span class="p">[</span><span class="n">source</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Target</span><span class="p">(</span><span class="n">word</span><span class="o">=</span><span class="n">word</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="n">target_with_polarity</span><span class="o">.</span><span class="n">polarity</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="n">source_target_mapping_new</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Amit Kushwaha.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

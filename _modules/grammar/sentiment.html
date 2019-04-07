@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>grammar.sentiment &mdash; Aspect Based Sentiment Analysis  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Aspect Based Sentiment Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset.html">dataset package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feature_extraction.html">feature_extraction package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grammar.html">grammar package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">AspectBasedSentimentAnalysis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Aspect Based Sentiment Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>grammar.sentiment</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for grammar.sentiment</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="k">import</span> <span class="n">sentiwordnet</span>
+<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="k">import</span> <span class="n">PorterStemmer</span>
+
+<span class="n">SENTINET_PREFIX</span> <span class="o">=</span> <span class="mi">9</span>
+
+<span class="n">ROOT</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+<span class="n">NEGATIVE_WORDS_TXT</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">+</span> <span class="s1">&#39;dataset/sentiment_words_text_files/negative_words.txt&#39;</span>
+<span class="n">POSITIVE_WORDS_TXT</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">+</span> <span class="s1">&#39;dataset/sentiment_words_text_files/positive_words.txt&#39;</span>
+<span class="n">NEUTRAL_MODIFIERS_TXT</span> <span class="o">=</span> <span class="n">ROOT</span> <span class="o">+</span> <span class="s1">&#39;dataset/sentiment_words_text_files/neutral_modifiers.txt&#39;</span>
+
+<span class="n">POSITIVE_SENTIMENT_SCORE</span> <span class="o">=</span> <span class="s1">&#39;PosScore&#39;</span>
+<span class="n">NEGATIVE_SENTIMENT_SCORE</span> <span class="o">=</span> <span class="s1">&#39;NegScore&#39;</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
+
+<span class="n">neutral_modifiers</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">positive_modifiers</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">negative_modifiers</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">_POSITIVE_POLARITY</span> <span class="o">=</span> <span class="s1">&#39;positive&#39;</span>
+<span class="n">_NEGATIVE_POLARITY</span> <span class="o">=</span> <span class="s1">&#39;negative&#39;</span>
+
+
+<div class="viewcode-block" id="Sentiment"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment">[docs]</a><span class="k">class</span> <span class="nc">Sentiment</span><span class="p">:</span>
+<div class="viewcode-block" id="Sentiment.get_sentiment_for_word"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment.get_sentiment_for_word">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@functools</span><span class="o">.</span><span class="n">lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">16384</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">get_sentiment_for_word</span><span class="p">(</span><span class="n">target</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">positive_list_score</span><span class="p">,</span> <span class="n">negative_list_score</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="n">adj_list</span> <span class="o">=</span> <span class="n">target</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>  <span class="c1"># Handle word like &quot;must try&quot; as &quot;must&quot;, &quot;try&quot;</span>
+        <span class="k">for</span> <span class="n">adj</span> <span class="ow">in</span> <span class="n">adj_list</span><span class="p">:</span>
+            <span class="n">pos</span><span class="p">,</span> <span class="n">neg</span> <span class="o">=</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">_find_sentiment_score_for</span><span class="p">(</span><span class="n">adj</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">pos</span> <span class="ow">or</span> <span class="n">neg</span><span class="p">:</span>
+                <span class="n">positive_list_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+                <span class="n">negative_list_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">neg</span><span class="p">)</span>
+        <span class="n">positive</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">positive_list_score</span><span class="p">)</span> <span class="k">if</span> <span class="n">positive_list_score</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">negative</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">negative_list_score</span><span class="p">)</span> <span class="k">if</span> <span class="n">negative_list_score</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="n">POSITIVE_SENTIMENT_SCORE</span><span class="p">:</span> <span class="n">positive</span><span class="p">,</span>
+            <span class="n">NEGATIVE_SENTIMENT_SCORE</span><span class="p">:</span> <span class="n">negative</span>
+        <span class="p">}</span></div>
+
+<div class="viewcode-block" id="Sentiment.get_sentiment_with_polarity"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment.get_sentiment_with_polarity">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_sentiment_with_polarity</span><span class="p">(</span><span class="n">target_polarity</span><span class="p">):</span>
+        <span class="n">sentiment_score</span> <span class="o">=</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_sentiment_for_word</span><span class="p">(</span><span class="n">target_polarity</span><span class="o">.</span><span class="n">word</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">target_polarity</span><span class="o">.</span><span class="n">polarity</span> <span class="o">==</span> <span class="s1">&#39;negative&#39;</span><span class="p">:</span>
+            <span class="n">reverse_sentiment_score</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="n">POSITIVE_SENTIMENT_SCORE</span><span class="p">:</span> <span class="n">sentiment_score</span><span class="p">[</span><span class="n">NEGATIVE_SENTIMENT_SCORE</span><span class="p">],</span>
+                <span class="n">NEGATIVE_SENTIMENT_SCORE</span><span class="p">:</span> <span class="n">sentiment_score</span><span class="p">[</span><span class="n">POSITIVE_SENTIMENT_SCORE</span><span class="p">]</span>
+            <span class="p">}</span>
+            <span class="n">sentiment_score</span> <span class="o">=</span> <span class="n">reverse_sentiment_score</span>
+        <span class="k">return</span> <span class="n">sentiment_score</span></div>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_find_sentiment_score_for</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+        <span class="n">pos_matched_word</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sentiwordnet</span><span class="o">.</span><span class="n">senti_synsets</span><span class="p">(</span><span class="n">word</span><span class="p">)))</span>
+        <span class="n">neg_matched_word</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sentiwordnet</span><span class="o">.</span><span class="n">senti_synsets</span><span class="p">(</span><span class="n">word</span><span class="p">)))</span>
+        <span class="n">pos</span> <span class="o">=</span> <span class="n">pos_matched_word</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">pos_score</span><span class="p">())</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pos_matched_word</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="n">neg</span> <span class="o">=</span> <span class="n">neg_matched_word</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">neg_score</span><span class="p">())</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">neg_matched_word</span><span class="p">)</span> <span class="k">else</span> <span class="mi">0</span>
+        <span class="k">return</span> <span class="n">pos</span><span class="p">,</span> <span class="n">neg</span>
+
+<div class="viewcode-block" id="Sentiment.get_neutral_modifiers"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment.get_neutral_modifiers">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_neutral_modifiers</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">neutral_modifiers</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">neutral_modifiers</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">NEUTRAL_MODIFIERS_TXT</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">txt_file</span><span class="p">:</span>
+                <span class="n">neutral_modifiers</span> <span class="o">=</span> <span class="p">{</span><span class="n">w</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">txt_file</span>
+                                     <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()}</span>
+                <span class="c1"># neutral_modifiers.update({token for word in neutral_modifiers for token in word.split()})</span>
+        <span class="n">neutral_modifiers</span> <span class="o">-=</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_positive_modifiers</span><span class="p">()</span>
+        <span class="n">neutral_modifiers</span> <span class="o">-=</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_negative_modifiers</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">neutral_modifiers</span></div>
+
+<div class="viewcode-block" id="Sentiment.get_positive_modifiers"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment.get_positive_modifiers">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_positive_modifiers</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">positive_modifiers</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">positive_modifiers</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">POSITIVE_WORDS_TXT</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">txt_file</span><span class="p">:</span>
+                <span class="n">positive_modifiers</span> <span class="o">=</span> <span class="p">{</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">txt_file</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">positive_modifiers</span></div>
+
+<div class="viewcode-block" id="Sentiment.get_negative_modifiers"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment.get_negative_modifiers">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_negative_modifiers</span><span class="p">():</span>
+        <span class="k">global</span> <span class="n">negative_modifiers</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">negative_modifiers</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">NEGATIVE_WORDS_TXT</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">txt_file</span><span class="p">:</span>
+                <span class="n">negative_modifiers</span> <span class="o">=</span> <span class="p">{</span><span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">txt_file</span><span class="p">}</span>
+        <span class="k">return</span> <span class="n">negative_modifiers</span></div>
+
+<div class="viewcode-block" id="Sentiment.neutral_words"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment.neutral_words">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">neutral_words</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">stemmed_adj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_neutral_modifiers</span><span class="p">()</span> <span class="ow">or</span>
+                <span class="n">stemmed_adj</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_neutral_modifiers</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Sentiment.positive_words"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment.positive_words">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">positive_words</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">stemmed_adj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_positive_modifiers</span><span class="p">()</span> <span class="ow">or</span>
+                <span class="n">stemmed_adj</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_positive_modifiers</span><span class="p">())</span></div>
+
+<div class="viewcode-block" id="Sentiment.negative_words"><a class="viewcode-back" href="../../grammar.html#grammar.sentiment.Sentiment.negative_words">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">negative_words</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">stemmed_adj</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">word</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_negative_modifiers</span><span class="p">()</span> <span class="ow">or</span>
+                <span class="n">stemmed_adj</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="n">Sentiment</span><span class="o">.</span><span class="n">get_negative_modifiers</span><span class="p">())</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Amit Kushwaha.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

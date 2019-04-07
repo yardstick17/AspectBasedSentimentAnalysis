@@ -1,0 +1,506 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>grammar.pattern_grammar &mdash; Aspect Based Sentiment Analysis  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Aspect Based Sentiment Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset.html">dataset package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feature_extraction.html">feature_extraction package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grammar.html">grammar package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">AspectBasedSentimentAnalysis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Aspect Based Sentiment Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>grammar.pattern_grammar</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for grammar.pattern_grammar</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
+
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.sentiment.vader</span> <span class="k">import</span> <span class="n">NEGATE</span>
+
+<span class="n">syntactic_compiled_grammar</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">source_target_compiled_grammar</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">Target</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Target&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;word&#39;</span><span class="p">,</span> <span class="s1">&#39;polarity&#39;</span><span class="p">])</span>
+
+<span class="n">NEGATE_SET</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">NEGATE</span><span class="p">)</span> <span class="o">|</span> <span class="p">{</span><span class="s2">&quot;n&#39;t&quot;</span><span class="p">,</span> <span class="s1">&#39;never&#39;</span><span class="p">}</span>
+
+<span class="c1"># [0, 8, 13, 14, 16, 17, 18, 19, 21, 23, 25, 26, 30]</span>
+<div class="viewcode-block" id="PatternGrammar"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar">[docs]</a><span class="k">class</span> <span class="nc">PatternGrammar</span><span class="p">:</span>
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">syntactic_grammars</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">grammar</span> <span class="o">=</span> <span class="p">{</span>
+
+            <span class="mi">1</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                VBG_RB_DESRIBING_NN:    {   &lt;NN|NN.&gt;&lt;MD&gt;?&lt;RB|RB.&gt;*&lt;VB|VB.&gt;&lt;RB|RB.&gt;*(&lt;CC|,&gt;?&lt;RB|RB.&gt;?&lt;VB|VB.&gt;)+&lt;NN|NN.&gt;+ }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">2</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # the place was amazing |</span>
+<span class="s2">                VBG_DESRIBING_NN: {&lt;NN|NN.&gt;&lt;VB|VB.&gt;+&lt;RB|RB.&gt;*&lt;VB|VB.&gt;}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">3</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # I loved the ambiance and the food. | enjoyed the taste.</span>
+<span class="s2">                VBG_DESCRIBING_NN_V3 : {&lt;VB|VB.&gt;+&lt;DT&gt;?&lt;IN&gt;?&lt;NN.|NN&gt;+(&lt;CC|,&gt;?&lt;DT&gt;?&lt;JJ|JJ.&gt;*&lt;NN|NN.&gt;+)*}  # noqa nopep8&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">4</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # Amazingly satisfying food</span>
+<span class="s2">                VBG_DESRIBING_NN_V2: {&lt;RB|RB.&gt;*&lt;VB.|VBG&gt;+&lt;NN|NN.&gt;}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">5</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                VBG_DESRIBING_NN_V5 :{&lt;JJ|JJ.&gt;&lt;N.|NN.&gt;&lt;VB.|VB&gt;&lt;RB&gt;*&lt;VB.&gt;}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">6</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # perfect place to have varied options in burgers</span>
+<span class="s2">                VBG_NN_DESCRIBING_NN: { &lt;VBN&gt;&lt;NN|NN.&gt;&lt;IN&gt;&lt;NN|NN.&gt; }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">7</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # improved on their service</span>
+<span class="s2">                VBN_IN_PRP_NN: { &lt;VBN&gt;&lt;IN&gt;&lt;PRP\$&gt;&lt;NN&gt; }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">8</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                VBG_NN_DESCRIBING_NN: { &lt;VBN&gt;&lt;NN|NN.&gt;&lt;IN&gt;&lt;NN|NN.&gt; }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">9</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                VBN_DESCRING_THE_FOLLOWING_NOUN : { &lt;RB|JJ.|JJ&gt;*&lt;VB|VB.&gt;+&lt;IN|DT&gt;?(&lt;CC|,|TO&gt;?&lt;DT&gt;?&lt;NN|NN.&gt;+)+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">10</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                #i love east village pizza</span>
+<span class="s2">                VB_DESCRBING_NN : { &lt;VB|VB.&gt;(&lt;CC|,&gt;?&lt;RB|RB.&gt;&lt;JJ|JJ.&gt;*&lt;NN|NN.&gt;*)+}&quot;&quot;&quot;</span><span class="p">,</span>
+
+            <span class="mi">11</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # the place was ok and good</span>
+<span class="s2">                # The Phirni here is a rich flavoured dessert | Place not worth visiting | the place was ok and good | the fish , chicken and biryani were so tastefull   # noqa nopep8</span>
+<span class="s2">                JJ_DESCRIBING_NN_V4 :{(&lt;CC|,&gt;*&lt;DT&gt;?&lt;JJ|JJ.&gt;*&lt;NN|NN.&gt;+)+(&lt;IN&gt;&lt;NN.|N.&gt;)*&lt;RB|RB.&gt;*&lt;VB|VB.&gt;+&lt;IN&gt;?&lt;DT&gt;?(&lt;CC|,&gt;*&lt;RB|RB.&gt;*&lt;JJ|JJ.&gt;+&lt;NN|NN.&gt;*)+} # noqa nopep8&quot;&quot;&quot;</span><span class="p">,</span>
+
+            <span class="mi">12</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # this place is always crowded, noisy and full #JJ_VBG_RB_DESRIBING_NN</span>
+<span class="s2">                # great food , service and ambience. | great food and service. | the served the lovely food. | they have a speedy delivery</span>
+<span class="s2">                # food is amazing</span>
+<span class="s2">                NN_IS_VBG : { &lt;NN&gt;&lt;VBZ&gt;&lt;VB|VB.&gt; }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">13</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # they have a speedy delivery</span>
+<span class="s2">                PRP_VB_NN : { &lt;PRP&gt;&lt;VBP|VB&gt;&lt;DT&gt;?&lt;NN|NN.&gt;+ }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">14</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # they have a speedy delivery</span>
+<span class="s2">                PRP_VB_NN : { &lt;PRP&gt;&lt;VBP|VB&gt;&lt;DT&gt;?&lt;NN|NN.&gt;+ }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">15</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # nice for trying some authentic chinese</span>
+<span class="s2">                NN_VB_DT_JJ_NN: { &lt;NN&gt;&lt;IN&gt;&lt;VBG&gt;&lt;DT&gt;&lt;JJ&gt;&lt;NN|NN.&gt; }</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">16</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # vegans like me can also enjoy</span>
+<span class="s2">                NN_MD_VB : {&lt;NN|NN.&gt;&lt;IN|PRP&gt;*&lt;MD&gt;&lt;RB&gt;?&lt;VB&gt;&lt;JJ&gt;?} &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">17</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # They have awesome Indian and Chinese!</span>
+<span class="s2">                PR_VB_JJ_JJ : { &lt;PRP&gt;&lt;VBP&gt;&lt;JJ&gt;+&lt;CC|JJ&gt;* } &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">18</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # impossible to order</span>
+<span class="s2">                JJ_TO_NN_VB : { &lt;JJ&gt;(&lt;TO&gt;&lt;NN|VB&gt;+)+ } &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">19</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                RB_BEFORE_NN: {&lt;RB|RB.&gt;+&lt;JJ|JJ.&gt;*&lt;NN|NN.&gt;+} &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">20</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # not a fan of biryani and rolls</span>
+<span class="s2">                NN_IN_DT_NN_reverse : { &lt;NN|NN.&gt;+&lt;IN&gt;&lt;DT&gt;(&lt;CC|,&gt;?&lt;DT&gt;?&lt;JJ|JJ.&gt;*&lt;NN|NN.&gt;+)+ } &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">21</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # place isnt worth the hype</span>
+<span class="s2">                NN_IN_DT_NN: { &lt;NN&gt;+&lt;IN&gt;&lt;DT&gt;&lt;NN&gt; } &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">22</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;            # I was disappointed with the chicken tikka</span>
+<span class="s2">                I_JJ_NN : { &lt;JJ.|J.&gt;&lt;IN&gt;&lt;DT&gt;?&lt;NN.|N.&gt;+} &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">23</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # impeccable service</span>
+<span class="s2">                NN_JJ : { &lt;CC|DT&gt;&lt;NN|NN.&gt;+&lt;JJ|JJ.&gt;}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">24</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;JJ_BEFORE_NN : {&lt;RB|RB.&gt;*&lt;JJ|JJ.&gt;&lt;NN|NN.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">25</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # The asparagus, truffle oil, parmesan bruschetta is a winner.</span>
+<span class="s2">                NN_desc_NN : { (&lt;CC|,&gt;*&lt;DT&gt;?&lt;JJ|JJ.&gt;*&lt;N.|NN.&gt;+)+&lt;VB.|V.&gt;&lt;IN&gt;?&lt;DT&gt;?&lt;N.|NN.&gt;+} &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">26</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # Avoid this place</span>
+<span class="s2">                NN_DT_NN : { &lt;NN.|N.&gt;&lt;DT&gt;&lt;NN.|N.&gt;+}</span>
+<span class="s2">                &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">27</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # my favourite is the chicken biryani</span>
+<span class="s2">                NN_desc_NN_reverse : { &lt;NN.|N.&gt;&lt;VB.|V.&gt;&lt;DT&gt;&lt;N.|NN.&gt;+} &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">28</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                # grasps all NN if none rule captures the sentence</span>
+<span class="s2">                NN_Phrase : { &lt;JJ|JJ.&gt;?&lt;VB.|V.&gt;?&lt;FW|NN.|N.&gt;+ }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">29</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                JJ_VBG_RB_DESRIBING_NN_2: {  ( &lt;CC|,|TO&gt;? &lt;DT&gt;? &lt;JJ|JJ.&gt;*&lt;NN|NN.&gt;+ )+ &lt;WDT&gt; &lt;..|...&gt;* &lt;VB|VB.|JJ|JJ.|RB&gt;+ }</span>
+<span class="s2">                &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">30</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                JJ_VBG_RB_DESRIBING_NN: {   (&lt;CC|,&gt;?&lt;JJ|JJ.&gt;*&lt;VB.|V.&gt;?&lt;NN|NN.&gt;)+&lt;RB|RB.&gt;*&lt;MD&gt;?&lt;WDT|DT&gt;?&lt;VB|VB.&gt;?&lt;RB|RB.&gt;*(&lt;CC|,&gt;?&lt;RB|RB.&gt;?&lt;VB|VB.|JJ.|JJ|RB|RB.&gt;+)+}</span>
+<span class="s2">                &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="mi">31</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">                AAAA_IGNORE_ALL_RULES: {  &lt;RB&gt; }</span>
+<span class="s2">                &quot;&quot;&quot;</span>
+
+            <span class="p">}</span>
+        <span class="k">return</span> <span class="n">grammar</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">source_target_extraction_grammars</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">SRC_TARGET_GRAMMAR</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;JJ_grammar&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;JJ: {&lt;RB|R.&gt;*&lt;JJ|JJ.&gt;}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NN_JJ_desc&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;&quot;NN_JJ :  {&lt;JJ|JJ.&gt;+&lt;NN|NN.&gt;*}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NN_desc&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;&quot;RB_VB :  {&lt;RB|RB.&gt;*&lt;VB.|VBG&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="c1"># NN_MD_VB,</span>
+            <span class="s1">&#39;VB_desc&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;VB: { &lt;VB|VB.&gt;&lt;JJ&gt;? }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;JJ_multi&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;JJ: { &lt;JJ|JJ.|&gt;+(&lt;,|CC&gt;?&lt;JJ&gt;)* }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="c1"># JJ_IN_NN,</span>
+            <span class="s1">&#39;JJ_IN_NN&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;JJ: { &lt;JJ|JJ.&gt;&lt;NN&gt;+&lt;IN&gt; }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;JJ_any_IN&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;JJ: { &lt;JJ|JJ.&gt;+&lt;.*&gt;*&lt;IN&gt; }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;JJ_NN_end&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NN: { (&lt;VB|VB.&gt;?&lt;JJ|JJ.&gt;*&lt;NN|NN.&gt;+)$ }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NN_beg&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot; NP: { (^)(&lt;CC|,&gt;*&lt;DT&gt;?&lt;JJ|JJ.&gt;*&lt;VB|VB.&gt;?&lt;N.|NN.&gt;+)+ } &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NN_only&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP: {&lt;NN|NN.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NN_IN&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot; NN: {&lt;VB|VB.&gt;?&lt;NN|NN.&gt;+&lt;IN&gt;} &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;DT_NN&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot; NN: {&lt;DT&gt;(&lt;CC|,&gt;*&lt;DT&gt;?&lt;JJ|JJ.&gt;*&lt;VB|VB.&gt;?&lt;N.|NN.&gt;+)+} &quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;TO_NN&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP: { (&lt;TO&gt;&lt;NN|NN.&gt;+)+ }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="c1"># JJ_IN_NN | NN_MD_VB,</span>
+            <span class="s1">&#39;NE_grammar&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP: {&lt;JJ&gt;*&lt;N.|NN.&gt;+},</span>
+<span class="s2">                     NP: {&lt;NN.|N.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NN_all&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP: {(&lt;FW|NN|NN.&gt;+&lt;JJ|JJ.|VB|VB.&gt;?)*&lt;JJ|JJ.|VB|VB.&gt;*&lt;NN|NN.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NN_CC_JJ_multi&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP:     { (&lt;,|CC&gt;*&lt;JJ|JJ.&gt;?&lt;NN|NN.&gt;+)+ }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NP_before_VB&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP: {(&lt;CC|,&gt;*&lt;DT&gt;?&lt;JJ|JJ.&gt;*&lt;VB|VB.&gt;?&lt;NN|NN.&gt;+)+(&lt;IN&gt;&lt;N.|NN.&gt;)*&lt;RB|RB.&gt;*&lt;VB|VB.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="c1"># noqa nopep8</span>
+            <span class="s1">&#39;NP_After_VB_must&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP : {&lt;VB.|V.&gt;&lt;DT&gt;&lt;JJ|JJ.&gt;*&lt;N.|NN.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NP_After_VB&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP : {(&lt;,|CC&gt;*&lt;JJ|JJ.&gt;?&lt;NN|NN.&gt;+)*}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="c1"># was of great taste.,</span>
+            <span class="s1">&#39;NP_After_VB_i&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NP : {(&lt;,|CC&gt;*&lt;JJ|JJ.|VB|VB.&gt;?&lt;NN|NN.&gt;+)*}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="c1"># The food Hummus n Pita and Fish n Chips were &#39;mouth watering`.,</span>
+            <span class="s1">&#39;VB_JJ_RB_desc&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NN_JJ : {&lt;JJ|JJ.|RB|RB.&gt;*&lt;VB|VB.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>  <span class="c1"># was amazing</span>
+            <span class="s1">&#39;RB_AFTER_VB&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;VB_RB : {&lt;VB|VB.&gt;&lt;RB|RB.&gt;+&lt;JJ|JJ.|NN|NN.|VB|VB.&gt;*}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="c1"># the service was fast.  | fast -&gt; RB,</span>
+            <span class="s1">&#39;VB_all&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;VB_ : { &lt;VB|VB.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+
+            <span class="c1"># all verbs : i &#39;loved&#39; the ambience.</span>
+            <span class="s1">&#39;RB_all&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;RB : {&lt;JJ|JJ.&gt;*&lt;RB|RB.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+
+            <span class="s1">&#39;JJ_all&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;JJ : {&lt;JJ|JJ.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;NN_FW_only&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;NN_FW : { &lt;VB|VB.&gt;?&lt;NN.|N.|FW&gt;+ }&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;VBG_JJ : { &lt;VB.|VB&gt;&lt;JJ|JJ.|NN|NN.&gt;+}&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="s1">&#39;JJ_NN_RB_VB&#39;</span><span class="p">:</span>
+                <span class="sd">&quot;&quot;&quot; JJ : {&lt;JJ|JJ.&gt;+}</span>
+<span class="sd">                    RB_JJ : {&lt;RB|RB.&gt;+&lt;JJ|JJ.&gt;*}</span>
+<span class="sd">                    RB_VB : {&lt;VB.|VB&gt;+&lt;RB|RB.&gt;+}</span>
+<span class="sd">                    RB : {&lt;RB|RB.&gt;+}</span>
+<span class="sd">                    JJ : {&lt;JJ|JJ.&gt;+&lt;NN|NN.&gt;*}</span>
+<span class="sd">                    VB : {&lt;VB|VB.&gt;+}</span>
+<span class="sd">                    NN : { &lt;NN|NN.&gt;+}</span>
+<span class="sd">                    &quot;&quot;&quot;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">SRC_TARGET_GRAMMAR</span>
+
+<div class="viewcode-block" id="PatternGrammar.extractor_mapping_dict"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar.extractor_mapping_dict">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">extractor_mapping_dict</span><span class="p">():</span>
+        <span class="n">extractor_dict</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;JJ_DESCRIBING_NN_V4&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VBG_RB_DESRIBING_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VBN_DESCRING_THE_FOLLOWING_NOUN&#39;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;JJ_VBG_RB_DESRIBING_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                       <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;JJ_VBG_RB_DESRIBING_NN_2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                         <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VBG_DESCRIBING_NN_V3&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                     <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VBG_NN_DESCRIBING_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                     <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VBG_DESRIBING_NN_V2&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VBG_DESCRIBIN_NN_V4&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VB_DESCRBING_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;RB_BEFORE_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                             <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;JJ_BEFORE_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                             <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_JJ&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                      <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;JJ_IN_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                         <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;JJ_TO_NN_VB&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                            <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_MD_VB&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                         <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VBN_IN_PRP_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                              <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;VB_PRP_NNS&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                           <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;PR_VB_JJ_JJ&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                            <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;I_JJ_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                        <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_IN_DT_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                            <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_VB_DT_JJ_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                               <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_Phrase&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                          <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_desc_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                           <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_DT_NN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                         <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_desc_NN_reverse&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                   <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)},</span>
+            <span class="s1">&#39;NN_IN_DT_NN_reverse&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;NP_before_VB&#39;</span><span class="p">),</span>
+                                    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">PatternGrammar</span><span class="p">()</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="s1">&#39;JJ_AFTER_VB&#39;</span><span class="p">)}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">extractor_dict</span></div>
+
+<div class="viewcode-block" id="PatternGrammar.get_source_target_compiled_grammar"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar.get_source_target_compiled_grammar">[docs]</a>    <span class="k">def</span> <span class="nf">get_source_target_compiled_grammar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clause</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">source_target_compiled_grammar</span>
+        <span class="n">compiled_grammar</span> <span class="o">=</span> <span class="n">source_target_compiled_grammar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">clause</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">compiled_grammar</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">compiled_grammar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile_source_target_grammar</span><span class="p">(</span><span class="n">clause</span><span class="p">)</span>
+            <span class="n">source_target_compiled_grammar</span><span class="p">[</span><span class="n">clause</span><span class="p">]</span> <span class="o">=</span> <span class="n">compiled_grammar</span>
+        <span class="k">return</span> <span class="n">compiled_grammar</span></div>
+
+<div class="viewcode-block" id="PatternGrammar.compile_source_target_grammar"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar.compile_source_target_grammar">[docs]</a>    <span class="k">def</span> <span class="nf">compile_source_target_grammar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">clause</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">nltk</span><span class="o">.</span><span class="n">RegexpParser</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_target_extraction_grammars</span><span class="p">[</span><span class="n">clause</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="PatternGrammar.compile_all_source_target_grammar"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar.compile_all_source_target_grammar">[docs]</a>    <span class="k">def</span> <span class="nf">compile_all_source_target_grammar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">source_target_compiled_grammar</span>
+        <span class="n">clauses</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">source_target_extraction_grammars</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">clause</span> <span class="ow">in</span> <span class="n">clauses</span><span class="p">:</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_source_target_compiled_grammar</span><span class="p">(</span><span class="n">clause</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">source_target_compiled_grammar</span></div>
+
+<div class="viewcode-block" id="PatternGrammar.get_syntactic_grammar"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar.get_syntactic_grammar">[docs]</a>    <span class="k">def</span> <span class="nf">get_syntactic_grammar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">syntactic_compiled_grammar</span>
+        <span class="n">compiled_grammar</span> <span class="o">=</span> <span class="n">syntactic_compiled_grammar</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">compiled_grammar</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">compiled_grammar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compile_syntactic_grammar</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+            <span class="n">syntactic_compiled_grammar</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">=</span> <span class="n">compiled_grammar</span>
+        <span class="k">return</span> <span class="n">compiled_grammar</span></div>
+
+<div class="viewcode-block" id="PatternGrammar.compile_syntactic_grammar"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar.compile_syntactic_grammar">[docs]</a>    <span class="k">def</span> <span class="nf">compile_syntactic_grammar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">nltk</span><span class="o">.</span><span class="n">RegexpParser</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">syntactic_grammars</span><span class="p">[</span><span class="n">index</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="PatternGrammar.compile_all_syntactic_grammar"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar.compile_all_syntactic_grammar">[docs]</a>    <span class="k">def</span> <span class="nf">compile_all_syntactic_grammar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">global</span> <span class="n">syntactic_compiled_grammar</span>
+        <span class="n">indexes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">syntactic_grammars</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">indexes</span><span class="p">:</span>
+            <span class="n">_</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_syntactic_grammar</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">syntactic_compiled_grammar</span></div>
+
+<div class="viewcode-block" id="PatternGrammar.get_source_target_set"><a class="viewcode-back" href="../../grammar.html#grammar.pattern_grammar.PatternGrammar.get_source_target_set">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">get_source_target_set</span><span class="p">(</span><span class="n">source_chunk</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span><span class="p">):</span>
+        <span class="kn">from</span> <span class="nn">grammar.chunker</span> <span class="k">import</span> <span class="n">Chunker</span>
+
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        :param source_chunk: list of source chunk , extracted using</span>
+<span class="sd">        :param target_chunk_with_polarity:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">source_set</span><span class="p">,</span> <span class="n">target_set</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(),</span> <span class="nb">set</span><span class="p">()</span>
+        <span class="n">target_chunk</span> <span class="o">=</span> <span class="n">target_tuple_with_polarity</span><span class="o">.</span><span class="n">word</span>
+        <span class="n">target_chunk</span> <span class="o">=</span> <span class="p">[</span><span class="n">tgt</span> <span class="k">for</span> <span class="n">tgt</span> <span class="ow">in</span> <span class="n">target_chunk</span> <span class="k">if</span> <span class="n">tgt</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">source_chunk</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">src</span> <span class="ow">in</span> <span class="n">source_chunk</span><span class="p">:</span>
+            <span class="n">src_pos_tagged_part</span> <span class="o">=</span> <span class="n">src</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">np_phrase_pos_tagged_list</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">src_pos_tagged_part</span><span class="p">,</span> <span class="s1">&#39;NN_all&#39;</span><span class="p">)</span>
+            <span class="c1"># np_phrase_pos_tagged_part = np_phrase_pos_tagged_list[0]</span>
+            <span class="k">for</span> <span class="n">np_phrase_pos_tagged_part</span> <span class="ow">in</span> <span class="n">np_phrase_pos_tagged_list</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">single_np_phrase</span> <span class="ow">in</span> <span class="n">np_phrase_pos_tagged_part</span><span class="p">:</span>
+                    <span class="n">source_word</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">single_np_phrase</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="n">source_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">source_word</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">tgt</span> <span class="ow">in</span> <span class="n">target_chunk</span><span class="p">:</span>
+            <span class="n">tgt_pos_tagged_part</span> <span class="o">=</span> <span class="n">tgt</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">sentiment_phrase_pos_tagged_list</span> <span class="o">=</span> <span class="n">Chunker</span><span class="o">.</span><span class="n">get_chunk</span><span class="p">(</span><span class="n">tgt_pos_tagged_part</span><span class="p">,</span> <span class="s1">&#39;JJ_NN_RB_VB&#39;</span><span class="p">)</span>
+            <span class="c1"># sentiment_phrase_pos_tagged_part = sentiment_phrase_pos_tagged_list[0]</span>
+            <span class="k">for</span> <span class="n">sentiment_phrase_pos_tagged_part</span> <span class="ow">in</span> <span class="n">sentiment_phrase_pos_tagged_list</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">single_sentiment_phrase</span> <span class="ow">in</span> <span class="n">sentiment_phrase_pos_tagged_part</span><span class="p">:</span>
+                    <span class="n">target_word</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">single_sentiment_phrase</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="n">target_set</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">target_word</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">source_set</span><span class="p">,</span> <span class="n">target_set</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Amit Kushwaha.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

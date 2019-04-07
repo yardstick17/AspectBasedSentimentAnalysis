@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>dataset.read_dataset &mdash; Aspect Based Sentiment Analysis  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Aspect Based Sentiment Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset.html">dataset package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feature_extraction.html">feature_extraction package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grammar.html">grammar package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">AspectBasedSentimentAnalysis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Aspect Based Sentiment Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>dataset.read_dataset</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for dataset.read_dataset</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">xml.dom</span> <span class="k">import</span> <span class="n">minidom</span>
+
+
+<div class="viewcode-block" id="read_json_formatted"><a class="viewcode-back" href="../../dataset.html#dataset.read_dataset.read_json_formatted">[docs]</a><span class="k">def</span> <span class="nf">read_json_formatted</span><span class="p">(</span><span class="n">dataset_filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">dataset_filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">data_file</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">data_file</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">data</span></div>
+
+
+<div class="viewcode-block" id="read_absa_2014_restaurant_xml"><a class="viewcode-back" href="../../dataset.html#dataset.read_dataset.read_absa_2014_restaurant_xml">[docs]</a><span class="k">def</span> <span class="nf">read_absa_2014_restaurant_xml</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    :param filename:</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">ipdb</span>
+    <span class="n">ipdb</span><span class="o">.</span><span class="n">set_trace</span><span class="p">()</span>
+    <span class="n">DOMTree</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">reviews</span> <span class="o">=</span> <span class="n">DOMTree</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;sentences&#39;</span><span class="p">)</span>
+    <span class="n">list_of_meta_dict</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
+        <span class="n">sentences</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;sentence&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+            <span class="n">text_node</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">text_node</span><span class="o">.</span><span class="n">childNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">nodeValue</span>
+            <span class="k">for</span> <span class="n">opinion_dom</span> <span class="ow">in</span> <span class="n">sentence</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;aspectTerms&#39;</span><span class="p">):</span>
+                <span class="n">opinion_list</span> <span class="o">=</span> <span class="n">opinion_dom</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;aspectTerm&#39;</span><span class="p">)</span>
+                <span class="n">target_list</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">polarity_list</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">opinion</span> <span class="ow">in</span> <span class="n">opinion_list</span><span class="p">:</span>
+                    <span class="n">target_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">opinion</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;term&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                    <span class="n">polarity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">opinion</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;polarity&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+                <span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;sentence&#39;</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
+                    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">target_list</span><span class="p">,</span>
+                    <span class="s1">&#39;polarity&#39;</span><span class="p">:</span> <span class="n">polarity_list</span>
+                <span class="p">}</span>
+                <span class="n">list_of_meta_dict</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">filename_json</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;.json&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">filename_json</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="n">filename_json</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename_json</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">list_of_meta_dict</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">filename_json</span></div>
+
+
+<div class="viewcode-block" id="read_absa_2015_restaurant_xml"><a class="viewcode-back" href="../../dataset.html#dataset.read_dataset.read_absa_2015_restaurant_xml">[docs]</a><span class="k">def</span> <span class="nf">read_absa_2015_restaurant_xml</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    :param filename:</span>
+<span class="sd">    :return:</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">DOMTree</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="n">reviews</span> <span class="o">=</span> <span class="n">DOMTree</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;Reviews&#39;</span><span class="p">)</span>
+    <span class="n">list_of_meta_dict</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">:</span>
+        <span class="n">sentences</span> <span class="o">=</span> <span class="n">review</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;sentence&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">sentences</span><span class="p">:</span>
+            <span class="n">text_node</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">text_node</span><span class="o">.</span><span class="n">childNodes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">nodeValue</span>
+            <span class="k">for</span> <span class="n">opinion_dom</span> <span class="ow">in</span> <span class="n">sentence</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;Opinions&#39;</span><span class="p">):</span>
+                <span class="n">opinion_list</span> <span class="o">=</span> <span class="n">opinion_dom</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;Opinion&#39;</span><span class="p">)</span>
+                <span class="n">target_list</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">polarity_list</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="k">for</span> <span class="n">opinion</span> <span class="ow">in</span> <span class="n">opinion_list</span><span class="p">:</span>
+                    <span class="n">target_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">opinion</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;target&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+                    <span class="n">polarity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">opinion</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s1">&#39;polarity&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+
+                <span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;sentence&#39;</span><span class="p">:</span> <span class="n">text</span><span class="p">,</span>
+                    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">target_list</span><span class="p">,</span>
+                    <span class="s1">&#39;polarity&#39;</span><span class="p">:</span> <span class="n">polarity_list</span>
+                <span class="p">}</span>
+                <span class="n">list_of_meta_dict</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">filename_json</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;.json&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">filename_json</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="n">filename_json</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename_json</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">list_of_meta_dict</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">filename_json</span></div>
+
+
+<div class="viewcode-block" id="read_customer_review_data"><a class="viewcode-back" href="../../dataset.html#dataset.read_dataset.read_customer_review_data">[docs]</a><span class="k">def</span> <span class="nf">read_customer_review_data</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">content</span><span class="p">]</span>
+    <span class="n">list_of_meta_dict</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">&#39;[t]&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">&#39;[p]&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">&#39;[cs]&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> \
+                <span class="ow">and</span> <span class="s1">&#39;[cc]&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">&#39;[s]&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span> <span class="ow">and</span> <span class="s1">&#39;[u]&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+            <span class="n">splitted_line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;##&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">splitted_line</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+            <span class="n">sentence</span> <span class="o">=</span> <span class="n">splitted_line</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">aspects_with_polarity</span> <span class="o">=</span> <span class="n">splitted_line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+            <span class="n">aspect_list</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">polarity_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+            <span class="k">for</span> <span class="n">aspect</span> <span class="ow">in</span> <span class="n">aspects_with_polarity</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">aspect</span><span class="p">:</span>
+                    <span class="c1"># aspect_list.append(aspect)</span>
+                    <span class="n">stripped_aspect</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^A-Za-z\s]+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">aspect</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="s1">&#39;+&#39;</span> <span class="ow">in</span> <span class="n">aspect</span><span class="p">:</span>
+                        <span class="n">aspect_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stripped_aspect</span><span class="p">)</span>
+                        <span class="n">polarity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;positive&#39;</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="s1">&#39;-&#39;</span> <span class="ow">in</span> <span class="n">aspect</span><span class="p">:</span>
+                        <span class="n">aspect_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stripped_aspect</span><span class="p">)</span>
+                        <span class="n">polarity_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;negative&#39;</span><span class="p">)</span>
+            <span class="n">d</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;sentence&#39;</span><span class="p">:</span> <span class="n">sentence</span><span class="p">,</span>
+                <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">aspect_list</span><span class="p">,</span>
+                <span class="s1">&#39;polarity&#39;</span><span class="p">:</span> <span class="n">polarity_list</span>
+            <span class="p">}</span>
+            <span class="n">list_of_meta_dict</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+
+    <span class="n">filename_json</span> <span class="o">=</span> <span class="n">filename</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;.json&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">filename_json</span> <span class="o">==</span> <span class="n">filename</span><span class="p">:</span>
+        <span class="n">filename_json</span> <span class="o">=</span> <span class="n">filename</span> <span class="o">+</span> <span class="s1">&#39;.json&#39;</span>
+
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename_json</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
+        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">list_of_meta_dict</span><span class="p">,</span> <span class="n">outfile</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">filename_json</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Amit Kushwaha.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

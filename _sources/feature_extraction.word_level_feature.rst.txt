@@ -1,0 +1,10 @@
+feature\_extraction.word\_level\_feature package
+================================================
+
+Module contents
+---------------
+
+.. automodule:: feature_extraction.word_level_feature
+    :members:
+    :undoc-members:
+    :show-inheritance:

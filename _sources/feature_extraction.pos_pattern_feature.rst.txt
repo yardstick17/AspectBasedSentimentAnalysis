@@ -1,0 +1,22 @@
+feature\_extraction.pos\_pattern\_feature package
+=================================================
+
+Submodules
+----------
+
+feature\_extraction.pos\_pattern\_feature.syntactic\_pos\_pattern module
+------------------------------------------------------------------------
+
+.. automodule:: feature_extraction.pos_pattern_feature.syntactic_pos_pattern
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: feature_extraction.pos_pattern_feature
+    :members:
+    :undoc-members:
+    :show-inheritance:

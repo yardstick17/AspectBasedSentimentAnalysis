@@ -1,0 +1,62 @@
+grammar package
+===============
+
+Submodules
+----------
+
+grammar.chunker module
+----------------------
+
+.. automodule:: grammar.chunker
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+grammar.language\_processor module
+----------------------------------
+
+.. automodule:: grammar.language_processor
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+grammar.pattern\_grammar module
+-------------------------------
+
+.. automodule:: grammar.pattern_grammar
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+grammar.pos\_tagger module
+--------------------------
+
+.. automodule:: grammar.pos_tagger
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+grammar.sentiment module
+------------------------
+
+.. automodule:: grammar.sentiment
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+grammar.source\_target\_extractor module
+----------------------------------------
+
+.. automodule:: grammar.source_target_extractor
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: grammar
+    :members:
+    :undoc-members:
+    :show-inheritance:

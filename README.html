@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Aspect Based Sentiment Analysis &mdash; Aspect Based Sentiment Analysis  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Aspect Based Sentiment Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dataset.html">dataset package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="feature_extraction.html">feature_extraction package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="grammar.html">grammar package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">AspectBasedSentimentAnalysis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Aspect Based Sentiment Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Aspect Based Sentiment Analysis</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/README.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="aspect-based-sentiment-analysis">
+<span id="aspect-based-sentiment-analysis"></span><h1>Aspect Based Sentiment Analysis<a class="headerlink" href="#aspect-based-sentiment-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="dataset">
+<span id="dataset"></span><h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p>ABSA-15_Restaurants_Train_Final.xml</p>
+</div>
+<div class="section" id="approach">
+<span id="approach"></span><h2>Approach<a class="headerlink" href="#approach" title="Permalink to this headline">¶</a></h2>
+<p>Natural Language Processing based. Multilabel classifier on top of syntactic extraction rules.</p>
+</div>
+<div class="section" id="results">
+<span id="results"></span><h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="m">100</span>%<span class="p">|</span>█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████<span class="p">|</span> <span class="m">582</span>/582 <span class="o">[</span><span class="m">02</span>:18&lt;<span class="m">00</span>:00,  <span class="m">3</span>.10it/s<span class="o">]</span>
+For Data-set:  dataset/ABSA15_Restaurants_Test.json
+              precision    recall  f1-score   support
+
+          <span class="m">0</span>       <span class="m">0</span>.00      <span class="m">0</span>.00      <span class="m">0</span>.00        <span class="m">54</span>
+          <span class="m">1</span>       <span class="m">0</span>.83      <span class="m">0</span>.50      <span class="m">0</span>.63       <span class="m">542</span>
+
+avg / total       <span class="m">0</span>.76      <span class="m">0</span>.46      <span class="m">0</span>.57       <span class="m">596</span>
+
+<span class="o">[</span>root<span class="o">]</span> <span class="o">[</span><span class="m">2017</span>-09-27 <span class="m">17</span>:59:03,966<span class="o">]</span> INFO : Shape of array <span class="k">for</span> dataset:  X:<span class="o">(</span><span class="m">582</span>, <span class="m">13635</span><span class="o">)</span> , Y:<span class="o">(</span><span class="m">582</span>, <span class="m">31</span><span class="o">)</span>
+/Users/Amit/anaconda/lib/python3.5/site-packages/sklearn/metrics/classification.py:1135: UndefinedMetricWarning: Precision and F-score are ill-defined and being <span class="nb">set</span> to <span class="m">0</span>.0 in labels with no predicted samples.
+  <span class="s1">&#39;precision&#39;</span>, <span class="s1">&#39;predicted&#39;</span>, average, warn_for<span class="o">)</span>
+Classification report on testing_data
+              precision    recall  f1-score   support
+
+          <span class="m">0</span>       <span class="m">0</span>.97      <span class="m">0</span>.93      <span class="m">0</span>.95       <span class="m">101</span>
+          <span class="m">1</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">2</span>
+          <span class="m">2</span>       <span class="m">1</span>.00      <span class="m">0</span>.54      <span class="m">0</span>.70        <span class="m">54</span>
+          <span class="m">3</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">2</span>
+          <span class="m">4</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">3</span>
+          <span class="m">5</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">2</span>
+          <span class="m">6</span>       <span class="m">1</span>.00      <span class="m">0</span>.74      <span class="m">0</span>.85        <span class="m">23</span>
+          <span class="m">7</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">1</span>
+          <span class="m">8</span>       <span class="m">0</span>.00      <span class="m">0</span>.00      <span class="m">0</span>.00         <span class="m">1</span>
+          <span class="m">9</span>       <span class="m">1</span>.00      <span class="m">0</span>.83      <span class="m">0</span>.91         <span class="m">6</span>
+         <span class="m">10</span>       <span class="m">1</span>.00      <span class="m">0</span>.33      <span class="m">0</span>.50         <span class="m">3</span>
+         <span class="m">11</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">1</span>
+         <span class="m">12</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00        <span class="m">14</span>
+         <span class="m">13</span>       <span class="m">0</span>.94      <span class="m">0</span>.79      <span class="m">0</span>.86        <span class="m">19</span>
+         <span class="m">14</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">1</span>
+         <span class="m">15</span>       <span class="m">0</span>.00      <span class="m">0</span>.00      <span class="m">0</span>.00         <span class="m">1</span>
+         <span class="m">16</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">2</span>
+         <span class="m">17</span>       <span class="m">1</span>.00      <span class="m">1</span>.00      <span class="m">1</span>.00         <span class="m">5</span>
+
+avg / total       <span class="m">0</span>.97      <span class="m">0</span>.80      <span class="m">0</span>.87       <span class="m">241</span>
+
+<span class="o">[</span>root<span class="o">]</span> <span class="o">[</span><span class="m">2017</span>-09-27 <span class="m">17</span>:59:19,624<span class="o">]</span> INFO : Dataset: dataset/ABSA15_Restaurants_Test.json
+582it <span class="o">[</span><span class="m">00</span>:00, <span class="m">628</span>.15it/s<span class="o">]</span>
+NO PREDICTION FOR RULE:  <span class="m">397</span>  out of:  <span class="m">582</span>
+Task: ONLY_ASPECT_PREDICTION False
+Accuracy:  <span class="m">80</span>.96885813148789
+Total:  <span class="m">289</span> , Correct:  <span class="m">234</span>
+::::::::::::::::::   TESTING   ::::::::::::::::::
+ dataset/ABSA15_Restaurants_Test.json
+              precision    recall  f1-score   support
+
+          <span class="m">0</span>       <span class="m">0</span>.00      <span class="m">0</span>.00      <span class="m">0</span>.00        <span class="m">55</span>
+          <span class="m">1</span>       <span class="m">0</span>.81      <span class="m">0</span>.43      <span class="m">0</span>.56       <span class="m">542</span>
+
+avg / total       <span class="m">0</span>.74      <span class="m">0</span>.39      <span class="m">0</span>.51       <span class="m">597</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="paper">
+<span id="paper"></span><h2>Paper<a class="headerlink" href="#paper" title="Permalink to this headline">¶</a></h2>
+<p>Aspect based sentiment analysis for restaurant reviews.</p>
+</div>
+<div class="section" id="setup">
+<span id="setup"></span><h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># From project root, execute this command:</span>
+
+pip install -r requirements.txt
+</pre></div>
+</div>
+</div>
+<div class="section" id="commands">
+<span id="commands"></span><h2>Commands<a class="headerlink" href="#commands" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># From project root, execute this command:</span>
+<span class="nv">PYTHONPATH</span><span class="o">=</span><span class="s1">&#39;.&#39;</span> python3 training/train_top_classifier.py
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Amit Kushwaha.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

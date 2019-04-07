@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>grammar.source_target_extractor &mdash; Aspect Based Sentiment Analysis  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Aspect Based Sentiment Analysis
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../dataset.html">dataset package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../feature_extraction.html">feature_extraction package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../grammar.html">grammar package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">AspectBasedSentimentAnalysis</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Aspect Based Sentiment Analysis</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+      <li>grammar.source_target_extractor</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for grammar.source_target_extractor</h1><div class="highlight"><pre>
+<span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">defaultdict</span>
+
+<span class="kn">import</span> <span class="nn">nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="k">import</span> <span class="n">stopwords</span>
+
+<span class="kn">from</span> <span class="nn">grammar.chunker</span> <span class="k">import</span> <span class="n">Chunker</span>
+<span class="kn">from</span> <span class="nn">grammar.language_processor</span> <span class="k">import</span> <span class="n">LanguageProcessor</span>
+<span class="kn">from</span> <span class="nn">grammar.pattern_grammar</span> <span class="k">import</span> <span class="n">Target</span>
+<span class="kn">from</span> <span class="nn">grammar.pos_tagger</span> <span class="k">import</span> <span class="n">PosTagger</span>
+<span class="kn">from</span> <span class="nn">grammar.sentiment</span> <span class="k">import</span> <span class="n">Sentiment</span>
+
+<span class="n">STOP_WORDS</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;english&#39;</span><span class="p">))</span>
+<span class="c1"># logging.info(&quot;STOP_WORDS SIZE: {}&quot;.format(len(STOP_WORDS)))</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">less_adj</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;dataset/sentiment_words_text_files/less_adj.csv&#39;</span><span class="p">)[</span><span class="s1">&#39;less_adjective&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+
+
+<div class="viewcode-block" id="SourceTargetExtractor"><a class="viewcode-back" href="../../grammar.html#grammar.source_target_extractor.SourceTargetExtractor">[docs]</a><span class="k">class</span> <span class="nc">SourceTargetExtractor</span><span class="p">(</span><span class="n">LanguageProcessor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param text: can be a review or raw text</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sentences</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pos_tagged_sentences</span> <span class="o">=</span> <span class="p">[</span><span class="n">PosTagger</span><span class="p">(</span><span class="n">sentence</span><span class="o">=</span><span class="n">sentence</span><span class="p">)</span><span class="o">.</span><span class="n">pos_tag</span><span class="p">()</span> <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sentences</span><span class="p">]</span>
+
+<div class="viewcode-block" id="SourceTargetExtractor.get_topic_sentiment_score_dict"><a class="viewcode-back" href="../../grammar.html#grammar.source_target_extractor.SourceTargetExtractor.get_topic_sentiment_score_dict">[docs]</a>    <span class="k">def</span> <span class="nf">get_topic_sentiment_score_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compiled_grammar</span><span class="p">):</span>
+        <span class="c1"># self._logger.debug(&#39;Getting topic sentiment&#39;)</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param compiled_grammar:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">source_target_mapping</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_source_and_target</span><span class="p">(</span><span class="n">compiled_grammar</span><span class="p">)</span>
+        <span class="n">source_target_score_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">source</span><span class="p">,</span> <span class="n">targets_with_polarity_dict</span> <span class="ow">in</span> <span class="n">source_target_mapping</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">targets_with_polarity_dict</span><span class="p">:</span>
+                <span class="n">target_pos_neg_scores</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                    <span class="nb">map</span><span class="p">(</span><span class="n">Sentiment</span><span class="o">.</span><span class="n">get_sentiment_with_polarity</span><span class="p">,</span> <span class="nb">set</span><span class="p">(</span><span class="n">targets_with_polarity_dict</span><span class="p">)))</span>
+                <span class="n">target_pos_neg_score</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_target_pos_neg_scores_mean</span><span class="p">(</span><span class="n">target_pos_neg_scores</span><span class="p">)</span>
+                <span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">remove_stop_words</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+                <span class="n">source_target_score_mapping</span><span class="p">[</span><span class="n">source</span><span class="p">]</span> <span class="o">=</span> <span class="n">target_pos_neg_score</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span>
+                    <span class="s1">&#39;Source: </span><span class="si">%s</span><span class="s1"> Target </span><span class="si">%s</span><span class="s1"> Target Score: </span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">,</span>
+                    <span class="n">source</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">targets_with_polarity_dict</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">target_pos_neg_score</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">return</span> <span class="n">source_target_score_mapping</span></div>
+
+<div class="viewcode-block" id="SourceTargetExtractor.remove_stop_words"><a class="viewcode-back" href="../../grammar.html#grammar.source_target_extractor.SourceTargetExtractor.remove_stop_words">[docs]</a>    <span class="k">def</span> <span class="nf">remove_stop_words</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">word</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param word:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tokens</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">new_word</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">token</span> <span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">tokens</span> <span class="k">if</span> <span class="n">token</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">STOP_WORDS</span><span class="p">])</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="c1"># if word != new_word:</span>
+        <span class="c1">#     logging.debug(&#39;word: {} , new word: {}&#39;.format(word, new_word))</span>
+        <span class="k">return</span> <span class="n">new_word</span></div>
+
+<div class="viewcode-block" id="SourceTargetExtractor.get_source_and_target"><a class="viewcode-back" href="../../grammar.html#grammar.source_target_extractor.SourceTargetExtractor.get_source_and_target">[docs]</a>    <span class="k">def</span> <span class="nf">get_source_and_target</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">compiled_grammar</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param compiled_grammar:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">subject_to_target_mapping</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">chunk_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_source_target</span><span class="p">(</span><span class="n">compiled_grammar</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">chunk_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">subject_to_target_mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">):</span>
+                <span class="n">subject_to_target_mapping</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">subject_to_target_mapping</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="p">})</span>
+        <span class="k">return</span> <span class="n">subject_to_target_mapping</span></div>
+
+<div class="viewcode-block" id="SourceTargetExtractor.assign_source_and_target"><a class="viewcode-back" href="../../grammar.html#grammar.source_target_extractor.SourceTargetExtractor.assign_source_and_target">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">assign_source_and_target</span><span class="p">(</span><span class="n">source_set</span><span class="p">,</span> <span class="n">target_set</span><span class="p">,</span> <span class="n">polarity</span><span class="p">,</span> <span class="n">subject_to_target_mapping</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param source_set:</span>
+<span class="sd">        :param target_set:</span>
+<span class="sd">        :param polarity:</span>
+<span class="sd">        :param subject_to_target_mapping:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">subject</span> <span class="ow">in</span> <span class="n">source_set</span><span class="p">:</span>
+            <span class="n">subject</span> <span class="o">=</span> <span class="n">SourceTargetExtractor</span><span class="o">.</span><span class="n">strip_to_root_word</span><span class="p">(</span><span class="n">subject</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">subject</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">target_set</span><span class="p">:</span>
+                    <span class="n">subject_to_target_mapping</span><span class="p">[</span><span class="n">subject</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Target</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">polarity</span><span class="p">))</span>
+                    <span class="k">if</span> <span class="n">target</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">source_set</span><span class="p">:</span>
+                        <span class="n">subject_to_target_mapping</span><span class="p">[</span><span class="n">subject</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Target</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="n">polarity</span><span class="p">))</span>
+        <span class="k">return</span> <span class="n">subject_to_target_mapping</span></div>
+
+    <span class="k">def</span> <span class="nf">_get_source_target</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">grammar</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param grammar:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">chunk_dict</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">pos_tagged_sentence</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos_tagged_sentences</span><span class="p">:</span>
+            <span class="n">single_chunk_dict</span> <span class="o">=</span> <span class="n">Chunker</span><span class="p">(</span><span class="n">grammar</span><span class="p">)</span><span class="o">.</span><span class="n">chunk_pos_tagged_sentence</span><span class="p">(</span><span class="n">pos_tagged_sentence</span><span class="p">)</span>
+            <span class="n">chunk_dict</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">merge_two_dict</span><span class="p">(</span><span class="n">chunk_dict</span><span class="p">,</span> <span class="n">single_chunk_dict</span><span class="p">)</span>
+        <span class="n">subject_to_target_mapping</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">rule</span><span class="p">,</span> <span class="n">pos_tagged_chunk_list</span> <span class="ow">in</span> <span class="n">chunk_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">pos_tagged_chunk</span> <span class="ow">in</span> <span class="n">pos_tagged_chunk_list</span><span class="p">:</span>
+                <span class="n">source_chunk</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_src_target_chunk</span><span class="p">(</span><span class="n">rule</span><span class="p">,</span> <span class="n">pos_tagged_chunk</span><span class="p">)</span>
+                <span class="n">source_set</span><span class="p">,</span> <span class="n">target_set</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_source_target_set</span><span class="p">(</span><span class="n">source_chunk</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">assign_source_and_target</span><span class="p">(</span><span class="n">source_set</span><span class="p">,</span> <span class="n">target_set</span><span class="p">,</span> <span class="n">target_tuple_with_polarity</span><span class="o">.</span><span class="n">polarity</span><span class="p">,</span>
+                                              <span class="n">subject_to_target_mapping</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">subject_to_target_mapping</span>
+
+<div class="viewcode-block" id="SourceTargetExtractor.strip_to_root_word"><a class="viewcode-back" href="../../grammar.html#grammar.source_target_extractor.SourceTargetExtractor.strip_to_root_word">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">strip_to_root_word</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+        <span class="c1"># return word</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+        <span class="n">word_tokens</span> <span class="o">=</span> <span class="p">[</span><span class="n">w</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">less_adj</span><span class="p">]</span>
+        <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word_tokens</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span></div></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Amit Kushwaha.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

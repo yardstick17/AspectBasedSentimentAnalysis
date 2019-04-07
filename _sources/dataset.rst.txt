@@ -1,0 +1,22 @@
+dataset package
+===============
+
+Submodules
+----------
+
+dataset.read\_dataset module
+----------------------------
+
+.. automodule:: dataset.read_dataset
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: dataset
+    :members:
+    :undoc-members:
+    :show-inheritance:

@@ -1,0 +1,30 @@
+feature\_extraction package
+===========================
+
+Subpackages
+-----------
+
+.. toctree::
+
+    feature_extraction.pos_pattern_feature
+    feature_extraction.word_level_feature
+
+Submodules
+----------
+
+feature\_extraction.feature\_vector\_builder module
+---------------------------------------------------
+
+.. automodule:: feature_extraction.feature_vector_builder
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
+Module contents
+---------------
+
+.. automodule:: feature_extraction
+    :members:
+    :undoc-members:
+    :show-inheritance:
