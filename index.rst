@@ -10,6 +10,9 @@ Welcome to Aspect Based Sentiment Analysis's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+
+   research_paper
+   README
    dataset
    feature_extraction
    grammar
