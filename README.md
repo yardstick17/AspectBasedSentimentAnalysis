@@ -1,6 +1,11 @@
 Aspect Based Sentiment Analysis
 ==========================
 
+### Paper
+
+<embed src="https://github.com/yardstick17/AspectBasedSentimentAnalysis/raw/master/review_highlight_paper.pdf" width="700" height="1000" 
+ type="application/pdf">
+
 ### Dataset
 ABSA-15_Restaurants_Train_Final.xml
 
@@ -64,11 +69,6 @@ Total:  289 , Correct:  234
 avg / total       0.74      0.39      0.51       597
 
 ```
-
-
-### Paper
-Aspect based sentiment analysis for restaurant reviews.
-
 
 ### Setup
 ```bash
