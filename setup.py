@@ -47,7 +47,7 @@ setup(
     setup_requires=['flake8'],
     install_requires=load_requirements_file('requirements.txt'),
     dependency_links=[
-        gh('yardstick17/PyAthena', 'v0.0.2'),
+        gh('yardstick17/PyAthena', 'v0.0.4'),
     ]
 
 )

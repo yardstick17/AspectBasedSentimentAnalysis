@@ -1,2 +1,2 @@
 pandas==0.17.1
-python_athena
+PyAthena
