@@ -21,7 +21,7 @@ def gh(name, version):
         proto = 'git+https://'
     else:
         proto = 'git+ssh://git@'
-    return '{proto}github.com//{name}.git@{version}' \
+    return '{proto}github.com/{name}.git@{version}' \
            '#egg={package}-{version}'.format(**locals())
 
 
@@ -45,5 +45,9 @@ setup(
     author='Amit Kushwaha',
     url='https://github.com/yardstick17/AspectBasedSentimentAnalysis',
     setup_requires=['flake8'],
-    install_requires=load_requirements_file('requirements.txt')
+    install_requires=load_requirements_file('requirements.txt'),
+    dependency_links=[
+        gh('yardstick17/PyAthena', 'v0.0.2'),
+    ]
+
 )
